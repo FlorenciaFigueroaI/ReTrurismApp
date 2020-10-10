@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DAM2PM</string>
+    <string name="app_name">Antes y Ahora</string>
     <string name="enviar">Enviar</string>
     <string name="cancelar">Cancelar</string>
     <string name="contrase_a">Contraseña</string>
@@ -7,4 +7,7 @@
     <string name="email">email</string>
     <string name="he_olvidado_mi_contrase_a">He olvidado mi contraseña</string>
     <string name="logo">logo</string>
+    <string name="registro">registro</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="entrar">entrar</string>
 </resources>

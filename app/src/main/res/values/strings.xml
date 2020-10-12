@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Ayer &amp; Hoy</string>
-    <string name="enviar">Enviar</string>
     <string name="cancelar">Cancelar</string>
     <string name="contrase_a">Contraseña</string>
     <string name="usuario">Usuario</string>
@@ -10,4 +9,8 @@
     <string name="registro">registro</string>
     <string name="correo_electr_nico">Correo electrónico</string>
     <string name="entrar">entrar</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="repite_la_contrase_a">Repite la contraseña</string>
+    <string name="enviar">Enviar</string>
 </resources>

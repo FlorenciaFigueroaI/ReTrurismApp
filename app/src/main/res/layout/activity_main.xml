@@ -9,6 +9,7 @@
     android:paddingLeft="50dp"
     android:paddingRight="50dp"
     android:paddingTop="50dp"
+    android:id="@+id/contenedor"
     tools:context=".MainActivity">
 
     <ImageView
@@ -56,7 +57,7 @@
         android:textColorLink="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/txtViewOlvidoPwd"
+        android:id="@+id/txtVwOlvidoPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -65,25 +66,25 @@
         android:textColor="@android:color/background_light" />
 
     <Button
-        android:id="@+id/btnRegistro"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark"
-        android:textAlignment="center"
-        android:text="@string/registro"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/BtnEntrar"
+        android:id="@+id/btnEntrar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:textAlignment="center"
         android:background="@color/colorPrimaryDark"
         android:text="@string/entrar"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/registro"
+        android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold" />

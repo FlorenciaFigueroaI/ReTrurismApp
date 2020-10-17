@@ -14,5 +14,8 @@
     <string name="repite_la_contrase_a">Repite la contraseña</string>
     <string name="enviar">Enviar</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Registro</string>
+    <string name="recibir_noticias">Quiero recibir noticias sobre Ayer&amp;Hoy</string>
+    <string name="acepto_las_condiciones">Acepto las condiciones</string>
+
 </resources>

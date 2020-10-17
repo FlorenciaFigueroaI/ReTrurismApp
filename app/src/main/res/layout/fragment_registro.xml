@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contenedorRegistro"
+    tools:context=".RegistroFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegistroFragment">
+    android:layout_height="300dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLytVertc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="50dp">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/nombre"
+            android:inputType="textPersonName"
+            android:text="@string/nombre" />
+
+        <EditText
+            android:id="@+id/txtApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/apellido"
+            android:inputType="textPersonName"
+            android:text="@string/apellido" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:autofillHints=""
+            android:background="@color/colorPrimaryDark"
+            android:drawableStart="@android:drawable/ic_dialog_email"
+            android:drawablePadding="12dp"
+            android:ems="12"
+            android:hint="@string/correo_electr_nico"
+            android:inputType="textEmailAddress"
+            android:textAlignment="textStart"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="@android:color/background_dark"
+            android:textColorHint="@android:color/background_light"
+            android:textColorLink="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/txtPwd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints=""
+            android:background="@color/colorPrimaryDark"
+            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:drawablePadding="12dp"
+            android:ems="12"
+            android:hint="@string/contrase_a"
+            android:inputType="textPassword"
+            android:textColorHighlight="@android:color/background_dark"
+            android:textColorHint="@android:color/background_light"
+            android:textColorLink="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/txtPwdConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:autofillHints=""
+            android:background="@color/colorPrimaryDark"
+            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:drawablePadding="12dp"
+            android:ems="12"
+            android:hint="@string/repite_la_contrase_a"
+            android:inputType="textPassword"
+            android:textColorHighlight="@android:color/background_dark"
+            android:textColorHint="@android:color/background_light"
+            android:textColorLink="@android:color/darker_gray" />
+
+        <CheckBox
+            android:id="@+id/chkBoxCondiciones"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/acepto_las_condiciones" />
+
+        <CheckBox
+            android:id="@+id/chkBoxBoletin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/recibir_noticias" />
+
+        <LinearLayout
+            android:id="@+id/linearLytHortl"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/enviar"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="120dp"
+                android:layout_height="48dp"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/cancelar"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+

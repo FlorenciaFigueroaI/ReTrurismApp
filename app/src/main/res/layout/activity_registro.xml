@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:orientation="vertical"
     tools:context=".registroActivity">
 
     <EditText
@@ -22,13 +23,7 @@
         android:textColor="#FFFFFF"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        android:textColorLink="@android:color/darker_gray" />
 
     <EditText
         android:id="@+id/txtPwd"
@@ -43,13 +38,7 @@
         android:inputType="textPassword"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532" />
+        android:textColorLink="@android:color/darker_gray" />
 
     <EditText
         android:id="@+id/txtNombre"
@@ -59,12 +48,7 @@
         android:ems="10"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
-        android:text="@string/nombre"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
+        android:text="@string/nombre" />
 
     <EditText
         android:id="@+id/txtApellido"
@@ -74,12 +58,7 @@
         android:ems="10"
         android:hint="@string/apellido"
         android:inputType="textPersonName"
-        android:text="@string/apellido"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.243" />
+        android:text="@string/apellido" />
 
     <EditText
         android:id="@+id/txtPwdConfirm"
@@ -94,28 +73,17 @@
         android:inputType="textPassword"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        android:textColorLink="@android:color/darker_gray" />
 
     <Button
         android:id="@+id/btnEnviar"
         android:layout_width="270dp"
         android:layout_height="48dp"
         android:background="@color/colorPrimaryDark"
-        android:textColor="@android:color/background_light"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:text="@string/enviar"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textStyle="bold" />
+</LinearLayout>

@@ -65,6 +65,14 @@
         android:textAlignment="center"
         android:textColor="@android:color/background_light" />
 
+    <RadioButton
+        android:id="@+id/rdBtnMantenerSesion"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/background_light"
+        android:text="@string/mantener_sesion_abierta" />
+
     <Button
         android:id="@+id/btnEntrar"
         android:layout_width="match_parent"

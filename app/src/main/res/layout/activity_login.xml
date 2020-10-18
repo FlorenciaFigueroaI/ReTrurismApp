@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:paddingTop="50dp"
+    android:id="@+id/contenedor"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/imgViewLogo"
+        android:layout_width="match_parent"
+        android:layout_height="191dp"
+        android:contentDescription="@string/logo"
+        android:ems="50"
+        app:srcCompat="@drawable/icon_logo" />
+
+    <EditText
+        android:id="@+id/txtPwd"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:background="@color/colorPrimaryDark"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:drawablePadding="12dp"
+        android:ems="12"
+        android:hint="@string/contrase_a"
+        android:inputType="textPassword"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/darker_gray" />
+
+    <EditText
+        android:id="@+id/txtEmailUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:drawableStart="@android:drawable/ic_dialog_email"
+        android:drawablePadding="8dp"
+        android:ems="12"
+        android:hint="@string/correo_electr_nico"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/txtVwOlvidoPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/he_olvidado_mi_contrase_a"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/entrar"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/registro"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

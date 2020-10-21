@@ -24,12 +24,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        txtEmail=(EditText) findViewById(R.id.txtEmailUsuario);
-        txtPd=(EditText) findViewById(R.id.txtPwd);
-        txtVwOlviPwd=(TextView) findViewById(R.id.txtVwOlvidoPwd);
-        chkBoxMantSesion=(CheckBox) findViewById(R.id.chkBoxMantenerSesion);
+        txtEmail = findViewById(R.id.txtEmailUsuario);
+        txtPd = findViewById(R.id.txtPwd);
+        txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
+        chkBoxMantSesion = findViewById(R.id.chkBoxMantenerSesion);
 
-        btnEnt=(Button) findViewById(R.id.btnEntrar);
+        btnEnt = findViewById(R.id.btnEntrar);
         btnEnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnReg = (Button) findViewById(R.id.btnRegistro);
+        btnReg = findViewById(R.id.btnRegistro);
         btnReg.setOnClickListener(new View.OnClickListener() {
 
             @Override

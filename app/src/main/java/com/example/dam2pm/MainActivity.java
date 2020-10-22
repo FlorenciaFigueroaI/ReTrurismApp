@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Toolbar
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar();
         Objects.requireNonNull(getActionBar()).setTitle("Ayer & Hoy");
 

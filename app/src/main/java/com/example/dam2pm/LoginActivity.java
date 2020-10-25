@@ -7,7 +7,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -31,10 +30,12 @@ public class LoginActivity extends AppCompatActivity {
 
         btnEnt = findViewById(R.id.btnEntrar);
         btnEnt.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(i);
+                Intent intent = new Intent (v.getContext(), MainActivity.class);
+                startActivityForResult(intent, 0);
 
             }
         });
@@ -58,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
 }

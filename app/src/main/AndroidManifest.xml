@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".ConfiguracionActivity"></activity>
+        <activity android:name=".ConfiguracionActivity"/>
+
         <activity android:name=".ListadoLugaresActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">

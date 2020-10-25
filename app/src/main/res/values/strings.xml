@@ -17,5 +17,16 @@
     <string name="recibir_noticias">Quiero recibir noticias sobre Ayer&amp;Hoy</string>
     <string name="acepto_las_condiciones">Acepto las condiciones</string>
     <string name="mantener_sesion_abierta">Mantener la sesión iniciada</string>
+    <string name="oscuro">Oscuro</string>
+    <string name="claro">Claro</string>
+    <string name="activar_notificaciones">Activar notificaciones</string>
+    <string name="esquema_de_colores">Esquema de colores</string>
+    <string name="idiomas">Idiomas</string>
+
+    <string-array name="spnrIdiomas">
+        <item>Español</item>
+        <item>Inglés</item>
+        <item>Francés</item>
+    </string-array>
 
 </resources>

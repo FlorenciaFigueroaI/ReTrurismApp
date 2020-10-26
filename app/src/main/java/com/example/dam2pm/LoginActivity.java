@@ -11,12 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 public class LoginActivity extends AppCompatActivity {
-    Button btnReg;
-    Button btnEnt;
-    EditText txtEmail;
-    EditText txtPd;
-    TextView txtVwOlviPwd;
-    CheckBox chkBoxMantSesion;
+
+    private int ACTIVITY_PRINCIPAL = 1;
+    private Button btnEnt;
+    private Button btnReg;
+    private EditText txtEmail;
+    private EditText txtPd;
+    private TextView txtVwOlviPwd;
+    private CheckBox chkBoxMantSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +36,8 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), MainActivity.class);
-                startActivityForResult(intent, 0);
+                Intent i = new Intent (LoginActivity.this, MainActivity.class);
+                startActivityForResult(i, ACTIVITY_PRINCIPAL);
 
             }
         });

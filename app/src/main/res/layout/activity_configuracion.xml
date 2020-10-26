@@ -50,7 +50,9 @@
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingRight="20dp"
-            android:text="@string/idiomas" />
+            android:text="@string/idiomas"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spnrIdiomas"
@@ -89,7 +91,9 @@
             android:paddingTop="10dp"
             android:paddingEnd="10dp"
             android:paddingRight="20dp"
-            android:text="@string/esquema_de_colores" />
+            android:text="@string/esquema_de_colores"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="16sp" />
 
         <RadioGroup
             android:id="@+id/rdGrpColores"
@@ -97,23 +101,23 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="200dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="20dp">
+            android:background="@color/colorPrimaryDark">
 
             <RadioButton
                 android:id="@+id/rdbtnOscuro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/oscuro" />
+                android:text="@string/oscuro"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="16sp" />
 
             <RadioButton
                 android:id="@+id/rdBtnClaro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/claro" />
+                android:text="@string/claro"
+                android:textColor="@color/colorTextWhite"
+                android:textSize="16sp" />
 
         </RadioGroup>
     </androidx.cardview.widget.CardView>
@@ -143,12 +147,21 @@
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/swtchNotificaciones"
-            android:layout_width="248dp"
-            android:layout_height="31dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:background="@color/colorPrimaryDark"
-            android:text="@string/activar_notificaciones" />
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingRight="20dp"
+            android:scrollbarDefaultDelayBeforeFade="400"
+            android:scrollbarSize="6dp"
+            android:text="@string/activar_notificaciones"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="16sp"
+            app:switchPadding="20dp" />
     </androidx.cardview.widget.CardView>
 
     <View

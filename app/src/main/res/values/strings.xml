@@ -20,6 +20,9 @@
     <string name="activar_notificaciones">Activar notificaciones</string>
     <string name="esquema_de_colores">Esquema de colores</string>
     <string name="idiomas">Idiomas</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="Fotos">Fotos</string>
+    <string name="mapa">Mapa</string>
 
     <string-array name="spnrIdiomas">
         <item>Español</item>

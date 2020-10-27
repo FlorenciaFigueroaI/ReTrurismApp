@@ -21,6 +21,8 @@
     <string name="activar_notificaciones">Activer les notifications</string>
     <string name="esquema_de_colores">Schéma de couleur</string>
     <string name="idiomas">Langues</string>
+    <string name="Fotos">Photos</string>
+    <string name="mapa">Carte</string>
 
     <string-array name="spnrIdiomas">
         <item name="espanyol">Espagnol</item>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nvgFotos"
+        android:icon="@drawable/ic_baseline_photo_album_24"
+        android:title="@string/Fotos"/>
+
+    <item
+        android:id="@+id/nvgMapa"
+        android:icon="@drawable/ic_baseline_location_on_24"
+        android:title="@string/mapa"/>
+
+
+    <item
+        android:id="@+id/nvgAjustes"
+        android:icon="@drawable/ic_baseline_settings_applications_24"
+        android:title="@string/ajustes" />
+
+</menu>

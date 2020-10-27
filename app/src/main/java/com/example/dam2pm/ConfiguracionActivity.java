@@ -18,7 +18,7 @@ public class ConfiguracionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_configuracion);
 
         // Toolbar
-        toolbar = findViewById(R.id.toolbar1);
+        toolbar = findViewById(R.id.tlBarBuscador);
         setSupportActionBar();
         Objects.requireNonNull(getActionBar()).setTitle("Ayer & Hoy");
 

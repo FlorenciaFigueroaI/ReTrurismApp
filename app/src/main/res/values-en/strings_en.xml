@@ -21,11 +21,13 @@
     <string name="activar_notificaciones">Turn notifications on</string>
     <string name="esquema_de_colores">Color scheme</string>
     <string name="idiomas">Languages</string>
+    <string name="Fotos">Photos</string>
+    <string name="mapa">Map</string>
 
     <string-array name="spnrIdiomas">
-        <item name="espanyol">Español</item>
-        <item name="ingles">Inglés</item>
-        <item name= "frances">Francés</item>
+        <item name="espanyol">Spanish</item>
+        <item name="ingles">English</item>
+        <item name= "frances">French</item>
     </string-array>
 
 

@@ -20,7 +20,6 @@
 
         <activity android:name=".ConfiguracionActivity"/>
 
-        <activity android:name=".ListadoLugaresActivity" />
         <activity android:name=".MainActivity"/>
 
     </application>

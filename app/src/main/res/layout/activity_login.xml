@@ -47,7 +47,7 @@
         android:drawableStart="@android:drawable/ic_dialog_email"
         android:drawablePadding="8dp"
         android:ems="12"
-        android:hint="@string/correo_electr_nico"
+        android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:textAlignment="textStart"

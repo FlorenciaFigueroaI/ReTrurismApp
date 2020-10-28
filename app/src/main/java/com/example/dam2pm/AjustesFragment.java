@@ -27,19 +27,18 @@ public class AjustesFragment extends Fragment {
 
         toolbar = toolbar.findViewById(R.id.tlBarBuscador);
         setSupportActionBar();
- /*
+
         // Spinner de idiomas
         spinner = toolbar.findViewById(R.id.spnrIdiomas);
         // Creamos del array con el array spnrIdiomas y el spinner layout por defecto
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spnrIdiomas, android.R.layout.simple_spinner_item);
+        // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spnrIdiomas, android.R.layout.simple_spinner_item);
         // Espeficamos el layout para utlizarlo cuando la lista de opciones aparece
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+      //  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Ponemos el adaptador en el spinner
-        spinner.setAdapter(adapter);
+    //    spinner.setAdapter(adapter);
 
 
-  */
     }
 
     private void setSupportActionBar() {

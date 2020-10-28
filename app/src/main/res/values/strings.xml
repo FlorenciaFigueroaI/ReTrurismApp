@@ -21,7 +21,7 @@
     <string name="esquema_de_colores">Esquema de colores</string>
     <string name="idiomas">Idiomas</string>
     <string name="ajustes">Ajustes</string>
-    <string name="Fotos">Fotos</string>
+    <string name="fotos">Fotos</string>
     <string name="mapa">Mapa</string>
 
     <string-array name="spnrIdiomas">
@@ -29,6 +29,6 @@
         <item>Inglés</item>
         <item>Francés</item>
     </string-array>
-
+    <string name="cuenta">Cuenta</string>
 
 </resources>

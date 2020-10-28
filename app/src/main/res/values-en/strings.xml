@@ -21,8 +21,10 @@
     <string name="activar_notificaciones">Turn notifications on</string>
     <string name="esquema_de_colores">Color scheme</string>
     <string name="idiomas">Languages</string>
-    <string name="Fotos">Photos</string>
+    <string name="ajustes">Settings</string>
+    <string name="fotos">Photos</string>
     <string name="mapa">Map</string>
+    <string name="cuenta">Account</string>
 
     <string-array name="spnrIdiomas">
         <item name="espanyol">Spanish</item>

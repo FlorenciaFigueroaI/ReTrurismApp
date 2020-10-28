@@ -18,8 +18,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ConfiguracionActivity"/>
-
         <activity android:name=".MainActivity"/>
 
     </application>

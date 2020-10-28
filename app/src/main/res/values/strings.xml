@@ -12,7 +12,7 @@
     <string name="apellido">Apellido</string>
     <string name="repite_la_contrase_a">Repite la contraseña</string>
     <string name="enviar">Enviar</string>
-    <string name="recibir_noticias">Quiero recibir noticias sobre Ayer&amp;Hoy</string>
+    <string name="recibir_noticias">Quiero recibir noticias</string>
     <string name="acepto_las_condiciones">Acepto las condiciones</string>
     <string name="mantener_sesion_abierta">Mantener la sesión iniciada</string>
     <string name="oscuro">Oscuro</string>
@@ -23,12 +23,13 @@
     <string name="ajustes">Ajustes</string>
     <string name="fotos">Fotos</string>
     <string name="mapa">Mapa</string>
+    <string name="cuenta">Cuenta</string>
+    <string name="explorar">Explorar</string>
 
     <string-array name="spnrIdiomas">
         <item>Español</item>
         <item>Inglés</item>
         <item>Francés</item>
     </string-array>
-    <string name="cuenta">Cuenta</string>
 
 </resources>

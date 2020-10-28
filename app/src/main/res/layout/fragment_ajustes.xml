@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tlBarBuscador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <SearchView
-        android:id="@+id/srchVwBusqueda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tlBarBuscador" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/crdVwIdiomas"
@@ -40,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlBarBuscador">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/txtVwIdiomas"
@@ -186,11 +160,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tlBarBuscador"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/navigation">
 
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <SearchView
+        android:id="@+id/srchVwBusqueda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="337dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="343dp"
+        android:layout_marginBottom="11dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/crdVwIdiomas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="UnknownIdInLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

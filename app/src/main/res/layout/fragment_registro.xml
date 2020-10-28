@@ -51,7 +51,7 @@
             android:drawableStart="@android:drawable/ic_dialog_email"
             android:drawablePadding="12dp"
             android:ems="12"
-            android:hint="@string/correo_electr_nico"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textAlignment="textStart"
             android:background="@color/colorPrimaryDark"

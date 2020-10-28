@@ -9,7 +9,7 @@
     android:paddingLeft="50dp"
     android:paddingRight="50dp"
     android:paddingTop="50dp"
-    android:id="@+id/contenedor"
+    android:id="@+id/contRegistro"
     tools:context=".LoginActivity">
 
     <ImageView

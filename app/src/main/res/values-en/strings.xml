@@ -13,7 +13,7 @@
     <string name="apellido">Last name</string>
     <string name="repite_la_contrase_a">Type the password again</string>
     <string name="enviar">Send</string>
-    <string name="recibir_noticias">I want to recibe news about Ayer&amp;Hoy</string>
+    <string name="recibir_noticias">I want to receive newsletters</string>
     <string name="acepto_las_condiciones">I accept the terms and conditions</string>
     <string name="mantener_sesion_abierta">Keep me logged in</string>
     <string name="claro">Light Theme</string>
@@ -25,6 +25,7 @@
     <string name="fotos">Photos</string>
     <string name="mapa">Map</string>
     <string name="cuenta">Account</string>
+    <string name="explorar">Explore</string>
 
     <string-array name="spnrIdiomas">
         <item name="espanyol">Spanish</item>

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
-        android:id="@+id/nvCuenta"
-        android:icon="@drawable/ic_baseline_settings_applications_24"
-        android:title="@string/cuenta" />
-
+        android:id="@+id/nvExplorar"
+        android:icon="@drawable/ic_baseline_explore_24"
+        android:title="@string/explorar" />
     <item
         android:id="@+id/nvgFotos"
         android:icon="@drawable/ic_baseline_photo_album_24"
@@ -16,6 +14,10 @@
         android:icon="@drawable/ic_baseline_location_on_24"
         android:title="@string/mapa"/>
 
+    <item
+        android:id="@+id/nvCuenta"
+        android:icon="@drawable/ic_baseline_settings_applications_24"
+        android:title="@string/cuenta" />
 
     <item
         android:id="@+id/nvgAjustes"

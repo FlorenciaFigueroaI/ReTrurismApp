@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private int ACTIVITY_PRINCIPAL = 1;
     private Button btnEnt;
     private Button btnReg;
     private EditText txtEmail;
@@ -29,19 +28,18 @@ public class LoginActivity extends AppCompatActivity {
         txtPd = findViewById(R.id.txtPwd);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
         chkBoxMantSesion = findViewById(R.id.chkBoxMantenerSesion);
-
         btnEnt = findViewById(R.id.btnEntrar);
-        btnEnt.setOnClickListener(new View.OnClickListener() {
 
+        // Botón entrar que me lleva al activity_main
+        btnEnt.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent (LoginActivity.this, MainActivity.class);
-                startActivityForResult(i, ACTIVITY_PRINCIPAL);
-
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
 
+        // Botón registro que me lleva al fragment_registro
         btnReg = findViewById(R.id.btnRegistro);
         btnReg.setOnClickListener(new View.OnClickListener() {
 
@@ -56,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
                 FragmentTransaction transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
                 RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción
-                transaccion.add(R.id.contenedor, frgRegistro); // se añade transacción
+                transaccion.add(R.id.contRegistro, frgRegistro); // se añade transacción
                 transaccion.commit(); // confirmación del cambio
 
             }

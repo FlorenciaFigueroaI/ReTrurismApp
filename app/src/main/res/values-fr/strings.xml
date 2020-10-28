@@ -13,7 +13,7 @@
     <string name="apellido">Prénom</string>
     <string name="repite_la_contrase_a">Répéter le mot de passe</string>
     <string name="enviar">Valider</string>
-    <string name="recibir_noticias">Je voudrais recevoir des nouvelles d\'Ayer&amp;Hoy</string>
+    <string name="recibir_noticias">Je voudrais recevoir des nouvelles</string>
     <string name="mantener_sesion_abierta">Garder la session ouverte</string>
     <string name="acepto_las_condiciones">J\'accepte les termes et conditions</string>
     <string name="claro">Thème clair</string>
@@ -21,10 +21,11 @@
     <string name="activar_notificaciones">Activer les notifications</string>
     <string name="esquema_de_colores">Schéma de couleur</string>
     <string name="idiomas">Langues</string>
-    <string name="ajustes">Réglages</string>
+    <string name="ajustes">Parémetres</string>
     <string name="fotos">Photos</string>
     <string name="mapa">Carte</string>
     <string name="cuenta">Compte</string>
+    <string name="explorar">Explorer</string>
 
     <string-array name="spnrIdiomas">
         <item name="espanyol">Espagnol</item>

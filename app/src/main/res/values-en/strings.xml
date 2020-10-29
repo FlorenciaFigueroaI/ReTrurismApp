@@ -26,6 +26,9 @@
     <string name="mapa">Map</string>
     <string name="cuenta">Account</string>
     <string name="explorar">Explore</string>
+    <string name="foto">Photo</string>
+    <string name="todo">TODO</string>
+    <string name="chalet_el_pe_n_castro_urdiales_1940">Chalet El Peñón - Castro Urdiales - 1940</string>
 
     <string-array name="spnrIdiomas">
         <item name="espanyol">Spanish</item>

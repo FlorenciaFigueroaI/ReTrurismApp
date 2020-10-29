@@ -1,154 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contAjustes"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/crdVwIdiomas"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtVwIdiomas"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="20dp"
+        android:text="@string/idiomas"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/txtVwIdiomas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="20dp"
-            android:text="@string/idiomas"
-            android:textColor="@color/colorTextWhite"
-            android:textSize="16sp" />
-
-        <Spinner
-            android:id="@+id/spnrIdiomas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="20dp"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="20dp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdVwColores"
-        android:layout_width="match_parent"
+    <Spinner
+        android:id="@+id/spnrIdiomas"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="20dp" />
+
+
+    <TextView
+        android:id="@+id/txtVwEsquemaColores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:background="@color/colorPrimaryDark"
-        app:cardBackgroundColor="@color/colorPrimaryDark"
-        app:cardElevation="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/divider2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="20dp"
+        android:text="@string/esquema_de_colores"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/txtVwEsquemaColores"
-            android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/rdGrpColores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark">
+
+        <RadioButton
+            android:id="@+id/rdbtnOscuro"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="20dp"
-            android:text="@string/esquema_de_colores"
+            android:text="@string/oscuro"
             android:textColor="@color/colorTextWhite"
             android:textSize="16sp" />
 
-        <RadioGroup
-            android:id="@+id/rdGrpColores"
-            android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/rdBtnClaro"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark">
+            android:text="@string/claro"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="16sp" />
 
-            <RadioButton
-                android:id="@+id/rdbtnOscuro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/oscuro"
-                android:textColor="@color/colorTextWhite"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/rdBtnClaro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/claro"
-                android:textColor="@color/colorTextWhite"
-                android:textSize="16sp" />
-
-        </RadioGroup>
-    </androidx.cardview.widget.CardView>
+    </RadioGroup>
 
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/cdVwColores"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crdVwIdiomas" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cdVwNotificaciones"
-        android:layout_width="match_parent"
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swtchNotificaciones"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="20dp"
+        android:scrollbarDefaultDelayBeforeFade="400"
+        android:scrollbarSize="6dp"
+        android:text="@string/activar_notificaciones"
+        android:textColor="@color/colorTextWhite"
+        android:textSize="16sp"
+        app:switchPadding="20dp" />
 
-        app:cardBackgroundColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider2">
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/swtchNotificaciones"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="20dp"
-            android:scrollbarDefaultDelayBeforeFade="400"
-            android:scrollbarSize="6dp"
-            android:text="@string/activar_notificaciones"
-            android:textColor="@color/colorTextWhite"
-            android:textSize="16sp"
-            app:switchPadding="20dp" />
-    </androidx.cardview.widget.CardView>
 
     <View
         android:id="@+id/divider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/cdVwNotificaciones"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cdVwColores" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btmNavgtView"
@@ -166,22 +126,4 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <SearchView
-        android:id="@+id/srchVwBusqueda"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_marginStart="337dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="343dp"
-        android:layout_marginBottom="11dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="@+id/crdVwIdiomas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="UnknownIdInLayout" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/contenedorRegistro"
-    tools:context=".RegistroFragment"
     android:layout_width="match_parent"
-    android:layout_height="300dp">
+    android:layout_height="300dp"
+    android:background="@color/colorAccent"
+    tools:context=".RegistroFragment">
 
     <LinearLayout
         android:id="@+id/linearLytVertc"
@@ -23,11 +23,11 @@
             android:layout_marginTop="20dp"
             android:autofillHints=""
             android:ems="10"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/darker_gray"
             android:hint="@string/nombre"
             android:inputType="textPersonName"
-            android:text="@string/nombre" />
+            android:text="@string/nombre"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/darker_gray" />
 
         <EditText
             android:id="@+id/txtApellido"
@@ -36,11 +36,11 @@
             android:layout_marginTop="30dp"
             android:autofillHints=""
             android:ems="10"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/darker_gray"
             android:hint="@string/apellido"
             android:inputType="textPersonName"
-            android:text="@string/apellido" />
+            android:text="@string/apellido"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/darker_gray" />
 
         <EditText
             android:id="@+id/txtEmailUsuario"
@@ -48,13 +48,13 @@
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
             android:autofillHints=""
+            android:background="@color/colorPrimaryDark"
             android:drawableStart="@android:drawable/ic_dialog_email"
             android:drawablePadding="12dp"
             android:ems="12"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textAlignment="textStart"
-            android:background="@color/colorPrimaryDark"
             android:textColor="@android:color/background_light"
             android:textColorHighlight="@android:color/background_dark"
             android:textColorHint="@android:color/background_light"
@@ -66,13 +66,13 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:autofillHints=""
+            android:background="@color/colorPrimaryDark"
             android:drawableStart="@android:drawable/ic_lock_idle_lock"
             android:drawablePadding="12dp"
             android:ems="12"
             android:hint="@string/contrase_a"
             android:inputType="textPassword"
             android:textColor="@android:color/background_light"
-            android:background="@color/colorPrimaryDark"
             android:textColorHighlight="@android:color/background_dark"
             android:textColorHint="@android:color/background_light"
             android:textColorLink="@android:color/darker_gray" />
@@ -83,12 +83,12 @@
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
             android:autofillHints=""
+            android:background="@color/colorPrimaryDark"
             android:drawableStart="@android:drawable/ic_lock_idle_lock"
             android:drawablePadding="12dp"
             android:ems="12"
             android:hint="@string/repite_la_contrase_a"
             android:inputType="textPassword"
-            android:background="@color/colorPrimaryDark"
             android:textColor="@android:color/background_light"
             android:textColorHighlight="@android:color/background_dark"
             android:textColorHint="@android:color/background_light"
@@ -98,15 +98,15 @@
             android:id="@+id/chkBoxCondiciones"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textColor="#FFFFFF"
-            android:text="@string/acepto_las_condiciones" />
+            android:text="@string/acepto_las_condiciones"
+            android:textColor="#FFFFFF" />
 
         <CheckBox
             android:id="@+id/chkBoxBoletin"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:textColor="@android:color/background_light"
-            android:text="@string/recibir_noticias" />
+            android:text="@string/recibir_noticias"
+            android:textColor="@android:color/background_light" />
 
         <LinearLayout
             android:id="@+id/linearLytHortl"
@@ -118,9 +118,9 @@
                 android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_margin="10dp"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/enviar"
                 android:textAlignment="center"
-                android:background="@color/colorPrimaryDark"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -131,9 +131,9 @@
                 android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_margin="10dp"
+                android:background="@color/colorPrimaryDark"
                 android:text="@string/cancelar"
                 android:textAlignment="center"
-                android:background="@color/colorPrimaryDark"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
                 android:textStyle="bold"

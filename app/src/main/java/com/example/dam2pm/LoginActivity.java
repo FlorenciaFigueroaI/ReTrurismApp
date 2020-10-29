@@ -23,13 +23,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         txtEmail = findViewById(R.id.txtEmailUsuario);
         txtPd = findViewById(R.id.txtPwd);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
         chkBoxMantSesion = findViewById(R.id.chkBoxMantenerSesion);
         btnEnt = findViewById(R.id.btnEntrar);
-
         // Botón entrar que me lleva al activity_main
         btnEnt.setOnClickListener(new View.OnClickListener() {
 
@@ -54,11 +52,12 @@ public class LoginActivity extends AppCompatActivity {
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
                 FragmentTransaction transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
                 RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción
-                transaccion.add(R.id.contRegistro, frgRegistro); // se añade transacción
+                transaccion.add(R.id.contenedorLogin, frgRegistro); // se añade transacción
                 transaccion.commit(); // confirmación del cambio
 
             }
         });
+
     }
 
 }

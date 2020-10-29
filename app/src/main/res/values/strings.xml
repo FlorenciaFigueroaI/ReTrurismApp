@@ -27,7 +27,7 @@
     <string name="explorar">Explorar</string>
     <string name="foto">foto</string>
     <string name="todo">TODO</string>
-    <string name="chalet_el_pe_n_castro_urdiales_1940">Chalet El Peñón - Castro Urdiales - 1940</string>
+    <string name="chalet_el_pe_n_" translatable="false">Chalet El Peñón</string>
     <string name="ayer_hoy" translatable="false">Ayer &amp; Hoy</string>
 
     <string-array name="spnrIdiomas">
@@ -35,7 +35,8 @@
         <item>Inglés</item>
         <item>Francés</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="ciudad" translatable="false">Castro Urdiales</string>
+    <string name="fecha" translatable="false">1940</string>
 
 </resources>

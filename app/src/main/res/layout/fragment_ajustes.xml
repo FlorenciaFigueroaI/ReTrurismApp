@@ -1,129 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/contAjustes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorAccent"
     android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/txtVwIdiomas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="20dp"
+        android:layout_margin="20dp"
         android:text="@string/idiomas"
         android:textColor="@color/colorTextWhite"
-        android:textSize="16sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/dvdAjustes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
 
     <Spinner
         android:id="@+id/spnrIdiomas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="20dp" />
-
+        android:layout_width="117dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/colorTextWhite"
+        app:layout_constraintBottom_toTopOf="@+id/dvdAjustes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toEndOf="@+id/txtVwIdiomas"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
 
     <TextView
         android:id="@+id/txtVwEsquemaColores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="20dp"
+        android:background="@color/colorAccent"
         android:text="@string/esquema_de_colores"
         android:textColor="@color/colorTextWhite"
-        android:textSize="16sp" />
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/dvdAjustes2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dvdAjustes"
+        app:layout_constraintVertical_bias="0.19" />
 
     <RadioGroup
         android:id="@+id/rdGrpColores"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark">
+        android:layout_width="249dp"
+        android:layout_height="71dp"
 
-        <RadioButton
-            android:id="@+id/rdbtnOscuro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/oscuro"
-            android:textColor="@color/colorTextWhite"
-            android:textSize="16sp" />
+        android:layout_marginTop="52dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toTopOf="@+id/dvdAjustes2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtVwEsquemaColores"
+        app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
             android:id="@+id/rdBtnClaro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/claro"
             android:textColor="@color/colorTextWhite"
-            android:textSize="16sp" />
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="164dp"
+            tools:layout_editor_absoluteY="161dp" />
+
+        <RadioButton
+            android:id="@+id/rdbtnOscuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oscuro"
+            android:textColor="@color/colorTextWhite"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="205dp" />
 
     </RadioGroup>
 
     <View
-        android:id="@+id/divider"
+        android:id="@+id/dvdAjustes"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
+        android:layout_height="2dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorTextWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/swtchNotificaciones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark"
-        android:paddingLeft="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingRight="20dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/colorAccent"
         android:scrollbarDefaultDelayBeforeFade="400"
         android:scrollbarSize="6dp"
         android:text="@string/activar_notificaciones"
         android:textColor="@color/colorTextWhite"
-        android:textSize="16sp"
-        app:switchPadding="20dp" />
-
-
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btmNavgtView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="548dp"
-        app:itemIconSize="30dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.244"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/navigation">
+        app:layout_constraintTop_toBottomOf="@+id/dvdAjustes2"
+        app:layout_constraintVertical_bias="0.0"
+        app:switchPadding="20dp"
+        app:thumbTint="@color/colorToolbar" />
+
+    <View
+        android:id="@+id/dvdAjustes2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_margin="10dp"
+        android:background="@color/colorTextWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
 
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

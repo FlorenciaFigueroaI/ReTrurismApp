@@ -9,7 +9,7 @@
     android:paddingLeft="50dp"
     android:paddingRight="50dp"
     android:paddingTop="50dp"
-    android:id="@+id/contRegistro"
+    android:id="@+id/contenedorLogin"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -19,24 +19,6 @@
         android:contentDescription="@string/logo"
         android:ems="50"
         app:srcCompat="@drawable/icon_logo" />
-
-    <EditText
-        android:id="@+id/txtPwd"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints=""
-        android:background="@color/colorPrimaryDark"
-        android:drawableStart="@android:drawable/ic_lock_idle_lock"
-        android:drawablePadding="12dp"
-        android:ems="12"
-        android:hint="@string/contrase_a"
-        android:inputType="textPassword"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="@android:color/background_dark"
-        android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray" />
 
     <EditText
         android:id="@+id/txtEmailUsuario"
@@ -50,6 +32,24 @@
         android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="@android:color/background_dark"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="@android:color/darker_gray" />
+
+    <EditText
+        android:id="@+id/txtPwd"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:background="@color/colorPrimaryDark"
+        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:drawablePadding="12dp"
+        android:ems="12"
+        android:hint="@string/contrase_a"
+        android:inputType="textPassword"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textColorHighlight="@android:color/background_dark"

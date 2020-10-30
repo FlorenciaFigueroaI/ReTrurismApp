@@ -28,6 +28,7 @@
     <string name="explorar">Explore</string>
     <string name="foto">Photo</string>
     <string name="todo">TODO</string>
+    <string name="galeria">Gallery</string>
 
     <string-array name="spnrIdiomas">
         <item name="espanyol">Spanish</item>

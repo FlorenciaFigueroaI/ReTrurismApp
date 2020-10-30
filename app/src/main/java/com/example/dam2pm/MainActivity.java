@@ -1,0 +1,77 @@
+package com.example.dam2pm;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.MenuItem;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    boolean viewIsAtHome;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Menú ayuda: https://platzi.com/contributions/mostrar-fragments-con-bottomnavigationview/
+        BottomNavigationView btmNavVw = findViewById(R.id.btmNavgtView);
+        addFragment(new ExploreFragment());
+
+        btmNavVw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @SuppressLint("NonConstantResourceId")
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int itemId = item.getItemId();
+                switch (itemId) {
+
+                    case R.id.nvExplorar:
+                        addFragment(new ExploreFragment());
+                        viewIsAtHome = true;
+                        break;
+
+                    case R.id.nvCuenta:
+                        addFragment(new CuentaFragment());
+                        viewIsAtHome = false;
+                        break;
+
+                    case R.id.nvgGaleria:
+                        addFragment(new GaleriaFragment());
+                        viewIsAtHome = false;
+                        break;
+
+                    case R.id.nvgMapa:
+                        addFragment(new MapaFragment());
+                        viewIsAtHome = false;
+                        break;
+
+                    case R.id.nvgAjustes:
+                        addFragment(new AjustesFragment());
+                        viewIsAtHome = false;
+                        break;
+                }
+                return true;
+            }
+
+        });
+
+    }
+
+    // Método que añade los fragmentos
+    private void addFragment(Fragment fragment){
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.mainContainer, fragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .addToBackStack(null)
+                .commit();
+    }
+
+}

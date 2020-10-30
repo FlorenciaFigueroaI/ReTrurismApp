@@ -13,25 +13,21 @@ import android.widget.Toolbar;
 
 public class AjustesFragment extends Fragment {
 
-    Toolbar toolbar;
-    Spinner spinner;
-
-    public AjustesFragment() {
-        // Required empty public constructor
-    }
+ //   Toolbar toolbar;
+    Spinner spIdiomas;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView();
 
-        toolbar = toolbar.findViewById(R.id.tlBarBuscador);
-        setSupportActionBar();
+     //   toolbar = toolbar.findViewById(R.id.tlBarBuscador);
+       // setSupportActionBar();
 
         // Spinner de idiomas
-        spinner = toolbar.findViewById(R.id.spnrIdiomas);
+     //   spIdiomas.findViewById(R.id.spnrIdiomas);
         // Creamos del array con el array spnrIdiomas y el spinner layout por defecto
-        // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spnrIdiomas, android.R.layout.simple_spinner_item);
+       //  ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.spnrIdiomas, android.R.layout.simple_spinner_item);
         // Espeficamos el layout para utlizarlo cuando la lista de opciones aparece
       //  adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -39,9 +35,6 @@ public class AjustesFragment extends Fragment {
     //    spinner.setAdapter(adapter);
 
 
-    }
-
-    private void setSupportActionBar() {
     }
 
     private void setContentView() {
@@ -54,4 +47,5 @@ public class AjustesFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ajustes, container, false);
     }
+
 }

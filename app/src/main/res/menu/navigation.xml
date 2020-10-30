@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nvExplorar"
         android:icon="@drawable/ic_baseline_explore_24"
@@ -12,9 +9,9 @@
         android:icon="@drawable/ic_baseline_account_box_24"
         android:title="@string/cuenta" />
     <item
-        android:id="@+id/nvgFotos"
+        android:id="@+id/nvgGaleria"
         android:icon="@drawable/ic_baseline_photo_album_24"
-        android:title="@string/fotos"/>
+        android:title="@string/galeria"/>
 
     <item
         android:id="@+id/nvgMapa"
@@ -24,10 +21,6 @@
     <item
         android:id="@+id/nvgAjustes"
         android:icon="@drawable/ic_baseline_settings_applications_24"
-        android:title="@string/ajustes">
-    <action
-        android:id="@+id/action_exploreFragment_to_fragAjustes"
-        tools:layout="@layout/fragAjustes" />
-    </item>
+        android:title="@string/ajustes"/>
 
 </menu>

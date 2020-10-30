@@ -39,5 +39,6 @@
     <string name="fecha" translatable="false">1940</string>
     <string name="todo">TODO</string>
     <string name="Castro_Urdiales" translatable="false" />
+    <string name="galeria" />
 
 </resources>

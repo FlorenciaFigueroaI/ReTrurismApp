@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:context=".ExploreActivity">
+
+    <android.widget.Toolbar
+        android:id="@+id/tlBarBuscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorToolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toTopOf="@+id/btmNavgtView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/icon_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
+        app:layout_constraintEnd_toStartOf="@+id/txtVwNombreApp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.461" />
+    <TextView
+        android:id="@+id/txtVwNombreApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/ayer_hoy"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
+        app:layout_constraintEnd_toStartOf="@+id/srchVwBusqueda"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tlBarBuscador"
+        app:layout_constraintVertical_bias="0.551" />
+
+    <SearchView
+        android:id="@+id/srchVwBusqueda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/tlBarBuscador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tlBarBuscador"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmNavgtView"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="21dp"
+        android:background="@color/colorToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment"
+        app:menu="@menu/navigation">
+
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.dam2pm.ExploreFragment"
+        android:layout_width="match_parent"
+        android:layout_height="529dp"
+        android:layout_margin="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/btmNavgtView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlBarBuscador"
+        app:layout_constraintVertical_bias="0.065"
+        tools:layout="@layout/fragment_explore" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -26,7 +26,6 @@
     <string name="cuenta">Cuenta</string>
     <string name="explorar">Explorar</string>
     <string name="foto">foto</string>
-    <string name="todo">TODO</string>
     <string name="chalet_el_pe_n_" translatable="false">Chalet El Peñón</string>
     <string name="ayer_hoy" translatable="false">Ayer &amp; Hoy</string>
 
@@ -38,5 +37,7 @@
 
     <string name="ciudad" translatable="false">Castro Urdiales</string>
     <string name="fecha" translatable="false">1940</string>
+    <string name="todo">TODO</string>
+    <string name="Castro_Urdiales" translatable="false" />
 
 </resources>

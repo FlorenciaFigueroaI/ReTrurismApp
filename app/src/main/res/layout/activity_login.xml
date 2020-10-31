@@ -16,16 +16,15 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
         android:text="@string/ayer_hoy"
         android:textAlignment="center"
         android:textColor="@color/colorTextWhite"
-        android:textSize="36sp" />
+        android:textSize="34sp" />
 
     <ImageView
         android:id="@+id/imgViewLogo"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="180dp"
         android:contentDescription="@string/logo"
         android:ems="50"
         app:srcCompat="@drawable/icon_logo" />
@@ -37,16 +36,17 @@
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimaryDark"
         android:drawableStart="@android:drawable/ic_dialog_email"
-        android:drawablePadding="8dp"
-        android:ems="12"
+        android:drawablePadding="12dp"
         android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
+        android:padding="6dp"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray" />
+        android:textColorLink="@android:color/darker_gray"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/txtPwd"
@@ -57,14 +57,15 @@
         android:background="@color/colorPrimaryDark"
         android:drawableStart="@android:drawable/ic_lock_idle_lock"
         android:drawablePadding="12dp"
-        android:ems="12"
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
+        android:padding="6dp"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray" />
+        android:textColorLink="@android:color/darker_gray"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/txtVwOlvidoPwd"

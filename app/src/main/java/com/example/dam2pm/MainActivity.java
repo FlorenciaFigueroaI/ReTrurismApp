@@ -13,12 +13,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean viewIsAtHome;
+    boolean viewIsAtHome; // Variable para el navigationmenuview
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // Menú ayuda: https://platzi.com/contributions/mostrar-fragments-con-bottomnavigationview/
         BottomNavigationView btmNavVw = findViewById(R.id.btmNavgtView);
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-    }
+        }
 
     // Método que añade los fragmentos
     private void addFragment(Fragment fragment){

@@ -32,15 +32,15 @@
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/tlBarBuscador"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tlBarBuscador"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.562" />
 
     <SearchView
         android:id="@+id/srchVwBusqueda"
-        android:layout_width="wrap_content"
+        android:layout_width="116dp"
         android:layout_height="wrap_content"
         android:background="@color/colorToolbar"
         app:layout_constraintBottom_toBottomOf="@id/tlBarBuscador"

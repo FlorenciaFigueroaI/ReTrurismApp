@@ -13,19 +13,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean viewIsAtHome; // Variable para el navigationmenuview
-
+    boolean vistaEnExplore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         // Menú ayuda: https://platzi.com/contributions/mostrar-fragments-con-bottomnavigationview/
         BottomNavigationView btmNavVw = findViewById(R.id.btmNavgtView);
         addFragment(new ExploreFragment());
-
         btmNavVw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @SuppressLint("NonConstantResourceId")
             @Override
@@ -36,27 +33,27 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nvExplorar:
                         addFragment(new ExploreFragment());
-                        viewIsAtHome = true;
+                        vistaEnExplore = true;
                         break;
 
                     case R.id.nvCuenta:
                         addFragment(new CuentaFragment());
-                        viewIsAtHome = false;
+                        vistaEnExplore = false;
                         break;
 
                     case R.id.nvgGaleria:
                         addFragment(new GaleriaFragment());
-                        viewIsAtHome = false;
+                        vistaEnExplore = false;
                         break;
 
                     case R.id.nvgMapa:
                         addFragment(new MapaFragment());
-                        viewIsAtHome = false;
+                        vistaEnExplore = false;
                         break;
 
                     case R.id.nvgAjustes:
                         addFragment(new AjustesFragment());
-                        viewIsAtHome = false;
+                        vistaEnExplore = false;
                         break;
                 }
                 return true;
@@ -74,6 +71,17 @@ public class MainActivity extends AppCompatActivity {
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .addToBackStack(null)
                 .commit();
+    }
+
+    // Método botón hacia atrás
+    @Override
+    public void onBackPressed() {
+        if (!vistaEnExplore) {
+            BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.btmNavgtView);
+            bottomNavigationView.setSelectedItemId(R.id.nvExplorar);
+        } else {
+            moveTaskToBack(true);  // sale de la app
+        }
     }
 
 }

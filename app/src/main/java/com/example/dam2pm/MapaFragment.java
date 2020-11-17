@@ -33,7 +33,7 @@ public class MapaFragment extends Fragment {
         mapVw.setBuiltInZoomControls(true);
         mpContrl = (MapController) mapVw.getController();
         mpContrl.setCenter(castro);
-        mpContrl.setZoom(15);
+        mpContrl.setZoom(6);
         mapVw.setMultiTouchControls(true);
 
         // carga layout del fragment map

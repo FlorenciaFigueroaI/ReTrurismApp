@@ -2,7 +2,9 @@ package com.example.dam2pm;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -15,14 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
     boolean vistaEnExplore;
 
-    // Firebase
+    // Menú inferior
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Menú ayuda: https://platzi.com/contributions/mostrar-fragments-con-bottomnavigationview/
         BottomNavigationView btmNavVw = findViewById(R.id.btmNavgtView);
         addFragment(new ExploreFragment());
         btmNavVw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+
     // Método que añade los fragmentos
     private void addFragment(Fragment fragment){
         getSupportFragmentManager()
@@ -84,6 +86,34 @@ public class MainActivity extends AppCompatActivity {
         } else {
             moveTaskToBack(true);  // sale de la app
         }
+    }
+
+    // Menú opciones del toolbar
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int itemId = item.getItemId();
+        switch (itemId) {
+
+            case R.id.nvgAcercaDe:
+                addFragment(new AcercaDeFragment());
+                vistaEnExplore = false;
+                break;
+
+            case R.id.nvgColabora:
+                addFragment(new ColaboraFragment());
+                vistaEnExplore = false;
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

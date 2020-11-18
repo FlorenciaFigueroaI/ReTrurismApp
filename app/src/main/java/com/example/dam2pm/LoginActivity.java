@@ -47,17 +47,6 @@ public class LoginActivity extends AppCompatActivity {
 
         btnEnt = findViewById(R.id.btnEntrar);
 
-
-        // verifica datos
-        btnEnt.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                loguearUsuario(); // cargar los datos de login
-
-            }
-        });
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -68,11 +57,19 @@ public class LoginActivity extends AppCompatActivity {
 
                 } else {
                     // si no es correcta nos mostrará el siguiente mensaje
-                //   Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrectos. Inténtelo de nuevo.", Toast.LENGTH_SHORT).show();
+                  // Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrectos. Inténtelo de nuevo.", Toast.LENGTH_SHORT).show();
                 }
             }
         };
+        // verifica datos
+        btnEnt.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+                loguearUsuario(); // cargar los datos de login
+
+            }
+        });
 
 
         // Botón registro que me lleva al fragment_registro
@@ -97,7 +94,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
 
     // Método que verifica si el usuario ya está logueado, si lo está no volverá a salir la página de login al volver a entrar
     @Override

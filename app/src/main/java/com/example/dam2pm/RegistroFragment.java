@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 public class RegistroFragment extends Fragment {
 
+    EditText txtEmailUsuario, txtPwdConfirm, txtNombre, txtApellido;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,15 +30,20 @@ public class RegistroFragment extends Fragment {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(2000, LinearLayout.LayoutParams.MATCH_PARENT);
         view.setLayoutParams(params);
 
-        Button btnEnviar = (Button) view.findViewById(R.id.btnEnviar);
+        Button btnEnviar = view.findViewById(R.id.btnEnviar);
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+
+
                 Toast.makeText(getActivity(), "Formulario enviado", Toast.LENGTH_SHORT).show();
 
             }
         });
 
-        Button btnCancelar = (Button) view.findViewById(R.id.btnCancelar);
+
+
+
+        Button btnCancelar = view.findViewById(R.id.btnCancelar);
         btnCancelar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 Toast.makeText(getActivity(), "No te has registrado", Toast.LENGTH_SHORT).show();
@@ -47,6 +54,5 @@ public class RegistroFragment extends Fragment {
         return view;
 
     }
-
 
 }

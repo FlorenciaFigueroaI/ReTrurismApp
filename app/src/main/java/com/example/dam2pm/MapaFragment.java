@@ -20,14 +20,6 @@ public class MapaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_mapa, container, false);
         MapView mapVw = view.findViewById(R.id.mapaVw);
         GeoPoint castro = new GeoPoint( -3.2167, 43.3833);
         mapVw.setBuiltInZoomControls(true);
@@ -35,6 +27,16 @@ public class MapaFragment extends Fragment {
         mpContrl.setCenter(castro);
         mpContrl.setZoom(6);
         mapVw.setMultiTouchControls(true);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_mapa, container, false);
+
+
+
 
         // carga layout del fragment map
        // return inflater.inflate(R.layout.fragment_mapa, container, false);

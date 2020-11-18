@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     boolean vistaEnExplore;
 
+    // Firebase
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

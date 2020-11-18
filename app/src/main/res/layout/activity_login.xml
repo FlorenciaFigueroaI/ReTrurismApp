@@ -5,7 +5,7 @@
     android:id="@+id/contenedorLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="#C1A5A1"
     android:orientation="vertical"
     android:paddingLeft="50dp"
     android:paddingTop="50dp"
@@ -18,9 +18,9 @@
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
         android:text="@string/app_name"
+        android:textColor="#725956"
         android:textAlignment="center"
-        android:textColor="@color/colorTextWhite"
-        android:textSize="34sp" />
+        android:textSize="40sp" />
 
     <ImageView
         android:id="@+id/imgViewLogo"
@@ -35,7 +35,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark"
         android:drawableStart="@android:drawable/ic_dialog_email"
         android:drawablePadding="12dp"
         android:hint="@string/email"
@@ -43,7 +42,7 @@
         android:inputType="textEmailAddress"
         android:padding="6dp"
         android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
+        android:textColor="@android:color/background_dark"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@android:color/background_light"
         android:textColorLink="@android:color/darker_gray"
@@ -55,7 +54,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:autofillHints=""
-        android:background="@color/colorPrimaryDark"
         android:drawableStart="@android:drawable/ic_lock_idle_lock"
         android:drawablePadding="12dp"
         android:hint="@string/contrase_a"
@@ -75,18 +73,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/he_olvidado_mi_contrase_a"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light" />
-
-    <CheckBox
-        android:id="@+id/chkBoxMantenerSesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/mantener_sesion_abierta"
-        android:textColor="@android:color/background_light"
-        android:textColorHighlight="@android:color/background_light"
-        android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/background_light" />
+        android:textColor="#725956" />
 
     <Button
 
@@ -94,10 +81,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark"
         android:text="@string/entrar"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
+        android:background="#725956"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -106,10 +93,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/colorPrimaryDark"
         android:text="@string/registro"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
+        android:background="#725956"
         android:textSize="18sp"
         android:textStyle="bold" />
 

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText txtEmail;
     private EditText txtPd;
     private TextView txtVwOlviPwd;
-    private CheckBox chkBoxMantSesion;
 
 
     @Override
@@ -43,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmailUsuario);
         txtPd = findViewById(R.id.txtPwd);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
-        chkBoxMantSesion = findViewById(R.id.chkBoxMantenerSesion);
 
         btnEnt = findViewById(R.id.btnEntrar);
 
@@ -83,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
                 txtEmail.setVisibility(View.GONE);
                 txtPd.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
-                chkBoxMantSesion.setVisibility(View.GONE);
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
                 FragmentTransaction transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
                 RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción

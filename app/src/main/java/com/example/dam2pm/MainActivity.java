@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /*
+
     // Menú opciones del toolbar
 
     @Override
@@ -115,5 +117,9 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+     */
+
+
 
 }

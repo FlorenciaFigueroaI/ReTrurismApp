@@ -2,7 +2,6 @@ package com.example.dam2pm;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -87,39 +86,6 @@ public class MainActivity extends AppCompatActivity {
             moveTaskToBack(true);  // sale de la app
         }
     }
-
-    /*
-
-    // Menú opciones del toolbar
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        int itemId = item.getItemId();
-        switch (itemId) {
-
-            case R.id.nvgAcercaDe:
-                addFragment(new AcercaDeFragment());
-                vistaEnExplore = false;
-                break;
-
-            case R.id.nvgColabora:
-                addFragment(new ColaboraFragment());
-                vistaEnExplore = false;
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-     */
-
 
 
 }

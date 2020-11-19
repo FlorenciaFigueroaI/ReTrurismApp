@@ -52,9 +52,6 @@ public class LoginActivity extends AppCompatActivity {
                     // si la verificacion de los datos es correcta nos llevará a la actividad principal
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
-                } else {
-                    // si no es correcta nos mostrará el siguiente mensaje
-                  // Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrectos. Inténtelo de nuevo.", Toast.LENGTH_SHORT).show();
                 }
             }
         };

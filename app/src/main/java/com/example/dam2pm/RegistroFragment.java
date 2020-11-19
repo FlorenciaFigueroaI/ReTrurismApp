@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,10 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistroFragment extends Fragment {
 
-    ProgressBar prgrssBarRegistro;
-
-    private FirebaseAuth mAuth; // variable para conexión de la base de datos en Firebase
-    private FirebaseAuth.AuthStateListener mAuthListener; // escucha para verificar si son correctos los datos
+    FirebaseAuth mAuth; // variable para conexión de la base de datos en Firebase
+    FirebaseAuth.AuthStateListener mAuthListener; // escucha para verificar si son correctos los datos
 
     EditText txtEmailUsuario, txtPwd;
 
@@ -85,13 +82,6 @@ public class RegistroFragment extends Fragment {
 
     }
 
-    // Método que verifica si el usuario ya está logueado, si lo está no volverá a salir la página de login al volver a entrar
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
     // Método cargar datos de logueo de los usuarios
     private void loguearUsuario() {
 
@@ -109,28 +99,25 @@ public class RegistroFragment extends Fragment {
             return;
         }
 
-        // Mostramos barra de progreso
-
-        prgrssBarRegistro.setVisibility(View.VISIBLE);
-
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                         // mensaje de registro correcto
+                            // mensaje de registro correcto
                             Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getActivity(), LoginActivity.class));
 
                         } else {
-                           // mensaje de error
+                            // mensaje de error
                             Toast.makeText(getActivity(), "El usuario o la contraseña son incorrectos. Inténtelo de nuevo",
                                     Toast.LENGTH_SHORT).show();
 
                         }
-                        // Ocultamos barra de progreso
-                        prgrssBarRegistro.setVisibility(View.GONE);
                     }
                 });
     }
+
+
 
 }

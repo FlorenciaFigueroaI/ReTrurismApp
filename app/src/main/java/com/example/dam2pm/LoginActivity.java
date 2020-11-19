@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
@@ -50,16 +51,18 @@ public class LoginActivity extends AppCompatActivity {
                 txtEmail.setVisibility(View.GONE);
                 txtPwdLg.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
+
+                // se carga el fragment
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
                 FragmentTransaction transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
                 RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción
                 transaccion.add(R.id.contenedorLogin, frgRegistro); // se añade transacción
+                transaccion.addToBackStack(null); //para volver hacia atrás
                 transaccion.commit(); // confirmación del cambio
 
             }
         });
 
     }
-
 
 }

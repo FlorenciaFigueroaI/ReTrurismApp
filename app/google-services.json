@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "529405096545",
+    "firebase_url": "https://dam2pm-c03b0.firebaseio.com",
+    "project_id": "dam2pm-c03b0",
+    "storage_bucket": "dam2pm-c03b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529405096545:android:d79649fe1a13d306ef7020",
+        "android_client_info": {
+          "package_name": "com.example.dam2pm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529405096545-qdlkhmbdco4mujcutvkp5joroct9vc2q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYD6BXl5LMgETTqwiXvgEqaFlN4c7t4Gg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529405096545-qdlkhmbdco4mujcutvkp5joroct9vc2q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

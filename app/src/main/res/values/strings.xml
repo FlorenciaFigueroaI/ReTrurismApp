@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name" translatable="false">ReTrurism</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="usuario">Usuario</string>v
+    <string name="contrase_a">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="he_olvidado_mi_contrase_a">He olvidado mi contraseña</string>
+    <string name="logo">logo</string>
+    <string name="registro">registro</string>
+    <string name="entrar">entrar</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="repite_la_contrase_a">Repite la contraseña</string>
+    <string name="enviar">Enviar</string>
+    <string name="recibir_noticias">Quiero recibir noticias</string>
+    <string name="acepto_las_condiciones">Acepto las condiciones</string>
+    <string name="mantener_sesion_abierta">Mantener la sesión iniciada</string>
+    <string name="oscuro">Oscuro</string>
+    <string name="claro">Claro</string>
+    <string name="activar_notificaciones">Activar notificaciones</string>
+    <string name="esquema_de_colores">Esquema de colores</string>
+    <string name="idiomas">Idiomas</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="fotos">Fotos</string>
+    <string name="mapa">Mapa</string>
+    <string name="cuenta">Cuenta</string>
+    <string name="explorar">Explorar</string>
+    <string name="foto">foto</string>
+    <string name="chalet_el_pe_n_" translatable="false">Chalet El Peñón</string>
+    <string name="ciudad" translatable="false">Castro Urdiales</string>
+    <string name="fecha" translatable="false">1940</string>
+    <string name="todo">TODO</string>
+    <string name="Castro_Urdiales" translatable="false" />
+    <string name="galeria" />
+    <string name="acerca_de">Acerca de</string>
+    <string name="colabora_con_nosotros">Colabora con nosotros</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="mas">Más</string>
+
+
+</resources>

@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     boolean vistaEnExplore;
-    private Button btnCerrarSesion;
+    Button btnCerrarSesion;
 
     // Menú
     @Override
@@ -82,14 +82,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     // Método que añade los fragmentos
     private void addFragment(Fragment fragment){
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.mainContainer, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                .addToBackStack(null)
                 .commit();
     }
 

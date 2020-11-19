@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -32,6 +33,7 @@ public class RegistroFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
     }
 
@@ -71,7 +73,6 @@ public class RegistroFragment extends Fragment {
         Button btnCancelar = view.findViewById(R.id.btnCancelar);
         btnCancelar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-
                 startActivity(new Intent(getActivity(), LoginActivity.class)); // volvemos a la página de Login
                 Toast.makeText(getActivity(), "No te has registrado", Toast.LENGTH_SHORT).show();
 
@@ -117,7 +118,5 @@ public class RegistroFragment extends Fragment {
                     }
                 });
     }
-
-
 
 }

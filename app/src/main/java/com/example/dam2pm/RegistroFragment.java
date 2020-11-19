@@ -17,10 +17,12 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+//import java.sql.DatabaseMetaData;
+//import java.util.HashMap;
+//import java.util.Map;
 
 
 public class RegistroFragment extends Fragment {
@@ -29,6 +31,10 @@ public class RegistroFragment extends Fragment {
     FirebaseAuth.AuthStateListener mAuthListener; // escucha para verificar si son correctos los datos
 
     EditText txtEmailUsuario, txtPwd;
+   // String nombre = "";
+  //  String apellido = "";
+  //  String email = "";
+  //  String password = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,10 +69,11 @@ public class RegistroFragment extends Fragment {
                 }
             }
         };
+
         // Verificamos los datos
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                loguearUsuario(); // cargar los datos de login
+                registrarUsuario(); // cargar los datos de login
             }
         });
 
@@ -83,20 +90,20 @@ public class RegistroFragment extends Fragment {
 
     }
 
-    // Método cargar datos de logueo de los usuarios
-    private void loguearUsuario() {
+
+    // Método cargar datos de registro de los usuarios
+    private void registrarUsuario() {
 
         String email = txtEmailUsuario.getText().toString(); // obtener email y password
         String password = txtPwd.getText().toString();
 
         // Si los edittext están vacíos se envían los mensajes de aviso
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(getActivity(), "Debe ingresar un email", Toast.LENGTH_SHORT).show();
+            txtEmailUsuario.setError("Debe ingresar un email.");
             return;
         }
-
         if(TextUtils.isEmpty(password)){
-            Toast.makeText(getActivity(), "Debe ingresar una contraseña", Toast.LENGTH_SHORT).show();
+            txtPwd.setError("Debe ingresar una contraseña.");
             return;
         }
 
@@ -117,6 +124,7 @@ public class RegistroFragment extends Fragment {
                         }
                     }
                 });
+
     }
 
 }

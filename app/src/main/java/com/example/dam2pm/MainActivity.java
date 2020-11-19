@@ -1,8 +1,11 @@
 package com.example.dam2pm;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,19 +13,21 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
 
     boolean vistaEnExplore;
+    private Button btnCerrarSesion;
 
-    // Menú inferior
-
+    // Menú
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Menú de opciones
         BottomNavigationView btmNavVw = findViewById(R.id.btmNavgtView);
         addFragment(new ExploreFragment());
         btmNavVw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -63,7 +68,19 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        }
+        btnCerrarSesion = findViewById(R.id.btnCerrarSesion);
+
+        // Botón cerrar sesión
+        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, LoginActivity.class)); // volvemos a la página de Login
+
+            }
+        });
+
+    }
 
 
     // Método que añade los fragmentos
@@ -80,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (!vistaEnExplore) {
-            BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.btmNavgtView);
+            BottomNavigationView bottomNavigationView = findViewById(R.id.btmNavgtView);
             bottomNavigationView.setSelectedItemId(R.id.nvExplorar);
         } else {
             moveTaskToBack(true);  // sale de la app

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, LoginActivity.class)); // volvemos a la página de Login
+                startActivity(new Intent(MainActivity.this, AccesoActivity.class)); // volvemos a la página de Login
 
             }
         });

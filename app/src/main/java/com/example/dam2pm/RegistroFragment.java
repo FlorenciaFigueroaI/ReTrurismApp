@@ -70,7 +70,7 @@ public class RegistroFragment extends Fragment {
 
                 if (firebaseAuth.getCurrentUser() != null) {
                     // si la verificacion de los datos es correcta nos llevará a la página de login
-                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                    startActivity(new Intent(getActivity(), AccesoActivity.class));
                 }
             }
         };
@@ -85,7 +85,7 @@ public class RegistroFragment extends Fragment {
 
         btnCancelar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                startActivity(new Intent(getActivity(), LoginActivity.class)); // volvemos a la página de Login
+                startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de Login
                 Toast.makeText(getActivity(), "No te has registrado", Toast.LENGTH_SHORT).show();
 
             }
@@ -160,7 +160,7 @@ public class RegistroFragment extends Fragment {
 
                                             // mensaje de registro correcto
                                             Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getActivity(), LoginActivity.class));
+                                            startActivity(new Intent(getActivity(), AccesoActivity.class));
 
                                         } else {
                                             // mensaje de error

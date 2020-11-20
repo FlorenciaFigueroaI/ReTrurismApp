@@ -13,6 +13,7 @@
         android:id="@+id/txtVwEsquemaColores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/esquema_de_colores"
         android:textColor="#725956"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/dvdAjustes2"
@@ -92,6 +93,7 @@
         android:layout_height="2dp"
         android:layout_margin="10dp"
 
+        android:background="#725956"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"

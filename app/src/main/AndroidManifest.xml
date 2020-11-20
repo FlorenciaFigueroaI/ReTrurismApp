@@ -4,9 +4,10 @@
     <!-- PERMISOS INTERNET -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- PERMISOS OPENSTREETMAP -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- PERMISOS OBTENCIÓN DE LISTA DE CUENTAS (AUTENTICACION) -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- PERMISOS OBTENCIÓN DE LISTA DE CUENTAS (AUTENTICACION) -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
@@ -17,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".AccesoActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -21,13 +21,16 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    FirebaseAuth mAuth; // variable para conexión de la base de datos en Firebase
 
     private Button btnEnt;
     private Button btnReg;
     private EditText txtEmail;
     private EditText txtPwdLg;
     private TextView txtVwOlviPwd;
+    FirebaseAuth mAuth; // variable para conexión de la base de datos en Firebase
+    FirebaseAuth.AuthStateListener mAuthListener;
+
+   // FirebaseUser usuarioActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,34 +44,21 @@ public class LoginActivity extends AppCompatActivity {
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
 
         btnEnt = findViewById(R.id.btnEntrar);
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                if(firebaseAuth.getCurrentUser() != null){
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                }
+
+            }
+        };
+
         btnEnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                   ingresarUsuario();
 
-                String email = txtEmail.getText().toString().trim();
-                String password = txtPwdLg.getText().toString().trim();
-
-                if(TextUtils.isEmpty(email)){
-                    txtEmail.setError("Debe ingresar un email.");
-                    return;
-                }
-                if(TextUtils.isEmpty(password)){
-                    txtPwdLg.setError("Debe ingresar una contraseña.");
-                    return;
-                }
-
-                // verificación de datos
-                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(LoginActivity.this, "Login con éxito", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        }else{
-                            Toast.makeText(LoginActivity.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
             }
         });
 
@@ -96,5 +86,43 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+/*
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Comprueba si el usuario está registrado
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+ */
+
+    public void ingresarUsuario(){
+        String email = txtEmail.getText().toString();
+        String password = txtPwdLg.getText().toString();
+        // verificación de datos
+        if(TextUtils.isEmpty(email)){
+            txtEmail.setError("Email requerido.");
+        } else if(TextUtils.isEmpty(password)) {
+            txtPwdLg.setError("Contraseña requerida.");
+        } else if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
+
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(LoginActivity.this, "Login con éxito", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                    }else{
+                        Toast.makeText(LoginActivity.this, "Registro erróneo" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+
+        }
+
+    }
+
 
 }

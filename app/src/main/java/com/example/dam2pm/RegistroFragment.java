@@ -4,12 +4,14 @@ package com.example.dam2pm;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,22 +21,20 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
-//import java.sql.DatabaseMetaData;
-//import java.util.HashMap;
-//import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 
 public class RegistroFragment extends Fragment {
 
+    int contador = 0; // contador
     FirebaseAuth mAuth; // variable para conexión de la base de datos en Firebase
-    FirebaseAuth.AuthStateListener mAuthListener; // escucha para verificar si son correctos los datos
+    FirebaseAuth.AuthStateListener mAuthListener; // comprueba el estado del usuario
 
-    EditText txtEmailUsuario, txtPwd;
-   // String nombre = "";
-  //  String apellido = "";
-  //  String email = "";
-  //  String password = "";
+    EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido;
+    ProgressBar progressBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,9 +56,14 @@ public class RegistroFragment extends Fragment {
 
         txtEmailUsuario = view.findViewById(R.id.txtEmailUsuario);
         txtPwd = view.findViewById(R.id.txtPwdLogin);
+        txtNombre = view.findViewById(R.id.txtNombre);
+        txtApellido = view.findViewById(R.id.txtApellido);
+        progressBar = view.findViewById(R.id.prgrssBarRegistro);
 
         Button btnEnviar = view.findViewById(R.id.btnEnviar);
+        Button btnCancelar = view.findViewById(R.id.btnCancelar);
 
+        // comprueba cambios en el estado del usuario
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -70,14 +75,14 @@ public class RegistroFragment extends Fragment {
             }
         };
 
-        // Verificamos los datos
+
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                registrarUsuario(); // cargar los datos de login
+                // llamada al método de registro
+                registrarUsuario();
             }
         });
 
-        Button btnCancelar = view.findViewById(R.id.btnCancelar);
         btnCancelar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 startActivity(new Intent(getActivity(), LoginActivity.class)); // volvemos a la página de Login
@@ -90,41 +95,91 @@ public class RegistroFragment extends Fragment {
 
     }
 
+    // Método para el comportamiento de la barra del progreso
+    private void barraProgreso() {
+        // Progressbar con el objeto Timer
+        final Timer t = new Timer();
+        TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                contador++;
+                progressBar.setProgress(contador);
+                if(contador==100)
+                    t.cancel();
+            }
+        };
+        t.schedule(tt, 0,100);
+    }
+
 
     // Método cargar datos de registro de los usuarios
     private void registrarUsuario() {
 
-        String email = txtEmailUsuario.getText().toString(); // obtener email y password
-        String password = txtPwd.getText().toString();
 
-        // Si los edittext están vacíos se envían los mensajes de aviso
-        if(TextUtils.isEmpty(email)){
-            txtEmailUsuario.setError("Debe ingresar un email.");
-            return;
-        }
-        if(TextUtils.isEmpty(password)){
-            txtPwd.setError("Debe ingresar una contraseña.");
-            return;
+        final String email = txtEmailUsuario.getText().toString();
+        final String password = txtPwd.getText().toString();
+        final String nombre = txtNombre.getText().toString();
+        final String apellido = txtApellido.getText().toString();
+
+        // Restricciones
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            txtEmailUsuario.setError("Escriba un email válido.");
         }
 
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // mensaje de registro correcto
-                            Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getActivity(), LoginActivity.class));
+        if (password.length() < 6){
+            txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
+        }
 
-                        } else {
-                            // mensaje de error
-                            Toast.makeText(getActivity(), "El usuario o la contraseña son incorrectos. Inténtelo de nuevo",
-                                    Toast.LENGTH_SHORT).show();
+        // Campos requeridos
+        if (TextUtils.isEmpty(nombre)){
+            txtNombre.setError("Nombre requerido.");
+
+        } else if(TextUtils.isEmpty(email)){
+            txtEmailUsuario.setError("Email requerido.");
+
+        } else if(TextUtils.isEmpty(password)) {
+            txtPwd.setError("Contraseña requerida.");
+        }
+
+     //   progressBar.setVisibility(View.VISIBLE);
+        barraProgreso();
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+
+                               Usuario usuario = new Usuario(email, password, nombre, apellido);
+
+                               FirebaseDatabase.getInstance().getReference("Usuario")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+
+                                            // mensaje de registro correcto
+                                            Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
+                                            startActivity(new Intent(getActivity(), LoginActivity.class));
+
+                                        } else {
+                                            // mensaje de error
+                                            Toast.makeText(getActivity(), "El usuario ya existe.",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                            } else {
+                                Toast.makeText(getActivity(), "Algo ha fallado en el registro.",
+                                        Toast.LENGTH_SHORT).show();
+                            }
 
                         }
-                    }
-                });
+                    });
+
 
     }
 
 }
+
+

@@ -9,6 +9,7 @@
     android:layout_marginTop="50dp"
     android:background="#C1A5A1"
     android:orientation="vertical"
+    android:padding="20dp"
     app:layout_constraintBottom_toTopOf="@+id/btmNavgtView"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.0"
@@ -35,7 +36,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:padding="2dp">
 
             <ImageView
                 android:id="@+id/imgAntigua"
@@ -63,7 +64,7 @@
                 android:layout_toEndOf="@+id/imgAntigua"
                 android:text="@string/chalet_el_pe_n_"
                 android:textColor="#725956"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtCiudad"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.24"
@@ -77,7 +78,7 @@
                 android:layout_margin="8dp"
                 android:text="@string/ciudad"
                 android:textColor="#725956"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtAnyo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.202"
@@ -95,7 +96,7 @@
                 android:layout_toEndOf="@+id/imgAntigua"
                 android:text="@string/fecha"
                 android:textColor="#725956"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.117"
@@ -109,6 +110,8 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="#725956"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

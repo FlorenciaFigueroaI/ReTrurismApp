@@ -91,7 +91,7 @@
                 android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_margin="10dp"
-                android:background="#725956"
+                android:background="@drawable/botones_style"
                 android:text="@string/enviar"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light"
@@ -104,12 +104,14 @@
                 android:layout_width="120dp"
                 android:layout_height="48dp"
                 android:layout_margin="10dp"
-                android:background="#725956"
+                android:background="@drawable/botones_style"
                 android:text="@string/cancelar"
                 android:textAlignment="center"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
                 android:textStyle="bold"
+
+                android:layout_gravity="center"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
 

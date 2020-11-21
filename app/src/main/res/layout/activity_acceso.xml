@@ -76,7 +76,6 @@
         android:textColor="#725956" />
 
     <Button
-
         android:id="@+id/btnEntrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,9 +83,10 @@
         android:text="@string/entrar"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
-        android:background="#725956"
+        android:background="@drawable/botones_style"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/btnRegistro"
@@ -96,8 +96,9 @@
         android:text="@string/registro"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
-        android:background="#725956"
+        android:background="@drawable/botones_style"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

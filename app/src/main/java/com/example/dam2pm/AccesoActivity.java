@@ -27,15 +27,13 @@ public class AccesoActivity extends AppCompatActivity {
     private EditText txtEmail;
     private EditText txtPwdLg;
     private TextView txtVwOlviPwd;
-    FirebaseAuth mAuth; // variable para conexión de la base de datos en Firebase
-    FirebaseAuth.AuthStateListener mAuthListener;
+    FirebaseAuth mAuth;
 
-   // FirebaseUser usuarioActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_acceso);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -44,20 +42,12 @@ public class AccesoActivity extends AppCompatActivity {
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
 
         btnEnt = findViewById(R.id.btnEntrar);
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser() != null){
-                    startActivity(new Intent(AccesoActivity.this, MainActivity.class));
-                }
-
-            }
-        };
 
         btnEnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                   ingresarUsuario();
+
+                  ingresarUsuario();
 
             }
         });
@@ -86,15 +76,6 @@ public class AccesoActivity extends AppCompatActivity {
         });
 
     }
-/*
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Comprueba si el usuario está registrado
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
- */
 
     public void ingresarUsuario(){
         String email = txtEmail.getText().toString();
@@ -110,11 +91,11 @@ public class AccesoActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(AccesoActivity.this, "Login con éxito", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AccesoActivity.this, "¡Bienvenido/a!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AccesoActivity.this, MainActivity.class));
 
                     }else{
-                        Toast.makeText(AccesoActivity.this, "Registro erróneo" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

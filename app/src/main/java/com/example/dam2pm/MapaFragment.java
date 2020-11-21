@@ -33,14 +33,7 @@ public class MapaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_mapa, container, false);
+        return inflater.inflate(R.layout.fragment_mapa, container, false);
 
-
-
-
-        // carga layout del fragment map
-       // return inflater.inflate(R.layout.fragment_mapa, container, false);
-
-        return view;
     }
 }

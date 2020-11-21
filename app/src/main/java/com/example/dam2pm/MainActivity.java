@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     // Método que añade los fragmentos
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.mainContainer, fragment)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .addToBackStack(null)
                 .commit();
     }
 

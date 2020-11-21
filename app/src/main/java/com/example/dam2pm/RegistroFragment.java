@@ -30,8 +30,7 @@ import java.util.TimerTask;
 public class RegistroFragment extends Fragment {
 
     int contador = 0; // contador
-    FirebaseAuth mAuth; // variable para conexión de la base de datos en Firebase
-    FirebaseAuth.AuthStateListener mAuthListener; // comprueba el estado del usuario
+    FirebaseAuth mAuth;
 
     EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido;
     ProgressBar progressBar;
@@ -62,19 +61,6 @@ public class RegistroFragment extends Fragment {
 
         Button btnEnviar = view.findViewById(R.id.btnEnviar);
         Button btnCancelar = view.findViewById(R.id.btnCancelar);
-
-        // comprueba cambios en el estado del usuario
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-
-                if (firebaseAuth.getCurrentUser() != null) {
-                    // si la verificacion de los datos es correcta nos llevará a la página de login
-                    startActivity(new Intent(getActivity(), AccesoActivity.class));
-                }
-            }
-        };
-
 
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -114,7 +100,6 @@ public class RegistroFragment extends Fragment {
 
     // Método cargar datos de registro de los usuarios
     private void registrarUsuario() {
-
 
         final String email = txtEmailUsuario.getText().toString();
         final String password = txtPwd.getText().toString();
@@ -157,20 +142,16 @@ public class RegistroFragment extends Fragment {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-
+                                            barraProgreso();
                                             // mensaje de registro correcto
                                             Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(getActivity(), AccesoActivity.class));
 
-                                        } else {
-                                            // mensaje de error
-                                            Toast.makeText(getActivity(), "El usuario ya existe.",
-                                                    Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 });
                             } else {
-                                Toast.makeText(getActivity(), "Algo ha fallado en el registro.",
+                                Toast.makeText(getActivity(), "El usuario ya existe.",
                                         Toast.LENGTH_SHORT).show();
                             }
 

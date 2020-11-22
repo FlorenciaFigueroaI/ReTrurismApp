@@ -47,7 +47,7 @@ public class RegistroFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_registro, container, false);
 // Web usada de ayuda: http://www.hermosaprogramacion.com/2014/09/android-aplicaciones-fragmento/ Autor: James Revelo
 
-        // parámetros nuevos para el view del fragmento
+        //parámetros nuevos para el view del fragmento
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(2000, LinearLayout.LayoutParams.MATCH_PARENT);
         view.setLayoutParams(params);
 

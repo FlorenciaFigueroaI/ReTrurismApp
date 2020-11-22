@@ -20,6 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCyebqrs9r-7R2sZe9ulzYP4r_TJzONQEc"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
         <activity android:name=".AccesoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

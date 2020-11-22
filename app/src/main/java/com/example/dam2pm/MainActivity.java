@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
 
     // Método que añade los fragmentos
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                 .commit();
     }
 
+
+
     // Método botón hacia atrás
     @Override
     public void onBackPressed() {
@@ -103,6 +106,5 @@ public class MainActivity extends AppCompatActivity {
             moveTaskToBack(true);  // sale de la app
         }
     }
-
 
 }

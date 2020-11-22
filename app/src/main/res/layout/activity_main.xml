@@ -25,25 +25,6 @@
         app:layout_constraintVertical_bias="0.001" />
 
 
-    <Button
-        android:id="@+id/btnCerrarSesion"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="24dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="12dp"
-        android:drawableStart="@drawable/ic_baseline_lock_power_off"
-        android:padding="2dp"
-        android:textAlignment="gravity"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tlBarBuscador"
-        app:layout_constraintEnd_toStartOf="@+id/txtVwNombreApp"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <TextView
         android:id="@+id/txtVwNombreApp"
         android:layout_width="wrap_content"
@@ -90,6 +71,18 @@
         app:menu="@menu/navigation">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="37dp"
+        android:layout_height="34dp"
+        android:background="@drawable/ic_baseline_lock_power_off"
+        app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
+        app:layout_constraintEnd_toStartOf="@+id/txtVwNombreApp"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="@+id/tlBarBuscador"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.636" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

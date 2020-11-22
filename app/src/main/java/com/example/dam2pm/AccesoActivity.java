@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,16 +19,22 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class AccesoActivity extends AppCompatActivity {
 
 
+    int contador = 0; // contador
     private Button btnEnt;
     private Button btnReg;
     private EditText txtEmail;
     private EditText txtPwdLg;
     private TextView txtVwOlviPwd;
+    ProgressBar progressBar;
     FirebaseAuth mAuth;
+
 
 
     @Override
@@ -40,6 +47,7 @@ public class AccesoActivity extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmailUsuario);
         txtPwdLg= findViewById(R.id.txtPwdLogin);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
+        progressBar = findViewById(R.id.prgrssBarAcceso);
 
         btnEnt = findViewById(R.id.btnEntrar);
 
@@ -77,6 +85,23 @@ public class AccesoActivity extends AppCompatActivity {
 
     }
 
+    // Método para el comportamiento de la barra del progreso
+    private void barraProgreso() {
+
+        // Progressbar con el objeto Timer
+        final Timer t = new Timer();
+        TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                contador++;
+                progressBar.setProgress(contador);
+                if(contador==100)
+                    t.cancel();
+            }
+        };
+        t.schedule(tt, 0,100);
+    }
+
     public void ingresarUsuario(){
         String email = txtEmail.getText().toString();
         String password = txtPwdLg.getText().toString();
@@ -86,11 +111,12 @@ public class AccesoActivity extends AppCompatActivity {
         } else if(TextUtils.isEmpty(password)) {
             txtPwdLg.setError("Contraseña requerida.");
         } else if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
-
+            barraProgreso();
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+                        barraProgreso();
                         Toast.makeText(AccesoActivity.this, "¡Bienvenido/a!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AccesoActivity.this, MainActivity.class));
 
@@ -104,6 +130,7 @@ public class AccesoActivity extends AppCompatActivity {
         }
 
     }
+
 
 
 }

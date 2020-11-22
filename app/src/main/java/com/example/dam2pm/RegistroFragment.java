@@ -125,8 +125,6 @@ public class RegistroFragment extends Fragment {
         } else if(TextUtils.isEmpty(password)) {
             txtPwd.setError("Contraseña requerida.");
         }
-
-     //   progressBar.setVisibility(View.VISIBLE);
         barraProgreso();
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
@@ -151,7 +149,7 @@ public class RegistroFragment extends Fragment {
                                     }
                                 });
                             } else {
-                                Toast.makeText(getActivity(), "El usuario ya existe.",
+                                Toast.makeText(getActivity(), "Ha habido un problema.",
                                         Toast.LENGTH_SHORT).show();
                             }
 

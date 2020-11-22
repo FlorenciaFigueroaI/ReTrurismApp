@@ -11,20 +11,10 @@ import androidx.fragment.app.Fragment;
 
 public class AjustesFragment extends Fragment {
 
- //   Spinner spinnerIdiomas;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*
-        // Spinner de idiomas
-        spinnerIdiomas = spinnerIdiomas.findViewById(R.id.spnrIdiomas);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.spnrIdiomas, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerIdiomas.setAdapter(adapter);
-        */
     }
 
     @Override

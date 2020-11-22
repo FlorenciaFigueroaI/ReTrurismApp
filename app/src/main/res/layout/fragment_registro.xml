@@ -25,8 +25,10 @@
             android:ems="10"
             android:hint="@string/nombre"
             android:inputType="textPersonName"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/darker_gray" />
+            android:textColor="#725956"
+            android:textColorHighlight="#725956"
+            android:textColorHint="#725956"
+            android:textColorLink="#725956" />
 
         <EditText
             android:id="@+id/txtApellido"
@@ -37,8 +39,10 @@
             android:ems="10"
             android:hint="@string/apellido"
             android:inputType="textPersonName"
-            android:textColor="@android:color/background_light"
-            android:textColorHint="@android:color/darker_gray" />
+            android:textColor="#725956"
+            android:textColorHighlight="#725956"
+            android:textColorHint="#725956"
+            android:textColorLink="#725956" />
 
         <EditText
             android:id="@+id/txtEmailUsuario"
@@ -46,16 +50,16 @@
             android:layout_height="40dp"
             android:layout_marginTop="30dp"
             android:autofillHints=""
-            android:drawableStart="@android:drawable/ic_dialog_email"
+            android:drawableStart="@drawable/ic_dialog_email"
             android:drawablePadding="12dp"
             android:ems="12"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textAlignment="textStart"
-            android:textColor="@android:color/background_dark"
-            android:textColorHighlight="@android:color/background_dark"
-            android:textColorHint="@android:color/background_light"
-            android:textColorLink="@android:color/darker_gray" />
+            android:textColor="#725956"
+            android:textColorHighlight="#725956"
+            android:textColorHint="#725956"
+            android:textColorLink="#725956" />
 
         <EditText
             android:id="@+id/txtPwdLogin"
@@ -63,23 +67,24 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:autofillHints=""
-            android:drawableStart="@android:drawable/ic_lock_idle_lock"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="12dp"
             android:ems="12"
             android:hint="@string/contrase_a"
             android:inputType="textPassword"
-            android:textColor="@android:color/background_light"
-            android:textColorHighlight="@android:color/background_dark"
-            android:textColorHint="@android:color/background_light"
-            android:textColorLink="@android:color/darker_gray" />
+            android:textColor="#725956"
+            android:textColorHighlight="#725956"
+            android:textColorHint="#725956"
+            android:textColorLink="#725956" />
 
 
         <CheckBox
             android:id="@+id/chkBoxCondiciones"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:button="@drawable/ic_baseline_check_box_outline_blank_24"
             android:text="@string/acepto_las_condiciones"
-            android:textColor="#FFFFFF" />
+            android:textColor="#725956" />
 
         <LinearLayout
             android:id="@+id/linearLytHortl"
@@ -94,7 +99,7 @@
                 android:background="@drawable/botones_style"
                 android:text="@string/enviar"
                 android:textAlignment="center"
-                android:textColor="@android:color/background_light"
+                android:textColor="#A2BDB6"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="ButtonStyle" />
@@ -107,10 +112,9 @@
                 android:background="@drawable/botones_style"
                 android:text="@string/cancelar"
                 android:textAlignment="center"
-                android:textColor="@android:color/background_light"
+                android:textColor="#A2BDB6"
                 android:textSize="18sp"
                 android:textStyle="bold"
-
                 android:layout_gravity="center"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>

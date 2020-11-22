@@ -35,17 +35,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:drawableStart="@android:drawable/ic_dialog_email"
+        android:drawableStart="@drawable/ic_dialog_email"
         android:drawablePadding="12dp"
         android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:padding="6dp"
         android:textAlignment="textStart"
-        android:textColor="@android:color/background_dark"
-        android:textColorHighlight="@android:color/background_dark"
-        android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray"
+        android:textColor="#725956"
+        android:textColorHighlight="#725956"
+        android:textColorHint="#725956"
+        android:textColorLink="#725956"
         android:textSize="20sp" />
 
     <EditText
@@ -54,16 +54,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:autofillHints=""
-        android:drawableStart="@android:drawable/ic_lock_idle_lock"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:drawablePadding="12dp"
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:padding="6dp"
         android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="@android:color/background_dark"
-        android:textColorHint="@android:color/background_light"
-        android:textColorLink="@android:color/darker_gray"
+        android:textColor="#725956"
+        android:textColorHighlight="#725956"
+        android:textColorHint="#725956"
+        android:textColorLink="#725956"
         android:textSize="20sp" />
 
     <TextView
@@ -82,7 +82,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/entrar"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#A2BDB6"
         android:background="@drawable/botones_style"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -95,10 +95,17 @@
         android:layout_marginTop="20dp"
         android:text="@string/registro"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="#A2BDB6"
         android:background="@drawable/botones_style"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_gravity="center"/>
+
+    <ProgressBar
+        android:id="@+id/prgrssBarAcceso"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

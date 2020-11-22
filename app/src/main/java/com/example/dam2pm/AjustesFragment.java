@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-//import android.widget.ArrayAdapter;
-//import android.widget.Spinner;
+import android.widget.Toast;
 
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 public class AjustesFragment extends Fragment {
+
+    SwitchCompat swtchNotificaciones;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,7 +23,23 @@ public class AjustesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.fragment_ajustes, container, false);
+        View view = inflater.inflate(R.layout.fragment_ajustes, container, false);
+
+        swtchNotificaciones = view.findViewById(R.id.swtchNotificaciones);
+
+        swtchNotificaciones.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Toast.makeText(getActivity(), "Descubre nuestras últimas novedades y si somos muy pesados, podrás desactivar las notificaciones cuando quieras", Toast.LENGTH_LONG).show();
+
+                return true;
+            }
+        });
+
+
+        return view;
     }
+
+
 
 }

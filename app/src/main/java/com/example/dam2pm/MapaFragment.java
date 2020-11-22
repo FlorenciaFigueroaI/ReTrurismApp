@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
-
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -28,23 +28,16 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mapa, container, false);
-/*
-        //parámetros nuevos para el view del fragmento
-        LinearLayout.LayoutParams params =
-                new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.MATCH_PARENT);
-        view.setLayoutParams(params);
 
- */
 
-        mapVw = (MapView) view.findViewById(R.id.mapView);
+        mapVw = view.findViewById(R.id.mapView);
         mapVw.onCreate(savedInstanceState);
-        mapVw.getMapAsync(this);
-
+        mapVw.getMapAsync(this); // inicializa el mapa
 
         return view;
     }
+
+
 
 
     // Método mapa

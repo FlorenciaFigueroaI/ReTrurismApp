@@ -34,15 +34,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
         app:layout_constraintEnd_toStartOf="@+id/srchVwBusqueda"
-        app:layout_constraintHorizontal_bias="0.841"
+        app:layout_constraintHorizontal_bias="0.649"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.291" />
 
     <SearchView
         android:id="@+id/srchVwBusqueda"
-        android:layout_width="116dp"
-        android:layout_height="wrap_content"
+        android:layout_width="114dp"
+        android:layout_height="37dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="6dp"
         android:background="@drawable/botones_style"
@@ -79,10 +79,10 @@
         android:background="@drawable/ic_baseline_lock_power_off"
         app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
         app:layout_constraintEnd_toStartOf="@+id/txtVwNombreApp"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toStartOf="@+id/tlBarBuscador"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintVertical_bias="0.571" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

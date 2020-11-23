@@ -55,7 +55,7 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                  ingresarUsuario();
+                ingresarUsuario();
 
             }
         });

@@ -35,7 +35,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="2dp">
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/txtTitulo"
@@ -50,7 +50,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtCiudad"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.559"
+                app:layout_constraintHorizontal_bias="0.461"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -64,7 +64,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtAnyo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.554"
+                app:layout_constraintHorizontal_bias="0.435"
                 app:layout_constraintStart_toStartOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
                 app:layout_constraintVertical_bias="0.0" />
@@ -76,28 +76,26 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
+                android:layout_margin="8dp"
                 android:text="@string/fecha"
                 android:textColor="#725956"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.41"
+                app:layout_constraintHorizontal_bias="0.419"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtCiudad" />
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="125dp"
-                android:layout_height="107dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginBottom="2dp"
+                android:layout_width="166dp"
+                android:layout_height="112dp"
+                android:layout_margin="10dp"
                 android:contentDescription="@string/todo"
-                android:padding="5dp"
                 android:src="@drawable/img_antigua_penyol"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txtTitulo"
-                app:layout_constraintHorizontal_bias="0.075"
+                app:layout_constraintHorizontal_bias="0.121"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>

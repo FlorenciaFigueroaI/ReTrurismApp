@@ -31,7 +31,7 @@
             android:value="@integer/google_play_services_version" />
 
 
-        <activity android:name=".AccesoActivity">
+        <activity android:name=".AccesoActivity" android:screenOrientation = "portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

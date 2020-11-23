@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/contenedorRecupPwd"
+android:layout_width="match_parent"
+android:layout_height="300dp"
+android:background="#C1A5A1">
+
+<LinearLayout
+    android:id="@+id/linearLytVertc"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="50dp">
+
+
+    <TextView
+        android:layout_width="296dp"
+        android:layout_height="44dp"
+        android:text="@string/recupPwd"
+        android:textColor="#725956"
+        android:textColorHighlight="#725956"
+        android:textColorHint="#725956"
+        android:textColorLink="#725956"
+        android:textSize="18sp"/>
+
+    <EditText
+        android:id="@+id/txtEmailRecup"
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:autofillHints=""
+        android:drawableStart="@drawable/ic_dialog_email"
+        android:drawablePadding="12dp"
+        android:ems="12"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="textStart"
+        android:textColor="#725956"
+        android:textColorHighlight="#725956"
+        android:textColorHint="#725956"
+        android:textColorLink="#725956" />
+
+    <LinearLayout
+        android:layout_width="283dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnEnviarEmail"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/botones_style"
+            android:text="@string/enviar"
+            android:textAlignment="center"
+            android:textColor="#A2BDB6"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnCancelarRecupEmail"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/botones_style"
+            android:text="@string/cancelar"
+            android:textAlignment="center"
+            android:textColor="#A2BDB6"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/prgrssBarEnvioEmail"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="295dp"
+        android:layout_height="5dp" />
+
+</LinearLayout>
+</ScrollView>

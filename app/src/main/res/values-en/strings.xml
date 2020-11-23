@@ -37,6 +37,9 @@
     <string name="regla2Colaboracion">  2. The photo must be from before 1990.</string>
     <string name="ejemFotoColaboracion"> Example:</string>
     <string name="recupPwd">Send us your email to recover your password</string>
-
+    <string name="titulo">Title</string>
+    <string name="calle">Street</string>
+    <string name="ciudad">City</string>
+    <string name="ejemploFoto">Sample model</string>
 
 </resources>

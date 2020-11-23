@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,6 +25,7 @@ public class ColaboracionFragment extends Fragment {
  //   private static final int RESULT_OK = ;
     ImageView imagen;
     FloatingActionButton fltActBtn;
+    TextView txtVwEjemplo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,12 +38,15 @@ public class ColaboracionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_colaboracion, container, false);
 
-        imagen = view.findViewById(R.id.imgVwEjem);
+        txtVwEjemplo = view.findViewById(R.id.txtEjemplo);
+        imagen = view.findViewById(R.id.imgVwEjemplo);
         fltActBtn = view.findViewById(R.id.fltActBtn);
         fltActBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cargarImagen(); // método para cargar la imagen
+                cargarImagen();
+                fltActBtn.setVisibility(View.GONE);
+
             }
         });
 
@@ -50,6 +55,7 @@ public class ColaboracionFragment extends Fragment {
 
     }
 
+    // método para cargar la imagen
     @SuppressLint("IntentReset")
     private void cargarImagen() {
         @SuppressLint("IntentReset") Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -63,6 +69,8 @@ public class ColaboracionFragment extends Fragment {
         if (resultCode== RESULT_OK){
             Uri path=data.getData();
             imagen.setImageURI(path);
+            fltActBtn.setVisibility(View.GONE);
+            txtVwEjemplo.setVisibility(View.GONE);
 
         }
     }

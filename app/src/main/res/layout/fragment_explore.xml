@@ -45,7 +45,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_margin="8dp"
-                android:text="@string/chalet_el_pe_n_"
+                android:text="@string/peñon"
                 android:textColor="#725956"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtCiudad"
@@ -59,7 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/ciudad"
+                android:text="@string/castroUrdiales"
                 android:textColor="#725956"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/txtAnyo"
@@ -86,7 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtCiudad" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imgVwEjemplo"
                 android:layout_width="125dp"
                 android:layout_height="107dp"
                 android:layout_marginTop="2dp"

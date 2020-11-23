@@ -22,16 +22,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
 public class RecuperacionPwdFragment extends Fragment {
 
     int contador =0;
     String emailRecuperacion;
-
     EditText txtEmailRecup;
-    Button btnEnviarEmail;
     Button btnCancelarEmailRecup;
-
+    Button btnEnviarEmail;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
 

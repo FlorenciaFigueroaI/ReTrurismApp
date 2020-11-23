@@ -32,6 +32,9 @@ public class RegistroFragment extends Fragment {
     int contador = 0; // contador
     FirebaseAuth mAuth;
 
+    Button btnEnviar;
+    Button btnCancelar;
+
     EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido;
     ProgressBar progressBar;
 
@@ -59,8 +62,8 @@ public class RegistroFragment extends Fragment {
         txtApellido = view.findViewById(R.id.txtApellido);
         progressBar = view.findViewById(R.id.prgrssBarRegistro);
 
-        Button btnEnviar = view.findViewById(R.id.btnEnviar);
-        Button btnCancelar = view.findViewById(R.id.btnCancelar);
+        btnEnviar = view.findViewById(R.id.btnEnviar);
+        btnCancelar = view.findViewById(R.id.btnCancelar);
 
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
@@ -76,6 +79,7 @@ public class RegistroFragment extends Fragment {
 
             }
         });
+
 
         return view;
 

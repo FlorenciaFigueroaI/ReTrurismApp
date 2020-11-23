@@ -29,13 +29,18 @@
     <string name="chalet_el_pe_n_" translatable="false">Chalet El Peñón</string>
     <string name="ciudad" translatable="false">Castro Urdiales</string>
     <string name="fecha" translatable="false">1940</string>
-    <string name="todo">TODO</string>
     <string name="Castro_Urdiales" translatable="false" />
     <string name="galeria" />
     <string name="acerca_de">Acerca de</string>
     <string name="colabora_con_nosotros">Colabora con nosotros</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="mas">Más</string>
+    <string name="Colabora">Colabora</string>
+    <string name="cabeceraColaboracion">Colabora con nosotros compartiendo tus mejores fotos antiguas de cualquier lugar del mundo. Pincha en el botón de la esquina inferior derecha para subirla foto a la app. Antes de subir tu foto debes tener en cuenta que: </string>
+    <string name="regla1Colaboracion">1. No pueden salir personas en ella, a no ser que estén de fondo o que sean un grupo de personas.</string>
+    <string name="regla2Colaboracion"> 2. La foto debe ser de antes de 1990.</string>
+    <string name="ejemFotoColaboracion"> Ejemplo:</string>
+    <string name="todo">TODO</string>
 
 
 </resources>

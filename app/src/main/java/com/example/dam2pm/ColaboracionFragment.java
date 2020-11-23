@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class GaleriaFragment extends Fragment {
+public class ColaboracionFragment extends Fragment {
 
 
     @Override
@@ -21,6 +21,6 @@ public class GaleriaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_galeria, container, false);
+        return inflater.inflate(R.layout.fragment_colaboracion, container, false);
     }
 }

@@ -9,9 +9,9 @@
         android:icon="@drawable/ic_baseline_account_box_24"
         android:title="@string/cuenta" />
     <item
-        android:id="@+id/nvgGaleria"
-        android:icon="@drawable/ic_baseline_photo_album_24"
-        android:title="@string/fotos" />
+        android:id="@+id/nvgColaboracion"
+        android:icon="@drawable/ic_baseline_groups_24"
+        android:title="@string/Colabora" />
 
     <item
         android:id="@+id/nvgMapa"

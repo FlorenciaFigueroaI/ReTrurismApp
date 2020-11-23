@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
                         vistaEnExplore = false;
                         break;
 
-                    case R.id.nvgGaleria:
-                        addFragment(new GaleriaFragment());
+                    case R.id.nvgColaboracion:
+                        addFragment(new ColaboracionFragment());
                         vistaEnExplore = false;
                         break;
 

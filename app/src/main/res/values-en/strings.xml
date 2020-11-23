@@ -36,7 +36,7 @@
     <string name="regla1Colaboracion"> 1. People cannot be on the picture, unless they are in the background or it is a group of people.</string>
     <string name="regla2Colaboracion">  2. The photo must be from before 1990.</string>
     <string name="ejemFotoColaboracion"> Example:</string>
-
+    <string name="recupPwd">Send us your email to recover your password</string>
 
 
 </resources>

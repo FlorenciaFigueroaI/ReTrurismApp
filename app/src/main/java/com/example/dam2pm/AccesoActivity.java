@@ -32,6 +32,7 @@ public class AccesoActivity extends AppCompatActivity {
     private EditText txtEmail;
     private EditText txtPwdLg;
     private TextView txtVwOlviPwd;
+    FragmentTransaction transaccion;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
 
@@ -48,13 +49,11 @@ public class AccesoActivity extends AppCompatActivity {
         txtPwdLg= findViewById(R.id.txtPwdLogin);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
         progressBar = findViewById(R.id.prgrssBarAcceso);
-
         btnEnt = findViewById(R.id.btnEntrar);
 
         btnEnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 ingresarUsuario();
 
             }
@@ -74,9 +73,29 @@ public class AccesoActivity extends AppCompatActivity {
 
                 // se carga el fragment
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
-                FragmentTransaction transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
+                transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
                 RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción
-                transaccion.add(R.id.contenedorLogin, frgRegistro); // se añade transacción
+                transaccion.add(R.id.contenedorAcceso, frgRegistro); // se añade transacción
+                transaccion.addToBackStack(null); //para volver hacia atrás
+                transaccion.commit(); // confirmación del cambio
+
+            }
+        });
+
+        // Recuperacion de la contraseña
+        txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
+        txtVwOlviPwd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnReg.setVisibility(View.GONE);    // Desaparecen los componentes de la vista del usuario
+                btnEnt.setVisibility(View.GONE);
+                txtEmail.setVisibility(View.GONE);
+                txtPwdLg.setVisibility(View.GONE);
+                txtVwOlviPwd.setVisibility(View.GONE);
+                // se carga el fragment
+                transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
+                RecuperacionPwdFragment frgRecupPwd = new RecuperacionPwdFragment(); // instancia de transacción
+                transaccion.add(R.id.contenedorAcceso,  frgRecupPwd); // se añade transacción
                 transaccion.addToBackStack(null); //para volver hacia atrás
                 transaccion.commit(); // confirmación del cambio
 
@@ -121,7 +140,7 @@ public class AccesoActivity extends AppCompatActivity {
                         startActivity(new Intent(AccesoActivity.this, MainActivity.class));
 
                     }else{
-                        Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

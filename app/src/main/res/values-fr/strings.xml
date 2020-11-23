@@ -37,5 +37,6 @@
     <string name="regla1Colaboracion">1. Les personnes ne peuvent pas figurer sur la photo, sauf si elles sont en arrière-plan ou s\'il s\'agit d\'un groupe de personnes.</string>
     <string name="regla2Colaboracion">2. La photo doit être antérieure à 1990.</string>
     <string name="ejemFotoColaboracion">Exemple:</string>
+    <string name="recupPwd">Envoyez-nous votre email pour récupérer votre mot de passé</string>
 
 </resources>

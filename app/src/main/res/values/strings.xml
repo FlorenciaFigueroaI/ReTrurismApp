@@ -41,6 +41,7 @@
     <string name="regla2Colaboracion"> 2. La foto debe ser de antes de 1990.</string>
     <string name="ejemFotoColaboracion"> Ejemplo:</string>
     <string name="todo">TODO</string>
+    <string name="recupPwd">Envíenos su email para recuperar la contraseña</string>
 
 
 </resources>

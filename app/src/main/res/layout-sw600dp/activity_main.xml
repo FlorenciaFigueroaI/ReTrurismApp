@@ -75,8 +75,8 @@
 
     <Button
         android:id="@+id/btnCerrarSesion"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
         android:background="@drawable/ic_baseline_lock_power_off"
         app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
         app:layout_constraintEnd_toStartOf="@+id/txtVwNombreApp"

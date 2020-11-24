@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/contenedorRecupPwd"
-android:layout_width="match_parent"
-android:layout_height="300dp"
-android:background="#C1A5A1">
 
-<LinearLayout
-    android:id="@+id/linearLytVertc"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contenedorRecupPwd"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#C1A5A1"
     android:orientation="vertical"
     android:paddingStart="20dp"
     android:paddingTop="20dp"
@@ -17,14 +13,14 @@ android:background="#C1A5A1">
 
 
     <TextView
-        android:layout_width="296dp"
-        android:layout_height="44dp"
+        android:layout_width="242dp"
+        android:layout_height="60dp"
         android:text="@string/recupPwd"
         android:textColor="#725956"
         android:textColorHighlight="#725956"
         android:textColorHint="#725956"
         android:textColorLink="#725956"
-        android:textSize="18sp"/>
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/txtEmailRecup"
@@ -44,16 +40,17 @@ android:background="#C1A5A1">
         android:textColorLink="#725956" />
 
     <LinearLayout
-        android:layout_width="283dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btnEnviarEmail"
-            android:layout_width="120dp"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/botones_style"
             android:text="@string/enviar"
+            android:padding="10dp"
             android:textAlignment="center"
             android:textColor="#A2BDB6"
             android:textSize="18sp"
@@ -62,9 +59,10 @@ android:background="#C1A5A1">
 
         <Button
             android:id="@+id/btnCancelarRecupEmail"
-            android:layout_width="120dp"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:padding="10dp"
             android:background="@drawable/botones_style"
             android:text="@string/cancelar"
             android:textAlignment="center"
@@ -82,4 +80,3 @@ android:background="#C1A5A1">
         android:layout_height="5dp" />
 
 </LinearLayout>
-</ScrollView>

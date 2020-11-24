@@ -29,14 +29,16 @@ public class AccesoActivity extends AppCompatActivity {
     int contador = 0; // contador
     private Button btnEnt;
     private Button btnReg;
-    private EditText txtEmail;
-    private EditText txtPwdLg;
+    private EditText txtEmailAcc;
+    private EditText txtPwdAcc;
     private TextView txtVwOlviPwd;
     FragmentTransaction transaccion;
     ProgressBar progressBar;
+
     FirebaseAuth mAuth;
 
-
+    String email;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,8 @@ public class AccesoActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        txtEmail = findViewById(R.id.txtEmailUsuario);
-        txtPwdLg= findViewById(R.id.txtPwdLogin);
+        txtEmailAcc = findViewById(R.id.txtEmailAcceso);
+        txtPwdAcc= findViewById(R.id.txtPwdAcceso);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
         progressBar = findViewById(R.id.prgrssBarAcceso);
         btnEnt = findViewById(R.id.btnEntrar);
@@ -54,7 +56,7 @@ public class AccesoActivity extends AppCompatActivity {
         btnEnt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ingresarUsuario();
+                validar();
 
             }
         });
@@ -67,8 +69,8 @@ public class AccesoActivity extends AppCompatActivity {
             public void onClick(View v) {        // Carga el fragmento de registro al clikear en el botón de registro
                 btnReg.setVisibility(View.GONE);    // Desaparecen los componentes de la vista del usuario
                 btnEnt.setVisibility(View.GONE);
-                txtEmail.setVisibility(View.GONE);
-                txtPwdLg.setVisibility(View.GONE);
+                txtEmailAcc.setVisibility(View.GONE);
+                txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
 
                 // se carga el fragment
@@ -89,8 +91,8 @@ public class AccesoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 btnReg.setVisibility(View.GONE);    // Desaparecen los componentes de la vista del usuario
                 btnEnt.setVisibility(View.GONE);
-                txtEmail.setVisibility(View.GONE);
-                txtPwdLg.setVisibility(View.GONE);
+                txtEmailAcc.setVisibility(View.GONE);
+                txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
                 // se carga el fragment
                 transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
@@ -121,35 +123,42 @@ public class AccesoActivity extends AppCompatActivity {
         t.schedule(tt, 0,100);
     }
 
-    public void ingresarUsuario(){
-        String email = txtEmail.getText().toString();
-        String password = txtPwdLg.getText().toString();
-        // verificación de datos
-        if(TextUtils.isEmpty(email)){
-            txtEmail.setError("Email requerido.");
-        } else if(TextUtils.isEmpty(password)) {
-            txtPwdLg.setError("Contraseña requerida.");
-        } else if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(password)){
-            barraProgreso();
-            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        barraProgreso();
-                        Toast.makeText(AccesoActivity.this, "¡Bienvenido/a!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AccesoActivity.this, MainActivity.class));
+    // Comprueba que el edittext de email esté rellenado y con correcto formato
+    private void validar() {
+        email = txtEmailAcc.getText().toString();
+        password = txtPwdAcc.getText().toString();
 
-                    }else{
-                        Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-
-
+        if (TextUtils.isEmpty(email)) {
+            txtEmailAcc.setError("Campo requerido.");
+            return;
         }
 
+        if (TextUtils.isEmpty(password)) {
+            txtPwdAcc.setError("Campo requerido.");
+            return;
+        }
+        ingresarUsuario();
     }
 
+    private void ingresarUsuario() {
+        email = txtEmailAcc.getText().toString();
+        password = txtPwdAcc.getText().toString();
+
+        barraProgreso();
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    barraProgreso();
+                    Toast.makeText(AccesoActivity.this, "¡Bienvenido/a!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(AccesoActivity.this, MainActivity.class));
+
+                }else{
+                    Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
 
 }

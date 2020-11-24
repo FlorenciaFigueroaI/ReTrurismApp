@@ -45,7 +45,6 @@ public class ColaboracionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 cargarImagen();
-                fltActBtn.setVisibility(View.GONE);
 
             }
         });

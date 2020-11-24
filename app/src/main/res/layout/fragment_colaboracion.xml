@@ -150,5 +150,35 @@
             app:layout_constraintVertical_bias="0.879"
             app:srcCompat="@drawable/ic_baseline_add_circle_24" />
 
+        <Button
+            android:id="@+id/btnEnviarFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botones_style"
+            android:layout_margin="5dp"
+            android:text="@string/enviar"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="#A2BDB6"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btnCancelarEnvioFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:background="@drawable/botones_style"
+            android:text="@string/cancelar"
+            android:textAlignment="center"
+            android:textColor="#A2BDB6"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="ButtonStyle" />
+
     </LinearLayout>
+
+
 </ScrollView>

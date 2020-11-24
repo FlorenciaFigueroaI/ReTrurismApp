@@ -38,6 +38,11 @@ public class RegistroFragment extends Fragment {
     EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido;
     ProgressBar progressBar;
 
+    String email;
+    String password;
+    String nombre;
+    String apellido;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +73,7 @@ public class RegistroFragment extends Fragment {
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
                 // llamada al método de registro
-                registrarUsuario();
+                validar();
             }
         });
 
@@ -101,36 +106,52 @@ public class RegistroFragment extends Fragment {
         t.schedule(tt, 0,100);
     }
 
+    // Comprueba que el edittext de email esté rellenado y con formato correcto
+
+        private void validar() {
+            nombre = txtNombre.getText().toString();
+            email = txtEmailUsuario.getText().toString();
+            password = txtPwd.getText().toString();
+
+            if (TextUtils.isEmpty(nombre)) {
+                txtNombre.setError("Campo requerido.");
+                return;
+            }
+
+            if (TextUtils.isEmpty(email)) {
+                txtEmailUsuario.setError("Campo requerido.");
+                return;
+            }
+
+            if (TextUtils.isEmpty(password)) {
+                txtPwd.setError("Campo requerido.");
+                return;
+            }
+
+            // Restricciones
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    txtEmailUsuario.setError("Escriba un email válido.");
+                    return;
+            }
+
+             if (password.length() < 6) {
+                    txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
+                    return;
+             }
+            registrarUsuario();
+    }
+
+
 
     // Método cargar datos de registro de los usuarios
     private void registrarUsuario() {
 
-        final String email = txtEmailUsuario.getText().toString();
-        final String password = txtPwd.getText().toString();
-        final String nombre = txtNombre.getText().toString();
-        final String apellido = txtApellido.getText().toString();
-
-        // Restricciones
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            txtEmailUsuario.setError("Escriba un email válido.");
-        }
-
-        if (password.length() < 6){
-            txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
-        }
-
-        // Campos requeridos
-        if (TextUtils.isEmpty(nombre)){
-            txtNombre.setError("Nombre requerido.");
-
-        } else if(TextUtils.isEmpty(email)){
-            txtEmailUsuario.setError("Email requerido.");
-
-        } else if(TextUtils.isEmpty(password)) {
-            txtPwd.setError("Contraseña requerida.");
-        }
+        email = txtEmailUsuario.getText().toString();
+        password = txtPwd.getText().toString();
+        nombre = txtNombre.getText().toString();
+        apellido = txtApellido.getText().toString();
         barraProgreso();
-            mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -159,9 +180,6 @@ public class RegistroFragment extends Fragment {
 
                         }
                     });
-
-
-
 
     }
 

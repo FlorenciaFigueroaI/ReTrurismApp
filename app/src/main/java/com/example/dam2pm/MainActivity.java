@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                         addFragment(new AjustesFragment());
                         vistaEnExplore = false;
                         break;
+
                 }
                 return true;
             }

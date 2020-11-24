@@ -77,12 +77,11 @@
             android:textColorLink="#725956" />
 
 
-        <CheckBox
-            android:id="@+id/chkBoxCondiciones"
+        <TextView
+            android:id="@+id/txtCamposReq"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:button="@drawable/ic_baseline_check_box_outline_blank_24"
-            android:text="@string/acepto_las_condiciones"
+            android:text="@string/camposreq"
             android:textColor="#725956" />
 
         <LinearLayout
@@ -92,11 +91,12 @@
 
             <Button
                 android:id="@+id/btnEnviar"
-                android:layout_width="120dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:background="@drawable/botones_style"
                 android:text="@string/enviar"
+                android:padding="10dp"
                 android:textAlignment="center"
                 android:textColor="#A2BDB6"
                 android:textSize="18sp"
@@ -105,8 +105,9 @@
 
             <Button
                 android:id="@+id/btnCancelar"
-                android:layout_width="120dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/botones_style"
                 android:text="@string/cancelar"

@@ -2,6 +2,7 @@ package com.example.dam2pm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ public class RecuperacionPwdFragment extends Fragment {
     ProgressBar progressBar;
     FirebaseAuth mAuth;
 
+    String email;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class RecuperacionPwdFragment extends Fragment {
         txtEmailRecup = view.findViewById(R.id.txtEmailRecup);
         btnEnviarEmail = view.findViewById(R.id.btnEnviarEmail);
         btnCancelarEmailRecup = view.findViewById(R.id.btnCancelarRecupEmail);
+        progressBar = view.findViewById(R.id.prgrssBarEnvioEmail);
 
         btnEnviarEmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,9 +96,13 @@ public class RecuperacionPwdFragment extends Fragment {
 
     // Comprueba que el edittext de email esté rellenado y con correcto formato
     private void validar() {
-        String email = txtEmailRecup.getText().toString();
+        email = txtEmailRecup.getText().toString();
 
-        if(email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+        if(TextUtils.isEmpty(email)){
+            txtEmailRecup.setError("Email requerido.");
+        }
+
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             txtEmailRecup.setError("Email inválido");
             return;
         }

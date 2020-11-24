@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="cancelar">Cancel</string>
-    <string name="contrase_a">Password</string>
-    <string name="usuario">User</string>
-    <string name="email">Email</string>
+    <string name="contrase_a">Password (*)</string>
+    <string name="email">Email (*)</string>
     <string name="he_olvidado_mi_contrase_a">I forgot my password</string>
     <string name="logo">logo</string>
     <string name="registro">Register</string>
     <string name="entrar">Entry</string>
-    <string name="nombre">Name</string>
+    <string name="nombre">Name (*)</string>
     <string name="apellido">Last name</string>
-    <string name="repite_la_contrase_a">Type the password again</string>
     <string name="enviar">Send</string>
     <string name="recibir_noticias">I want to receive newsletters</string>
     <string name="acepto_las_condiciones">I accept the terms and conditions</string>
@@ -41,5 +39,6 @@
     <string name="calle">Street</string>
     <string name="ciudad">City</string>
     <string name="ejemploFoto">Sample model</string>
+    <string name="camposreq">(*)Fields required</string>
 
 </resources>

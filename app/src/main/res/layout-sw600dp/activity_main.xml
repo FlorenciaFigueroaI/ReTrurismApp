@@ -12,7 +12,7 @@
     <android.widget.Toolbar
         android:id="@+id/tlBarBuscador"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:background="#725956"
         android:padding="20dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -25,8 +25,8 @@
 
     <TextView
         android:id="@+id/txtVwNombreApp"
-        android:layout_width="298dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="#658C88"
@@ -37,21 +37,21 @@
         app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <SearchView
         android:id="@+id/srchVwBusqueda"
-        android:layout_width="207dp"
-        android:layout_height="68dp"
+        android:layout_width="208dp"
+        android:layout_height="58dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="6dp"
         android:background="@drawable/botones_style"
         app:layout_constraintBottom_toBottomOf="@id/tlBarBuscador"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tlBarBuscador"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.347" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btmNavgtView"
@@ -78,10 +78,10 @@
         android:background="@drawable/ic_baseline_lock_power_off"
         app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
         app:layout_constraintEnd_toStartOf="@+id/txtVwNombreApp"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="@+id/tlBarBuscador"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.552" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

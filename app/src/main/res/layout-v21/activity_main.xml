@@ -58,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="#C1A5A1"
         app:itemIconSize="30dp"
         app:itemIconTint="#658C88"
         app:labelVisibilityMode="unlabeled"

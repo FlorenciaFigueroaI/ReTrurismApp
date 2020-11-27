@@ -1,11 +1,7 @@
 <resources>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimaryDark">#725956</item>
-        <item name="colorPrimary">#C1A5A1</item>
-        <item name="colorOnBackground" >#CBBCAA</item>
-        <item name="colorOnPrimary" >#A2BDB6</item>
-        <item name="colorOnSecondary">#658C88</item>
+
     </style>
 
 </resources>

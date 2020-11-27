@@ -4,24 +4,30 @@
     <item
         android:id="@+id/nvExplorar"
         android:icon="@drawable/ic_baseline_explore_24"
+        android:checked="true"
         android:title="@string/explorar" />
+
     <item
         android:id="@+id/nvCuenta"
         android:icon="@drawable/ic_baseline_account_box_24"
+        android:checked="true"
         android:title="@string/cuenta" />
     <item
         android:id="@+id/nvgColaboracion"
         android:icon="@drawable/ic_baseline_groups_24"
+        android:checked="true"
         android:title="@string/Colabora" />
 
     <item
         android:id="@+id/nvgMapa"
         android:icon="@drawable/ic_baseline_location_on_24"
+        android:checked="true"
         android:title="@string/mapa"/>
 
     <item
         android:id="@+id/nvgAjustes"
         android:icon="@drawable/ic_baseline_settings_applications_24"
+        android:checked="true"
         android:title="@string/ajustes"/>
 
 </menu>

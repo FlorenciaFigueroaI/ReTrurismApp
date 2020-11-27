@@ -76,6 +76,22 @@
             android:textColorHint="#725956"
             android:textColorLink="#725956" />
 
+        <EditText
+            android:id="@+id/txtPwdLoginConfirmacion"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints=""
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="12dp"
+            android:ems="12"
+            android:hint="@string/confirmContrase_a"
+            android:inputType="textPassword"
+            android:textColor="#725956"
+            android:textColorHighlight="#725956"
+            android:textColorHint="#725956"
+            android:textColorLink="#725956" />
+
 
         <TextView
             android:id="@+id/txtCamposReq"

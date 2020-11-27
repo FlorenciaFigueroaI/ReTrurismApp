@@ -40,5 +40,6 @@
     <string name="ciudad">City</string>
     <string name="ejemploFoto">Sample model</string>
     <string name="camposreq">(*)Fields required</string>
+    <string name="confirmContrase_a">Repeat password (*)</string>
 
 </resources>

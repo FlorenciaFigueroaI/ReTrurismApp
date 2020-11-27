@@ -23,6 +23,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -35,13 +37,11 @@ public class RegistroFragment extends Fragment {
     Button btnEnviar;
     Button btnCancelar;
 
-    EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido;
+    EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido, txtPwdConfirmn;
     ProgressBar progressBar;
 
-    String email;
-    String password;
-    String nombre;
-    String apellido;
+    String email, password, passwordConf, nombre, apellido;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,9 +62,11 @@ public class RegistroFragment extends Fragment {
 
         txtEmailUsuario = view.findViewById(R.id.txtEmailUsuario);
         txtPwd = view.findViewById(R.id.txtPwdLogin);
+        txtPwdConfirmn = view.findViewById(R.id.txtPwdLoginConfirmacion);
         txtNombre = view.findViewById(R.id.txtNombre);
         txtApellido = view.findViewById(R.id.txtApellido);
         progressBar = view.findViewById(R.id.prgrssBarRegistro);
+
 
         btnEnviar = view.findViewById(R.id.btnEnviar);
         btnCancelar = view.findViewById(R.id.btnCancelar);
@@ -111,7 +113,9 @@ public class RegistroFragment extends Fragment {
             nombre = txtNombre.getText().toString();
             email = txtEmailUsuario.getText().toString();
             password = txtPwd.getText().toString();
+            passwordConf = txtPwdConfirmn.getText().toString();
 
+            // Campos requeridos
             if (TextUtils.isEmpty(nombre)) {
                 txtNombre.setError("Campo requerido.");
                 return;
@@ -127,19 +131,26 @@ public class RegistroFragment extends Fragment {
                 return;
             }
 
-            // Restricciones
+            // Formato email
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                    txtEmailUsuario.setError("Escriba un email válido.");
-                    return;
+                txtEmailUsuario.setError("Escriba un email válido.");
+                return;
+            }
+            // tamaño password
+             if (password.length() < 6) {
+                 txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
+                 return;
+             }
+
+             // Confirmación Password
+            if(!password.equals(passwordConf)){
+                txtPwdConfirmn.setError("Las contraseñas no coinciden.");
+                return;
+
             }
 
-             if (password.length() < 6) {
-                    txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
-                    return;
-             }
             registrarUsuario();
     }
-
 
 
     // Método cargar datos de registro de los usuarios
@@ -157,7 +168,6 @@ public class RegistroFragment extends Fragment {
                             if (task.isSuccessful()) {
 
                                Usuario usuario = new Usuario(email, password, nombre, apellido);
-
                                FirebaseDatabase.getInstance().getReference("Usuario")
                                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {

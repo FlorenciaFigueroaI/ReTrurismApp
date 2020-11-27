@@ -126,24 +126,17 @@ public class RegistroFragment extends Fragment {
                 return;
             }
 
+            // requisitos password
             if (TextUtils.isEmpty(password)) {
                 txtPwd.setError("Campo requerido.");
                 return;
-            }
-
-            // Formato email
-            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            }else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {   // Formato email
                 txtEmailUsuario.setError("Escriba un email válido.");
                 return;
-            }
-            // tamaño password
-             if (password.length() < 6) {
-                 txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
-                 return;
-             }
-
-             // Confirmación Password
-            if(!password.equals(passwordConf)){
+            }else if (password.length() < 6) {      // tamaño password
+                txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
+                return;
+            } else if(!password.equals(passwordConf)){    // Confirmación Password
                 txtPwdConfirmn.setError("Las contraseñas no coinciden.");
                 return;
 
@@ -178,13 +171,12 @@ public class RegistroFragment extends Fragment {
                                             // mensaje de registro correcto
                                             Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
                                             startActivity(new Intent(getActivity(), AccesoActivity.class));
-
                                         }
                                     }
                                 });
                             } else {
-                                Toast.makeText(getActivity(), "Ha habido un problema.",
-                                        Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "El email introducido ya existe, intente acceder con dicho email o vuelva a intentarlo con otro.",
+                                        Toast.LENGTH_LONG).show();
                             }
 
                         }

@@ -41,5 +41,6 @@
     <string name="ejemploFoto">Sample model</string>
     <string name="camposreq">(*)Fields required</string>
     <string name="confirmContrase_a">Repeat password (*)</string>
+    <string name="cerrarSesion">Log out</string>
 
 </resources>

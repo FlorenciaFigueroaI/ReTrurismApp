@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -21,13 +20,14 @@ public class MainActivity extends AppCompatActivity {
     boolean vistaEnExplore;
     Button btnCerrarSesion;
 
+
     // Menú
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Menú de opciones
+        // Menú de opciones inferior
         BottomNavigationView btmNavVw = findViewById(R.id.btmNavgtView);
         addFragment(new ExploreFragment());
         btmNavVw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

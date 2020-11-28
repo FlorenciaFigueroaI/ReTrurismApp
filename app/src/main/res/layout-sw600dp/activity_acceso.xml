@@ -4,7 +4,7 @@
     android:id="@+id/contenedorAcceso"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C1A5A1"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
     android:paddingLeft="50dp"
     android:paddingTop="50dp"
@@ -17,7 +17,7 @@
         android:layout_margin="2dp"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textColor="#725956"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="60sp" />
 
     <ImageView
@@ -40,11 +40,10 @@
         android:inputType="textEmailAddress"
         android:padding="20dp"
         android:textAlignment="textStart"
-        android:textColor="#725956"
-        android:textColorHighlight="#725956"
-        android:textColorHint="#725956"
-        android:textColorLink="#725956"
-        android:textSize="20sp" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark" />
 
     <EditText
         android:id="@+id/txtPwdAcceso"
@@ -58,10 +57,10 @@
         android:inputType="textPassword"
         android:padding="20dp"
         android:textAlignment="textStart"
-        android:textColor="#725956"
-        android:textColorHighlight="#725956"
-        android:textColorHint="#725956"
-        android:textColorLink="#725956"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
         android:textSize="20sp" />
 
     <TextView
@@ -72,7 +71,7 @@
         android:padding="20dp"
         android:text="@string/he_olvidado_mi_contrase_a"
         android:textAlignment="center"
-        android:textColor="#725956"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp" />
 
     <Button
@@ -81,11 +80,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/botones_style"
         android:padding="20dp"
         android:text="@string/entrar"
         android:textAlignment="center"
-        android:textColor="#A2BDB6"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -95,11 +94,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimaryDark"
         android:background="@drawable/botones_style"
         android:padding="20dp"
         android:text="@string/registro"
         android:textAlignment="center"
-        android:textColor="#A2BDB6"
         android:textSize="18sp"
         android:textStyle="bold" />
 

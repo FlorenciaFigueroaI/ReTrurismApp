@@ -45,5 +45,7 @@
     <string name="ejemploFoto">Modelo de ejemplo</string>
     <string name="camposreq">(*)Campos requeridos</string>
     <string name="confirmContrase_a">Repita la contraseña (*)</string>
+    <string name="cerrarSesion">Cerrar sesión</string>
+
 
 </resources>

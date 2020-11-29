@@ -24,9 +24,6 @@
     <string name="cuenta">Cuenta</string>
     <string name="explorar">Explorar</string>
     <string name="foto">foto</string>
-    <string name="peñon" translatable="false">Chalet El Peñón</string>
-    <string name="castroUrdiales" translatable="false">Castro Urdiales</string>
-    <string name="fecha" translatable="false">1940</string>
     <string name="galeria" />
     <string name="acerca_de">Acerca de</string>
     <string name="colabora_con_nosotros">Colabora con nosotros</string>
@@ -38,14 +35,22 @@
     <string name="ejemFotoColaboracion"> Ejemplo:</string>
     <string name="todo">TODO</string>
     <string name="recupPwd">Envíenos su email para recuperar la contraseña</string>
-    <string name="titulo">Titulo</string>
+    <string name="titulo">Titulo (*)</string>
     <string name="calle">Calle</string>
-    <string name="ciudad">Ciudad</string>
+    <string name="ciudad">Ciudad (*)</string>
+    <string name="anyo">Año (*)</string>
     <string name="Url" translatable="false"/>
     <string name="ejemploFoto">Modelo de ejemplo</string>
     <string name="camposreq">(*)Campos requeridos</string>
     <string name="confirmContrase_a">Repita la contraseña (*)</string>
     <string name="cerrarSesion">Cerrar sesión</string>
+
+    <string name="peñon" translatable="false">Chalet El Peñón</string>
+    <string name="castroUrdiales" translatable="false">Castro Urdiales</string>
+    <string name="fecha" translatable="false">1940</string>
+
+
+
 
 
 </resources>

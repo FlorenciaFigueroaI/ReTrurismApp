@@ -35,11 +35,12 @@
     <string name="regla2Colaboracion">2. La photo doit être antérieure à 1990.</string>
     <string name="ejemFotoColaboracion">Exemple:</string>
     <string name="recupPwd">Envoyez-nous votre email pour récupérer votre mot de passé</string>
-    <string name="titulo">Titre</string>
+    <string name="titulo">Titre (*)</string>
     <string name="calle">Rue</string>
-    <string name="ciudad">Ville</string>
+    <string name="ciudad">Ville (*)</string>
+    <string name="anyo">L\'an (*)</string>
     <string name="ejemploFoto">Exemple de modèle</string>
-    <string name="camposreq">(*)Champs requis</string>
+    <string name="camposreq">Champs requis (*)</string>
     <string name="confirmContrase_a">Répéter le mot de passe (*)</string>
     <string name="cerrarSesion">Cerrar sesión</string>
 

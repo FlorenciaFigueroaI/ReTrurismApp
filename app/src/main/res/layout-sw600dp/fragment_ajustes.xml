@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="60dp"
     android:layout_marginBottom="50dp"
-    android:background="#C1A5A1"
+    android:background="@color/colorBackground"
     android:orientation="vertical">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/esquema_de_colores"
-        android:textColor="#725956"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/dvdAjustes2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="@string/claro"
-            android:textColor="#725956"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="30sp"
             tools:layout_editor_absoluteX="164dp"
             tools:layout_editor_absoluteY="161dp" />
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/oscuro"
-            android:textColor="#725956"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="30sp"
             tools:layout_editor_absoluteX="160dp"
             tools:layout_editor_absoluteY="205dp" />
@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_margin="10dp"
-        android:background="#725956"
+        android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.842"
@@ -81,7 +81,7 @@
         android:scrollbarDefaultDelayBeforeFade="400"
         android:scrollbarSize="6dp"
         android:text="@string/activar_notificaciones"
-        android:textColor="#725956"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,8 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_margin="10dp"
-
-        android:background="#725956"
+        android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"

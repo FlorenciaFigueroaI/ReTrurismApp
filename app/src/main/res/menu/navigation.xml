@@ -24,10 +24,11 @@
         android:checked="true"
         android:title="@string/mapa"/>
 
-    <item
-        android:id="@+id/nvgAjustes"
-        android:icon="@drawable/ic_baseline_settings_applications_24"
-        android:checked="true"
-        android:title="@string/ajustes"/>
+     <item
+         android:id="@+id/nvgAjustes"
+         android:icon="@drawable/ic_baseline_settings_applications_24"
+         android:checked="true"
+         android:title="@string/ajustes"/>
+
 
 </menu>

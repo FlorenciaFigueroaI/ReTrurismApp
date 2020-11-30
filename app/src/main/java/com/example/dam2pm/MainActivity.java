@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
     boolean vistaEnExplore;
     Button btnCerrarSesion;
-
 
     // Menú
     @Override
@@ -60,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.nvgAjustes:
                         addFragment(new AjustesFragment());
-                        vistaEnExplore = false;
+                        vistaEnExplore = true;
                         break;
+
 
                 }
                 return true;
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
     // Método transacciones para añadir y reemplazar los fragmentos
     private void addFragment(Fragment fragment){

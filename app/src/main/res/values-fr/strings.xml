@@ -43,5 +43,6 @@
     <string name="camposreq">Champs requis (*)</string>
     <string name="confirmContrase_a">Répéter le mot de passe (*)</string>
     <string name="cerrarSesion">Cerrar sesión</string>
+    <string name="guardar_cambios">Sauvegarder les modifications</string>
 
 </resources>

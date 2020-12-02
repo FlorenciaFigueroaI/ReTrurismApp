@@ -43,5 +43,6 @@
     <string name="camposreq">(*)Fields required</string>
     <string name="confirmContrase_a">Repeat password (*)</string>
     <string name="cerrarSesion">Log out</string>
+    <string name="guardar_cambios">Save changes</string>
 
 </resources>

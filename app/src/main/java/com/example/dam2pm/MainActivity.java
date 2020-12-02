@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
     // Método transacciones para añadir y reemplazar los fragmentos
     private void addFragment(Fragment fragment){
         getSupportFragmentManager()

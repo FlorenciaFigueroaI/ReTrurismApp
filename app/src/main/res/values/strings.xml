@@ -48,9 +48,7 @@
     <string name="peñon" translatable="false">Chalet El Peñón</string>
     <string name="castroUrdiales" translatable="false">Castro Urdiales</string>
     <string name="fecha" translatable="false">1940</string>
-
-
-
+    <string name="guardar_cambios">Guardar los cambios</string>
 
 
 </resources>

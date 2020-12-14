@@ -8,7 +8,7 @@
     <string name="registro">registro</string>
     <string name="entrar">entrar</string>
     <string name="nombre">Nombre (*)</string>
-    <string name="apellido">Apellido (*)</string>
+    <string name="apellido">Apellido</string>
     <string name="enviar">Enviar</string>
     <string name="recibir_noticias">Quiero recibir noticias</string>
     <string name="acepto_las_condiciones">Acepto las condiciones</string>

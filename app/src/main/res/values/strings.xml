@@ -39,7 +39,7 @@
     <string name="calle">Calle</string>
     <string name="ciudad">Ciudad (*)</string>
     <string name="anyo">Año (*)</string>
-    <string name="Url" translatable="false"/>
+    <string name="Url" translatable="false" />
     <string name="ejemploFoto">Modelo de ejemplo</string>
     <string name="camposreq">(*)Campos requeridos</string>
     <string name="confirmContrase_a">Repita la contraseña (*)</string>

@@ -10,7 +10,6 @@ import android.view.WindowManager;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int DURATION_SPLASH = 3000; // duración de 3 segundos
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,14 +19,16 @@ public class SplashActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_splash);
 
+
+        int DURATION_SPLASH = 2000; // duración de 3 segundos
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, AccesoActivity.class);
                 startActivity(intent);
                 finish();
 
-            };
+            }
         }, DURATION_SPLASH);
 
     }

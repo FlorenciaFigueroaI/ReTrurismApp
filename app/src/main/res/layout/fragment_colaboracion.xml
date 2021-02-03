@@ -26,37 +26,6 @@
             android:text="@string/cabeceraColaboracion" />
 
         <EditText
-            android:id="@+id/txtNombreUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:autofillHints=""
-            android:drawablePadding="12dp"
-            android:ems="12"
-            android:hint="@string/nombre"
-            android:inputType="textAutoComplete"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/txtApellidoUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/apellido"
-            android:inputType="textAutoComplete"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp" />
-
-        <EditText
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,21 +39,6 @@
             android:textColorHint="@color/colorPrimaryDark"
             android:textColorLink="@color/colorPrimaryDark"
             android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/txtCalle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/calle"
-            android:inputType="textAutoComplete"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/txtCiudad"

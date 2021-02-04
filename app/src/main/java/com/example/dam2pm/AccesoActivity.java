@@ -57,7 +57,6 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validar();
-
             }
         });
 
@@ -159,6 +158,8 @@ public class AccesoActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
 
 }

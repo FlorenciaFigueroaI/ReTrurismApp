@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
-        int DURATION_SPLASH = 2000; // duración de 3 segundos
+        int DURATION_SPLASH = 4000; // duración de 3 segundos
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {

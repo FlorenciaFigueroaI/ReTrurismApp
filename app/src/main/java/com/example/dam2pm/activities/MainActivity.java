@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.dam2pm.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.dam2pm.fragments.PerfilFragment;
+import com.example.dam2pm.R;
+import com.example.dam2pm.fragments.ColaboracionFragment;
+import com.example.dam2pm.fragments.ExploreFragment;
+import com.example.dam2pm.fragments.MapaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -44,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nvCuenta:
-                        addFragment(new CuentaFragment());
+                        addFragment(new PerfilFragment());
                         vistaEnExplore = false;
                         break;
 

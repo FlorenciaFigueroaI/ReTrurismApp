@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.dam2pm.animaciones;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -7,6 +7,8 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.dam2pm.R;
 
 public class GifLoadingActivity extends AppCompatActivity {
 

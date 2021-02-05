@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.dam2pm.clasesBD;
 
 public class Galeria {
     Integer galeriaId;
@@ -21,7 +21,7 @@ public class Galeria {
         this.ruta = ruta;
         this.usuarioId = usuarioId;
     }
-
+/*
     public Integer getGaleriaId() {
         return galeriaId;
     }
@@ -84,6 +84,8 @@ public class Galeria {
     }
 
 
+
+ */
 
 }
 

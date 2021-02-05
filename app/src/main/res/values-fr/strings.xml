@@ -44,5 +44,9 @@
     <string name="confirmContrase_a">Répéter le mot de passe (*)</string>
     <string name="cerrarSesion">Cerrar sesión</string>
     <string name="guardar_cambios">Sauvegarder les modifications</string>
+    <string name="Perfil">Profil</string>
+    <string name="Mis_fotos">Mes photos</string>
+
+
 
 </resources>

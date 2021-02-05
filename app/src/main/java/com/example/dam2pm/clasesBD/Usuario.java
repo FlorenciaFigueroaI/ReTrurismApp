@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.dam2pm.clasesBD;
 
 public class Usuario {
 
@@ -16,7 +16,7 @@ public class Usuario {
         this.nombre = nombre;
         this.apellido = apellido;
     }
-
+/*
     public String getEmail() {
         return email;
     }
@@ -46,6 +46,8 @@ public class Usuario {
         return "Usuario{" + ", email=" + email + ", nombre=" + nombre + ", apellido=" + apellido + '}';
     }
 
+
+ */
 
 
 

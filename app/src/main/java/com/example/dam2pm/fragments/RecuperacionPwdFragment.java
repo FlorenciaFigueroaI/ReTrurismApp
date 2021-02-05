@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.dam2pm.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.dam2pm.activities.AccesoActivity;
+import com.example.dam2pm.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;

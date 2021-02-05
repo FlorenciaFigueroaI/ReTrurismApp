@@ -1,5 +1,5 @@
 
-package com.example.dam2pm;
+package com.example.dam2pm.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
+
+import com.example.dam2pm.R;
 
 public class AjustesFragment extends Fragment {
 

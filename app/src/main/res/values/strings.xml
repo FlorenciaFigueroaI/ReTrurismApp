@@ -49,7 +49,8 @@
     <string name="castroUrdiales" translatable="false">Castro Urdiales</string>
     <string name="fecha" translatable="false">1940</string>
     <string name="guardar_cambios">Guardar los cambios</string>
-
+    <string name="Perfil">Perfil</string>
+    <string name="Mis_fotos">Mis fotos</string>
 
 
 </resources>

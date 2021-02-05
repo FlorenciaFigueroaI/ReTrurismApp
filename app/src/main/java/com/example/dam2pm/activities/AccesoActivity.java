@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.dam2pm.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.dam2pm.R;
+import com.example.dam2pm.fragments.RecuperacionPwdFragment;
+import com.example.dam2pm.fragments.RegistroFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

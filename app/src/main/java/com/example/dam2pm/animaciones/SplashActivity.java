@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.dam2pm.animaciones;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,9 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
+
+import com.example.dam2pm.activities.AccesoActivity;
+import com.example.dam2pm.R;
 
 public class SplashActivity extends AppCompatActivity {
 

@@ -58,12 +58,6 @@ public class MainActivity extends AppCompatActivity {
                         vistaEnExplore = false;
                         break;
 
-                    case R.id.nvgAjustes:
-                        addFragment(new AjustesFragment());
-                        vistaEnExplore = true;
-                        break;
-
-
                 }
                 return true;
             }

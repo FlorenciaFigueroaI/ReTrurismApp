@@ -1,98 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="50dp"
-    android:layout_marginBottom="50dp">
+    android:layout_height="wrap_content">
 
 
-    <LinearLayout
-        android:id="@+id/mainContainer"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLytCuenta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
-        android:background="@color/colorBackground"
-        android:orientation="vertical"
-        android:padding="60dp">
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:tabIndicatorHeight="3dp"
+        app:tabMode="fixed"
+        app:tabPaddingBottom="8dp"
+        app:tabPaddingTop="15dp" />
 
-        <ImageView
-            android:id="@+id/imgVwPerfil"
-            android:layout_width="184dp"
-            android:layout_height="140dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/img_user" />
-
-        <Button
-            android:id="@+id/btnEditarCuenta"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:background="@drawable/ic_baseline_edit_24" />
-
-        <EditText
-            android:id="@+id/txtNombreUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:autofillHints=""
-            android:drawablePadding="12dp"
-            android:ems="12"
-            android:hint="@string/nombre"
-            android:inputType="textAutoComplete"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/txtApellidoUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/apellido"
-            android:inputType="textAutoComplete"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp" />
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/VwPgrCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLytCuenta" />
 
 
-        <Button
-            android:id="@+id/btnGuardarCambios"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/botones_style"
-            android:layout_margin="5dp"
-            android:text="@string/guardar_cambios"
-            android:padding="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="ButtonStyle" />
 
-        <Button
-            android:id="@+id/btnCancelarEnvioFoto"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:padding="10dp"
-            android:background="@drawable/botones_style"
-            android:text="@string/cancelar"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="ButtonStyle" />
-
-    </LinearLayout>
-
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

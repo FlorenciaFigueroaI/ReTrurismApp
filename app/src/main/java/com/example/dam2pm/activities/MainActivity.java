@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.dam2pm.fragments.GaleriaFragment;
 import com.example.dam2pm.fragments.PerfilFragment;
 import com.example.dam2pm.R;
 import com.example.dam2pm.fragments.ColaboracionFragment;
@@ -48,10 +49,16 @@ public class MainActivity extends AppCompatActivity {
                         vistaEnExplore = true;
                         break;
 
+                    case R.id.nvgGaleria:
+                        addFragment(new GaleriaFragment());
+                        vistaEnExplore = false;
+                        break;
+
                     case R.id.nvCuenta:
                         addFragment(new PerfilFragment());
                         vistaEnExplore = false;
                         break;
+
 
                     case R.id.nvgColaboracion:
                         addFragment(new ColaboracionFragment());

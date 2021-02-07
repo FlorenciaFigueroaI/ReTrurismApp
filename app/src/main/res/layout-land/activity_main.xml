@@ -12,16 +12,50 @@
         android:id="@+id/tlBarBuscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="282dp"
         android:background="@color/colorPrimaryDark"
         android:padding="20dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintBottom_toTopOf="@+id/btmNavgtView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmNavgtView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:focusableInTouchMode="true"
+        app:itemBackground="@color/colorPrimaryDark"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/navigation"
+        app:itemIconTint="@color/design_default_color_surface"
+        app:itemTextColor="@color/design_default_color_surface">
 
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <SearchView
+        android:id="@+id/srchVwBusqueda"
+        android:layout_width="197dp"
+        android:layout_height="36dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/buscador_style"
+        app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
+        app:layout_constraintEnd_toEndOf="@+id/tlBarBuscador"
+        app:layout_constraintHorizontal_bias="0.637"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
 
     <TextView
         android:id="@+id/txtVwNombreApp"
@@ -32,29 +66,15 @@
         android:fontFamily="@font/lobster"
         android:text="@string/app_name"
         android:textAlignment="textStart"
-        android:textColor="@color/colorBackground"
+        android:textColor="@color/design_default_color_background"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tlBarBuscador"
         app:layout_constraintEnd_toStartOf="@+id/srchVwBusqueda"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-
-    <SearchView
-        android:id="@+id/srchVwBusqueda"
-        android:layout_width="197dp"
-        android:layout_height="36dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/buscador_style"
-        app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
-        app:layout_constraintEnd_toEndOf="@+id/tlBarBuscador"
-        app:layout_constraintHorizontal_bias="0.683"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
 
     <Button
         android:id="@+id/btnCerrarSesion"
@@ -63,30 +83,10 @@
         android:background="@drawable/ic_baseline_lock_power_off"
         app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
         app:layout_constraintEnd_toEndOf="@+id/tlBarBuscador"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toEndOf="@+id/srchVwBusqueda"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/btmNavgtView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:itemBackground="@color/colorPrimaryDark"
-        app:itemIconTint="@color/colorSecundary"
-        app:itemIconSize="30dp"
-        app:labelVisibilityMode="unlabeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/navigation">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

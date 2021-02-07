@@ -23,8 +23,8 @@
     <string name="mapa">Mapa</string>
     <string name="cuenta">Cuenta</string>
     <string name="explorar">Explorar</string>
+    <string name="galeria">Galería</string>
     <string name="foto">foto</string>
-    <string name="galeria" />
     <string name="acerca_de">Acerca de</string>
     <string name="colabora_con_nosotros">Colabora con nosotros</string>
     <string name="mas">Más</string>
@@ -44,13 +44,14 @@
     <string name="camposreq">(*)Campos requeridos</string>
     <string name="confirmContrase_a">Repita la contraseña (*)</string>
     <string name="cerrarSesion">Cerrar sesión</string>
-
     <string name="peñon" translatable="false">Chalet El Peñón</string>
     <string name="castroUrdiales" translatable="false">Castro Urdiales</string>
     <string name="fecha" translatable="false">1940</string>
     <string name="guardar_cambios">Guardar los cambios</string>
     <string name="Perfil">Perfil</string>
     <string name="Mis_fotos">Mis fotos</string>
+
+
 
 
 </resources>

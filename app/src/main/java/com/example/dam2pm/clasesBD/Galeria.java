@@ -1,33 +1,23 @@
 package com.example.dam2pm.clasesBD;
 
 public class Galeria {
-    Integer galeriaId;
+
     String titulo;
-    String descripcion;
     String ciudad;
     int anyo;
-    String ruta;
-    Usuario usuarioId;
+    int imagenId;
+
 
     public Galeria() {
     }
 
-    public Galeria(Integer galeriaId, String titulo, String descripcion, String ciudad, int anyo, String ruta, Usuario usuarioId) {
-        this.galeriaId = galeriaId;
+    public Galeria(String titulo, String ciudad, int anyo, int imagenId) {
+
         this.titulo = titulo;
-        this.descripcion = descripcion;
         this.ciudad = ciudad;
         this.anyo = anyo;
-        this.ruta = ruta;
-        this.usuarioId = usuarioId;
-    }
-/*
-    public Integer getGaleriaId() {
-        return galeriaId;
-    }
+        this.imagenId = imagenId;
 
-    public void setGaleriaId(Integer galeriaId) {
-        this.galeriaId = galeriaId;
     }
 
     public String getTitulo() {
@@ -38,13 +28,6 @@ public class Galeria {
         this.titulo = titulo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 
     public String getCiudad() {
         return ciudad;
@@ -62,30 +45,24 @@ public class Galeria {
         this.anyo = anyo;
     }
 
-    public String getRuta() {
-        return ruta;
+    public int getImagenId() {
+        return imagenId;
     }
 
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
+    public void setImagenId(int imagenId) {
+        this.imagenId = imagenId;
     }
 
-    public Usuario getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(Usuario usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-
+/*
     @Override
     public String toString() {
-        return "Galeria{" + "galeriaId=" + galeriaId + ", titulo=" + titulo + ", descripcion=" + descripcion + ", ciudad=" + ciudad + ", anyo=" + anyo + ", ruta=" + ruta + ", usuarioId=" + usuarioId + '}';
+        return "Galeria{" + "galeriaId=" + galeriaId + ", titulo=" + titulo + ", descripcion=" + descripcion + ", ciudad=" + ciudad + ", anyo=" + anyo + "}";
     }
 
 
 
  */
+
 
 }
 

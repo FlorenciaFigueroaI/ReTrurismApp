@@ -32,9 +32,7 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
     public void onBindViewHolder(@NonNull GaleriaAdapter.GaleriaViewHolder holder, int position) {
         holder.txtTitulo.setText(listaFotos.get(position).getTitulo());
         holder.txtCiudad.setText(listaFotos.get(position).getCiudad());
-    //    holder.txtAnyo.setText(listaFotos.get(position).getAnyo());
-        holder.txtAnyo.setText(String.valueOf(listaFotos.get(position)));
-      //  holder.txtAnyo.setText(""+ listaFotos.get(position));
+        holder.txtAnyo.setText(String.valueOf(listaFotos.get(position).getAnyo()));
         holder.imgVwFoto.setImageResource(listaFotos.get(position).getImagenId());
     }
 

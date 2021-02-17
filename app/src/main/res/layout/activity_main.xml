@@ -25,13 +25,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_marginBottom="544dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/btmNavgtView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/txtVwNombreApp"
@@ -43,37 +45,29 @@
             android:textAlignment="textStart"
             android:textColor="@color/design_default_color_background"
             android:textSize="26sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/tlBarBuscador"
-            app:layout_constraintEnd_toStartOf="@+id/srchVwBusqueda"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:textStyle="bold" />
 
         <SearchView
             android:id="@+id/srchVwBusqueda"
-            android:layout_width="197dp"
-            android:layout_height="36dp"
+            android:layout_width="235dp"
+            android:layout_height="34dp"
             android:layout_margin="5dp"
             android:background="@drawable/buscador_style"
             app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
             app:layout_constraintEnd_toEndOf="@+id/tlBarBuscador"
-            app:layout_constraintHorizontal_bias="0.718"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnCerrarSesion"
+            android:id="@+id/btnAjustes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:background="@drawable/ic_baseline_lock_power_off"
-            app:layout_constraintBottom_toBottomOf="@+id/tlBarBuscador"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/srchVwBusqueda"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.692" />
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:drawableBottom="@drawable/ic_baseline_settings_applications_24"
+            />
+
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.dam2pm.R;
-import com.example.dam2pm.clases.GaleriaAdapter;
+import com.example.dam2pm.adaptadores.GaleriaAdapter;
 import com.example.dam2pm.clasesBD.Galeria;
 
 import java.util.ArrayList;

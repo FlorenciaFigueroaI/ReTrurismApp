@@ -50,8 +50,7 @@
     <string name="guardar_cambios">Guardar los cambios</string>
     <string name="Perfil">Perfil</string>
     <string name="Mis_fotos">Mis fotos</string>
-
-
+    <string name="home" translatable="false">Home</string>
 
 
 </resources>

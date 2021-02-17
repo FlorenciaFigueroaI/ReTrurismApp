@@ -1,4 +1,4 @@
-package com.example.dam2pm.clases;
+package com.example.dam2pm.adaptadores;
 
 import android.view.LayoutInflater;
 import android.view.View;

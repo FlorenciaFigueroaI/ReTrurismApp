@@ -51,6 +51,7 @@
     <string name="Perfil">Perfil</string>
     <string name="Mis_fotos">Mis fotos</string>
     <string name="home" translatable="false">Home</string>
+    <string name="descripcion">Descripción</string>
 
 
 </resources>

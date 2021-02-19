@@ -10,15 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dam2pm.R;
-import com.example.dam2pm.clasesBD.Galeria;
+import com.example.dam2pm.modelos.Fotografia;
 
 import java.util.ArrayList;
 
 public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaViewHolder>{
 
-    ArrayList<Galeria> listaFotos;
+    ArrayList<Fotografia> listaFotos;
 
-    public GaleriaAdapter(ArrayList<Galeria> listaFoto) {
+    public GaleriaAdapter(ArrayList<Fotografia> listaFoto) {
         this.listaFotos=listaFoto;
     }
 
@@ -33,7 +33,7 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
         holder.txtTitulo.setText(listaFotos.get(position).getTitulo());
         holder.txtCiudad.setText(listaFotos.get(position).getCiudad());
         holder.txtAnyo.setText(String.valueOf(listaFotos.get(position).getAnyo()));
-        holder.imgVwFoto.setImageResource(listaFotos.get(position).getImagenId());
+        holder.imgVwFoto.setImageResource(listaFotos.get(position).getfotografiaID());
     }
 
 

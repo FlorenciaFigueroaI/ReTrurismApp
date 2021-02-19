@@ -8,14 +8,20 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dam2pm.R;
+import com.example.dam2pm.bd.DataBaseHelper;
+import com.example.dam2pm.modelos.Fotografia;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import static android.app.Activity.RESULT_OK;
@@ -23,10 +29,14 @@ import static android.app.Activity.RESULT_OK;
 
 public class ColaboracionFragment extends Fragment {
 
- //   private static final int RESULT_OK = ;
-    ImageView imagen;
+    ImageView imgVwFotografia;
     FloatingActionButton fltActBtn;
+    Button btnEnviarFoto;
     TextView txtVwEjemplo;
+    EditText txtTitulo;
+    EditText txtDescripcion;
+    EditText txtCiudad;
+    EditText txtAnyo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,8 +49,35 @@ public class ColaboracionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_colaboracion, container, false);
 
+        txtTitulo = view.findViewById(R.id.txtTitulo);
+        txtDescripcion = view.findViewById(R.id.txtDescripcion);
+        txtCiudad = view.findViewById(R.id.txtCiudad);
+        txtAnyo = view.findViewById(R.id.txtAnyo);
         txtVwEjemplo = view.findViewById(R.id.txtEjemplo);
-        imagen = view.findViewById(R.id.imgVwEjemplo);
+        imgVwFotografia = view.findViewById(R.id.imgVwEjemplo);
+        btnEnviarFoto = view.findViewById(R.id.btnEnviarFoto);
+        btnEnviarFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fotografia fotografia;
+
+                try {
+                    fotografia = new Fotografia(-1, txtTitulo.getText().toString(), txtCiudad.getText().toString(), txtDescripcion.getText().toString(), Integer.parseInt(txtAnyo.getText().toString()), imgVwFotografia.getDrawable().toString());
+
+                } catch (Exception e) {
+                    Toast.makeText(getActivity(), "No se ha podido agregar la fotografía",  Toast.LENGTH_SHORT).show();
+                    fotografia = new Fotografia(-1, "error", "error", "error",0, "error");
+
+                }
+                DataBaseHelper dataBaseHelper = new DataBaseHelper(getActivity());
+                boolean exito = dataBaseHelper.insertarFoto(fotografia);
+                Toast.makeText(getActivity(), "Se ha agregado correctamente", Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
         fltActBtn = view.findViewById(R.id.fltActBtn);
         fltActBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +105,7 @@ public class ColaboracionFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode== RESULT_OK){
             Uri path=data.getData();
-            imagen.setImageURI(path);
+            imgVwFotografia.setImageURI(path);
             fltActBtn.setVisibility(View.GONE);
             txtVwEjemplo.setVisibility(View.GONE);
 

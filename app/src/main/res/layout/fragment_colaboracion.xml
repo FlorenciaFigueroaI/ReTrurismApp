@@ -41,6 +41,22 @@
             android:textSize="20sp" />
 
         <EditText
+            android:id="@+id/txtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/descripcion"
+            android:inputType="textAutoComplete"
+            android:lines="10"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHighlight="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="20sp" />
+
+        <EditText
             android:id="@+id/txtCiudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +74,7 @@
             android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/txtDate"
+            android:id="@+id/txtAnyo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

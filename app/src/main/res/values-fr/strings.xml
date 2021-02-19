@@ -46,7 +46,7 @@
     <string name="guardar_cambios">Sauvegarder les modifications</string>
     <string name="Perfil">Profil</string>
     <string name="Mis_fotos">Mes photos</string>
-
+    <string name="descripcion">La description</string>
 
 
 </resources>

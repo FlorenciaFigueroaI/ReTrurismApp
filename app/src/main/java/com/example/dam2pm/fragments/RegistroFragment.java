@@ -19,7 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.dam2pm.activities.AccesoActivity;
 import com.example.dam2pm.R;
-import com.example.dam2pm.clasesBD.Usuario;
+import com.example.dam2pm.modelos.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

@@ -18,16 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCyebqrs9r-7R2sZe9ulzYP4r_TJzONQEc" />
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity android:name=".animaciones.GifLoadingActivity" />
 
         <activity
             android:name=".animaciones.SplashActivity"
@@ -39,10 +30,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.AccesoActivity" />
-        <activity android:name=".animaciones.GifLoadingActivity" />
+
         <activity
             android:name=".activities.MainActivity"
             android:configChanges="keyboardHidden|orientation" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCyebqrs9r-7R2sZe9ulzYP4r_TJzONQEc" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

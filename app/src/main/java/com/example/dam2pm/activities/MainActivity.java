@@ -27,10 +27,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     boolean vistaEnExplore;
-    Button btnCerrarSesion;
     BottomNavigationView btmNavVw;
     Button btnAjustes;
-
 
 
     @Override

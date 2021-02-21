@@ -52,6 +52,7 @@
     <string name="Mis_fotos">Mis fotos</string>
     <string name="home" translatable="false">Home</string>
     <string name="descripcion">Descripción</string>
+    <string name="play" translatable="false" />
 
 
 </resources>

@@ -1,6 +1,7 @@
 package com.example.dam2pm.activities;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -32,8 +33,8 @@ public class AccesoActivity extends AppCompatActivity {
     private EditText txtPwdAcc;
     private TextView txtVwOlviPwd;
     FragmentTransaction transaccion;
-    ProgressBar progressBar;
 
+    MediaPlayer mp;
     FirebaseAuth mAuth;
 
     String email;
@@ -56,6 +57,7 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validar();
+                efectoSonido();
             }
         });
 
@@ -70,7 +72,7 @@ public class AccesoActivity extends AppCompatActivity {
                 txtEmailAcc.setVisibility(View.GONE);
                 txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
-
+                efectoSonido();
                 // se carga el fragment
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
                 transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
@@ -92,6 +94,7 @@ public class AccesoActivity extends AppCompatActivity {
                 txtEmailAcc.setVisibility(View.GONE);
                 txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
+
                 // se carga el fragment
                 transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
                 RecuperacionPwdFragment frgRecupPwd = new RecuperacionPwdFragment(); // instancia de transacción
@@ -139,6 +142,11 @@ public class AccesoActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void efectoSonido() {
+        mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
+        mp.start();
     }
 
 

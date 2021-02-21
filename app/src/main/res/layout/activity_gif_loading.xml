@@ -9,7 +9,7 @@
         android:id="@+id/imgVwGIF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/gif_loading"
+        android:src="@drawable/gif_loading2"
         android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

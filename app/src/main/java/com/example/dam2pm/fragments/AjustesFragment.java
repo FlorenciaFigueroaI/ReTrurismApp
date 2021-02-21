@@ -1,6 +1,7 @@
 
 package com.example.dam2pm.fragments;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +12,10 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.dam2pm.R;
+import com.example.dam2pm.activities.AccesoActivity;
 
 public class AjustesFragment extends Fragment {
-
+    MediaPlayer mp;
     SwitchCompat swtchNotificaciones;
 
     @Override
@@ -33,6 +35,7 @@ public class AjustesFragment extends Fragment {
         swtchNotificaciones.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
+                efectoSonido();
                 Toast.makeText(getActivity(), "Descubre nuestras últimas novedades y si somos muy pesados, podrás desactivar las notificaciones cuando quieras", Toast.LENGTH_LONG).show();
 
                 return true;
@@ -43,6 +46,10 @@ public class AjustesFragment extends Fragment {
         return view;
     }
 
+    public void efectoSonido() {
+        mp = MediaPlayer.create(getActivity(), R.raw.sonido_botones);
+        mp.start();
+    }
 
 
 }

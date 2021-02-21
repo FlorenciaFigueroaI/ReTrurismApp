@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,7 +36,6 @@ public class RegistroFragment extends Fragment {
     Button btnCancelar;
 
     EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido, txtPwdConfirmn;
-    ProgressBar progressBar;
 
     String email, password, passwordConf, nombre, apellido;
 

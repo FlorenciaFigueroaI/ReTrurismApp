@@ -4,7 +4,9 @@ package com.example.dam2pm.animaciones;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -16,6 +18,8 @@ import com.example.dam2pm.R;
 
 public class GifLoadingActivity extends AppCompatActivity {
 
+    MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +30,11 @@ public class GifLoadingActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         // Inicializamos animación
-        Animation gifLoading1 = AnimationUtils.loadAnimation(this, R.anim.loading_anim);
+        Animation gifLoading = AnimationUtils.loadAnimation(this, R.anim.loading_anim);
 
         // Iniciamos animación
 
-        imgVwGIF.setAnimation(gifLoading1);
+        imgVwGIF.setAnimation(gifLoading);
 
         // Inicializamos el objeto animador
         ObjectAnimator oa = ObjectAnimator.ofPropertyValuesHolder(
@@ -45,6 +49,7 @@ public class GifLoadingActivity extends AppCompatActivity {
         oa.start();
 
     }
+
 
 
 }

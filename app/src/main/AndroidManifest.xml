@@ -39,6 +39,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.AccesoActivity" />
+        <activity android:name=".animaciones.GifLoadingActivity" />
         <activity
             android:name=".activities.MainActivity"
             android:configChanges="keyboardHidden|orientation" />

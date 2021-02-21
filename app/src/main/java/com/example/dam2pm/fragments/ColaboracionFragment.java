@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dam2pm.R;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.bd.DataBaseHelper;
 import com.example.dam2pm.modelos.Fotografia;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -60,19 +61,22 @@ public class ColaboracionFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Fotografia fotografia;
+         Fotografia fotografia;
 
                 try {
                     fotografia = new Fotografia(-1, txtTitulo.getText().toString(), txtCiudad.getText().toString(), txtDescripcion.getText().toString(), Integer.parseInt(txtAnyo.getText().toString()), imgVwFotografia.getDrawable().toString());
 
                 } catch (Exception e) {
+                    startActivity(new Intent(getActivity(), GifLoadingActivity.class));
                     Toast.makeText(getActivity(), "No se ha podido agregar la fotografía",  Toast.LENGTH_SHORT).show();
                     fotografia = new Fotografia(-1, "error", "error", "error",0, "error");
 
                 }
+                startActivity(new Intent(getActivity(), GifLoadingActivity.class));
                 DataBaseHelper dataBaseHelper = new DataBaseHelper(getActivity());
                 boolean exito = dataBaseHelper.insertarFoto(fotografia);
-                Toast.makeText(getActivity(), "Se ha agregado correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Se ha agregado correctamente" + exito, Toast.LENGTH_SHORT).show();
+
 
 
             }

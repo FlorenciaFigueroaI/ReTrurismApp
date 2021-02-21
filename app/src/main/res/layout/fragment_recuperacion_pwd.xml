@@ -73,10 +73,4 @@
             tools:ignore="ButtonStyle" />
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/prgrssBarEnvioEmail"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="295dp"
-        android:layout_height="5dp" />
-
 </LinearLayout>

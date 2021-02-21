@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.dam2pm.R;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.fragments.RecuperacionPwdFragment;
 import com.example.dam2pm.fragments.RegistroFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,14 +23,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-
 public class AccesoActivity extends AppCompatActivity {
 
 
-    int contador = 0; // contador
     private Button btnEnt;
     private Button btnReg;
     private EditText txtEmailAcc;
@@ -43,6 +39,7 @@ public class AccesoActivity extends AppCompatActivity {
     String email;
     String password;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +50,6 @@ public class AccesoActivity extends AppCompatActivity {
         txtEmailAcc = findViewById(R.id.txtEmailAcceso);
         txtPwdAcc= findViewById(R.id.txtPwdAcceso);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
-        progressBar = findViewById(R.id.prgrssBarAcceso);
         btnEnt = findViewById(R.id.btnEntrar);
 
         btnEnt.setOnClickListener(new View.OnClickListener() {
@@ -108,23 +104,6 @@ public class AccesoActivity extends AppCompatActivity {
 
     }
 
-    // Método para el comportamiento de la barra del progreso
-    private void barraProgreso() {
-
-        // Progressbar con el objeto Timer
-        final Timer t = new Timer();
-        TimerTask tt = new TimerTask() {
-            @Override
-            public void run() {
-                contador++;
-                progressBar.setProgress(contador);
-                if(contador==100)
-                    t.cancel();
-            }
-        };
-        t.schedule(tt, 0,100);
-    }
-
     // Comprueba que el edittext de email esté rellenado y con correcto formato
     private void validar() {
         email = txtEmailAcc.getText().toString();
@@ -146,13 +125,13 @@ public class AccesoActivity extends AppCompatActivity {
         email = txtEmailAcc.getText().toString();
         password = txtPwdAcc.getText().toString();
 
-        barraProgreso();
+        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    barraProgreso();
-                    Toast.makeText(AccesoActivity.this, "¡Bienvenido/a!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AccesoActivity.this, "¡Bienvenido/a! " + email, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(AccesoActivity.this, MainActivity.class));
 
                 }else{
@@ -161,8 +140,6 @@ public class AccesoActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
 
 }

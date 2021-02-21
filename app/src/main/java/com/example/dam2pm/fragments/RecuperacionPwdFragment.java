@@ -16,14 +16,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.dam2pm.activities.AccesoActivity;
 import com.example.dam2pm.R;
+import com.example.dam2pm.activities.AccesoActivity;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class RecuperacionPwdFragment extends Fragment {
 
@@ -58,7 +56,6 @@ public class RecuperacionPwdFragment extends Fragment {
         txtEmailRecup = view.findViewById(R.id.txtEmailRecup);
         btnEnviarEmail = view.findViewById(R.id.btnEnviarEmail);
         btnCancelarEmailRecup = view.findViewById(R.id.btnCancelarRecupEmail);
-        progressBar = view.findViewById(R.id.prgrssBarEnvioEmail);
 
         btnEnviarEmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,23 +74,6 @@ public class RecuperacionPwdFragment extends Fragment {
 
 
         return view;
-    }
-
-    // Método para el comportamiento de la barra del progreso
-    private void barraProgreso() {
-
-        // Progressbar con el objeto Timer
-        final Timer t = new Timer();
-        TimerTask tt = new TimerTask() {
-            @Override
-            public void run() {
-                contador++;
-                progressBar.setProgress(contador);
-                if(contador==100)
-                    t.cancel();
-            }
-        };
-        t.schedule(tt, 0,100);
     }
 
     // Comprueba que el edittext de email esté rellenado y con correcto formato
@@ -115,7 +95,7 @@ public class RecuperacionPwdFragment extends Fragment {
     // Método que envía el email a firebase y éste enviará un email con instrucciones al usuario para recuperar la contraseña
     private void enviarEmail(String email) {
         emailRecuperacion = email;
-        barraProgreso();
+        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
         mAuth.sendPasswordResetEmail(emailRecuperacion) // firebase envía el email
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

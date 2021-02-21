@@ -17,8 +17,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.dam2pm.activities.AccesoActivity;
 import com.example.dam2pm.R;
+import com.example.dam2pm.activities.AccesoActivity;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
+
 import com.example.dam2pm.modelos.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,13 +28,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 
 public class RegistroFragment extends Fragment {
 
-    int contador = 0; // contador
     FirebaseAuth mAuth;
 
     Button btnEnviar;
@@ -66,8 +64,6 @@ public class RegistroFragment extends Fragment {
         txtPwdConfirmn = view.findViewById(R.id.txtPwdLoginConfirmacion);
         txtNombre = view.findViewById(R.id.txtNombre);
         txtApellido = view.findViewById(R.id.txtApellido);
-        progressBar = view.findViewById(R.id.prgrssBarRegistro);
-
 
         btnEnviar = view.findViewById(R.id.btnEnviar);
         btnCancelar = view.findViewById(R.id.btnCancelar);
@@ -92,58 +88,42 @@ public class RegistroFragment extends Fragment {
 
     }
 
-    // Método para el comportamiento de la barra del progreso
-    private void barraProgreso() {
-        // Progressbar con el objeto Timer
-        final Timer t = new Timer();
-        TimerTask tt = new TimerTask() {
-            @Override
-            public void run() {
-                contador++;
-                progressBar.setProgress(contador);
-                if(contador==100)
-                    t.cancel();
-            }
-        };
-        t.schedule(tt, 0,100);
-    }
-
     // Comprueba que el edittext de email esté rellenado y con formato correcto
 
-        private void validar() {
-            nombre = txtNombre.getText().toString();
-            email = txtEmailUsuario.getText().toString();
-            password = txtPwd.getText().toString();
-            passwordConf = txtPwdConfirmn.getText().toString();
+    private void validar() {
+        nombre = txtNombre.getText().toString();
+        email = txtEmailUsuario.getText().toString();
+        password = txtPwd.getText().toString();
+        passwordConf = txtPwdConfirmn.getText().toString();
 
-            // Campos requeridos
-            if (TextUtils.isEmpty(nombre)) {
-                txtNombre.setError("Campo requerido.");
-                return;
-            }
+        // Campos requeridos
+        if (TextUtils.isEmpty(nombre)) {
+            txtNombre.setError("Campo requerido.");
+            return;
+        }
 
-            if (TextUtils.isEmpty(email)) {
-                txtEmailUsuario.setError("Campo requerido.");
-                return;
-            }
+        if (TextUtils.isEmpty(email)) {
+            txtEmailUsuario.setError("Campo requerido.");
+            return;
+        }
 
-            // requisitos password
-            if (TextUtils.isEmpty(password)) {
-                txtPwd.setError("Campo requerido.");
-                return;
-            }else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {   // Formato email
-                txtEmailUsuario.setError("Escriba un email válido.");
-                return;
-            }else if (password.length() < 6) {      // tamaño password
-                txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
-                return;
-            } else if(!password.equals(passwordConf)){    // Confirmación Password
-                txtPwdConfirmn.setError("Las contraseñas no coinciden.");
-                return;
+        // requisitos password
+        if (TextUtils.isEmpty(password)) {
+            txtPwd.setError("Campo requerido.");
+            return;
+        }else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {   // Formato email
+            txtEmailUsuario.setError("Escriba un email válido.");
+            return;
+        }else if (password.length() < 6) {      // tamaño password
+            txtPwd.setError("La contraseña debe tener más de 6 caracteres.");
+            return;
+        } else if(!password.equals(passwordConf)){    // Confirmación Password
+            txtPwdConfirmn.setError("Las contraseñas no coinciden.");
+            return;
 
-            }
+        }
 
-            registrarUsuario();
+        registrarUsuario();
     }
 
 
@@ -154,34 +134,34 @@ public class RegistroFragment extends Fragment {
         password = txtPwd.getText().toString();
         nombre = txtNombre.getText().toString();
         apellido = txtApellido.getText().toString();
-        barraProgreso();
+        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
         mAuth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
+                .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
 
-                               Usuario usuario = new Usuario(email, password, nombre, apellido);
-                               FirebaseDatabase.getInstance().getReference("Usuario")
-                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                        .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            barraProgreso();
-                                            // mensaje de registro correcto
-                                            Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(getActivity(), AccesoActivity.class));
-                                        }
+                            Usuario usuario = new Usuario(email, password, nombre, apellido);
+                            FirebaseDatabase.getInstance().getReference("Usuario")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+
+                                        // mensaje de registro correcto
+                                        Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getActivity(), AccesoActivity.class));
                                     }
-                                });
-                            } else {
-                                Toast.makeText(getActivity(), "El email introducido ya existe, intente acceder con dicho email o vuelva a intentarlo con otro.",
-                                        Toast.LENGTH_LONG).show();
-                            }
-
+                                }
+                            });
+                        } else {
+                            Toast.makeText(getActivity(), "El email introducido ya existe, intente acceder con dicho email o vuelva a intentarlo con otro.",
+                                    Toast.LENGTH_LONG).show();
                         }
-                    });
+
+                    }
+                });
 
     }
 

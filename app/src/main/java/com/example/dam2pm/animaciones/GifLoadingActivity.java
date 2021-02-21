@@ -1,10 +1,14 @@
 package com.example.dam2pm.animaciones;
 
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
+
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,14 +19,32 @@ public class GifLoadingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-      //  this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         setContentView(R.layout.activity_gif_loading);
 
-        //https://www.youtube.com/watch?v=BrgOzY5BHdg
+        ImageView imgVwGIF = findViewById(R.id.imgVwGIF);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // Inicializamos animación
+        Animation gifLoading1 = AnimationUtils.loadAnimation(this, R.anim.loading_anim);
+
+        // Iniciamos animación
+
+        imgVwGIF.setAnimation(gifLoading1);
+
+        // Inicializamos el objeto animador
+        ObjectAnimator oa = ObjectAnimator.ofPropertyValuesHolder(
+                imgVwGIF,
+                PropertyValuesHolder.ofFloat("scaleX", 1.2f),
+                PropertyValuesHolder.ofFloat("scaleY", 1.2f)
+        );
+
+        oa.setRepeatCount(ValueAnimator.INFINITE);
+        oa.setRepeatCount(4);
+        oa.setDuration(4000);
+        oa.start();
 
     }
+
+
 }

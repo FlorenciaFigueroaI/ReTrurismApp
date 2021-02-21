@@ -1,6 +1,7 @@
 package com.example.dam2pm.fragments;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -25,12 +26,11 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RecuperacionPwdFragment extends Fragment {
 
-    int contador =0;
+    MediaPlayer mp;
     String emailRecuperacion;
     EditText txtEmailRecup;
     Button btnCancelarEmailRecup;
     Button btnEnviarEmail;
-    ProgressBar progressBar;
     FirebaseAuth mAuth;
 
     String email;
@@ -60,6 +60,7 @@ public class RecuperacionPwdFragment extends Fragment {
         btnEnviarEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                efectoSonido();
                 validar();
             }
         });
@@ -67,6 +68,8 @@ public class RecuperacionPwdFragment extends Fragment {
         btnCancelarEmailRecup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                efectoSonido();
                 startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de acceso
                 Toast.makeText(getActivity(), "Tarea cancelada", Toast.LENGTH_SHORT).show();
             }
@@ -111,6 +114,13 @@ public class RecuperacionPwdFragment extends Fragment {
                     }
                 });
     }
+
+
+    public void efectoSonido() {
+        mp = MediaPlayer.create(getActivity(), R.raw.sonido_botones);
+        mp.start();
+    }
+
 
 
 }

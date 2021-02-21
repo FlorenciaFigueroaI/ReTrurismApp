@@ -2,6 +2,7 @@ package com.example.dam2pm.fragments;
 
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -31,7 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistroFragment extends Fragment {
 
     FirebaseAuth mAuth;
-
+    MediaPlayer mp;
     Button btnEnviar;
     Button btnCancelar;
 
@@ -68,6 +69,7 @@ public class RegistroFragment extends Fragment {
 
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+                efectoSonido();
                 // llamada al método de registro
                 validar();
             }
@@ -132,6 +134,7 @@ public class RegistroFragment extends Fragment {
         password = txtPwd.getText().toString();
         nombre = txtNombre.getText().toString();
         apellido = txtApellido.getText().toString();
+        efectoSonido();
         startActivity(new Intent(getActivity(), GifLoadingActivity.class));
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
@@ -161,6 +164,11 @@ public class RegistroFragment extends Fragment {
                     }
                 });
 
+    }
+
+    public void efectoSonido() {
+        mp = MediaPlayer.create(getActivity(), R.raw.sonido_botones);
+        mp.start();
     }
 
 }

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "529405096545-pu7euavqeajhof7nmvafhacf84774v5u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dam2pm",
+            "certificate_hash": "a8ad8253985f7ef187d8c10c46bb49855e84aab5"
+          }
+        },
+        {
           "client_id": "529405096545-qdlkhmbdco4mujcutvkp5joroct9vc2q.apps.googleusercontent.com",
           "client_type": 3
         }

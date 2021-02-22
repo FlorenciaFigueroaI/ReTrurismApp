@@ -57,6 +57,7 @@ public class ColaboracionFragment extends Fragment {
         txtVwEjemplo = view.findViewById(R.id.txtEjemplo);
         imgVwFotografia = view.findViewById(R.id.imgVwEjemplo);
         btnEnviarFoto = view.findViewById(R.id.btnEnviarFoto);
+        /*
         btnEnviarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +82,8 @@ public class ColaboracionFragment extends Fragment {
 
             }
         });
+
+         */
 
         fltActBtn = view.findViewById(R.id.fltActBtn);
         fltActBtn.setOnClickListener(new View.OnClickListener() {

@@ -16,34 +16,6 @@
         android:paddingEnd="50dp">
 
         <EditText
-            android:id="@+id/txtNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/nombre"
-            android:inputType="textPersonName"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/txtApellido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/apellido"
-            android:inputType="textPersonName"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp"  />
-
-        <EditText
             android:id="@+id/txtEmailUsuario"
             android:layout_width="match_parent"
             android:layout_height="40dp"

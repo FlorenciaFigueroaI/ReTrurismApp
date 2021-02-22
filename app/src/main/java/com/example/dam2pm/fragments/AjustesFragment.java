@@ -12,7 +12,6 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.dam2pm.R;
-import com.example.dam2pm.activities.AccesoActivity;
 
 public class AjustesFragment extends Fragment {
     MediaPlayer mp;

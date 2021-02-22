@@ -36,9 +36,9 @@ public class RegistroFragment extends Fragment {
     Button btnEnviar;
     Button btnCancelar;
 
-    EditText txtEmailUsuario, txtPwd, txtNombre, txtApellido, txtPwdConfirmn;
+    EditText txtEmailUsuario, txtPwd, txtPwdConfirmn;
 
-    String email, password, passwordConf, nombre, apellido;
+    String email, password, passwordConf;
 
 
     @Override
@@ -61,8 +61,6 @@ public class RegistroFragment extends Fragment {
         txtEmailUsuario = view.findViewById(R.id.txtEmailUsuario);
         txtPwd = view.findViewById(R.id.txtPwdLogin);
         txtPwdConfirmn = view.findViewById(R.id.txtPwdLoginConfirmacion);
-        txtNombre = view.findViewById(R.id.txtNombre);
-        txtApellido = view.findViewById(R.id.txtApellido);
 
         btnEnviar = view.findViewById(R.id.btnEnviar);
         btnCancelar = view.findViewById(R.id.btnCancelar);
@@ -91,16 +89,12 @@ public class RegistroFragment extends Fragment {
     // Comprueba que el edittext de email esté rellenado y con formato correcto
 
     private void validar() {
-        nombre = txtNombre.getText().toString();
+
         email = txtEmailUsuario.getText().toString();
         password = txtPwd.getText().toString();
         passwordConf = txtPwdConfirmn.getText().toString();
 
         // Campos requeridos
-        if (TextUtils.isEmpty(nombre)) {
-            txtNombre.setError("Campo requerido.");
-            return;
-        }
 
         if (TextUtils.isEmpty(email)) {
             txtEmailUsuario.setError("Campo requerido.");
@@ -132,8 +126,6 @@ public class RegistroFragment extends Fragment {
 
         email = txtEmailUsuario.getText().toString();
         password = txtPwd.getText().toString();
-        nombre = txtNombre.getText().toString();
-        apellido = txtApellido.getText().toString();
         efectoSonido();
         startActivity(new Intent(getActivity(), GifLoadingActivity.class));
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -142,7 +134,7 @@ public class RegistroFragment extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            Usuario usuario = new Usuario(email, password, nombre, apellido);
+                            Usuario usuario = new Usuario(email, password);
                             FirebaseDatabase.getInstance().getReference("Usuario")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {

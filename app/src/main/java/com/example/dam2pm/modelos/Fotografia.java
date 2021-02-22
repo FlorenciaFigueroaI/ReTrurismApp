@@ -8,13 +8,11 @@ public class Fotografia {
     String descripcion;
     int anyo;
     String ruta;
+    String autorID;
 
+    public Fotografia() {}
 
-
-    public Fotografia() {
-    }
-
-    public Fotografia(int fotografiaID, String titulo, String descripcion, String ciudad, int anyo, String ruta) {
+    public Fotografia(int fotografiaID, String titulo, String descripcion, String ciudad, int anyo, String ruta, String autorID) {
 
         this.fotografiaID = fotografiaID;
         this.titulo = titulo;
@@ -22,7 +20,7 @@ public class Fotografia {
         this.descripcion = descripcion;
         this.anyo = anyo;
         this.ruta = ruta;
-
+        this.autorID = autorID;
 
     }
 
@@ -83,6 +81,7 @@ public class Fotografia {
                 ", descripcion='" + descripcion + '\'' +
                 ", anyo=" + anyo +
                 ", ruta='" + ruta + '\'' +
+                ", autorID='" + autorID + '\'' +
                 '}';
     }
 }

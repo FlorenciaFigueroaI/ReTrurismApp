@@ -83,11 +83,12 @@ public class MainActivity extends AppCompatActivity {
 
     // menú contextual
 
+
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         menu.setHeaderIcon(R.drawable.ic_baseline_settings_applications_24);
-
+      //  v.showContextMenu();
         menu.add(0, v.getId(), 0, "Perfil");
         menu.add(0, v.getId(), 0, "Ajustes");
         menu.add(0, v.getId(), 0, "Cerrar sesión");
@@ -108,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
-
 
     // Método transacciones para añadir y reemplazar los fragmentos
     private void addFragment(Fragment fragment){

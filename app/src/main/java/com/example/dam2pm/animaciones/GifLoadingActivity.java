@@ -4,9 +4,7 @@ package com.example.dam2pm.animaciones;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,8 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dam2pm.R;
 
 public class GifLoadingActivity extends AppCompatActivity {
-
-    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

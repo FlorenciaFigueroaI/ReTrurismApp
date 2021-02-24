@@ -75,6 +75,7 @@ public class RegistroFragment extends Fragment {
 
         btnCancelar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
+                efectoSonido();
                 startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de Login
                 Toast.makeText(getActivity(), "No te has registrado", Toast.LENGTH_SHORT).show();
 
@@ -127,13 +128,13 @@ public class RegistroFragment extends Fragment {
         email = txtEmailUsuario.getText().toString();
         password = txtPwd.getText().toString();
         efectoSonido();
-        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
+     //   startActivity(new Intent(getActivity(), GifLoadingActivity.class));
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
+                            startActivity(new Intent(getActivity(), GifLoadingActivity.class));
                             Usuario usuario = new Usuario(email, password);
                             FirebaseDatabase.getInstance().getReference("Usuario")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -148,9 +149,12 @@ public class RegistroFragment extends Fragment {
                                     }
                                 }
                             });
+
                         } else {
+
                             Toast.makeText(getActivity(), "El email introducido ya existe, intente acceder con dicho email o vuelva a intentarlo con otro.",
                                     Toast.LENGTH_LONG).show();
+
                         }
 
                     }

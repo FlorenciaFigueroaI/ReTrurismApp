@@ -85,12 +85,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="@color/colorBackground"
                 android:background="@drawable/botones_style"
+                android:textSize="@dimen/font_size"
                 android:text="@string/enviar"
                 android:padding="10dp"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="ButtonStyle" />
 
@@ -100,11 +100,11 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:layout_margin="10dp"
+                android:textColor="@color/colorBackground"
                 android:background="@drawable/botones_style"
+                android:textSize="@dimen/font_size"
                 android:text="@string/cancelar"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 tools:ignore="ButtonStyle" />

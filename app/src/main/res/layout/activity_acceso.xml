@@ -7,7 +7,7 @@
     android:background="@color/colorBackground"
     android:orientation="vertical"
     android:paddingLeft="50dp"
-    android:paddingTop="50dp"
+    android:paddingTop="20dp"
     android:paddingRight="50dp">
 
     <TextView
@@ -19,12 +19,12 @@
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="40sp" />
+        android:textSize="@dimen/font_icon" />
 
     <ImageView
         android:id="@+id/imgViewLogo"
         android:layout_width="match_parent"
-        android:layout_height="181dp"
+        android:layout_height="200dp"
         android:contentDescription="@string/logo"
         android:ems="50"
         app:srcCompat="@drawable/icon_logo" />
@@ -45,7 +45,7 @@
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="@color/colorPrimaryDark"
-        android:textSize="20sp" />
+        android:textSize="@dimen/font_size" />
 
     <EditText
         android:id="@+id/txtPwdAcceso"
@@ -63,7 +63,7 @@
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="@color/colorPrimaryDark"
-        android:textSize="20sp" />
+        android:textSize="@dimen/font_size" />
 
     <TextView
         android:id="@+id/txtVwOlvidoPwd"
@@ -72,6 +72,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/he_olvidado_mi_contrase_a"
         android:textAlignment="center"
+        android:textSize="@dimen/font_size"
         android:textColor="@color/colorPrimaryDark" />
 
     <Button
@@ -81,9 +82,9 @@
         android:layout_marginTop="20dp"
         android:text="@string/entrar"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorBackground"
         android:background="@drawable/botones_style"
-        android:textSize="18sp"
+        android:textSize="@dimen/font_size"
         android:textStyle="bold"
         android:layout_gravity="center"/>
 
@@ -94,9 +95,9 @@
         android:layout_marginTop="20dp"
         android:text="@string/registro"
         android:textAlignment="center"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorBackground"
         android:background="@drawable/botones_style"
-        android:textSize="18sp"
+        android:textSize="@dimen/font_size"
         android:textStyle="bold"
         android:layout_gravity="center"/>
 

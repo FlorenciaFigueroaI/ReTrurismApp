@@ -16,34 +16,6 @@
         android:paddingEnd="50dp">
 
         <EditText
-            android:id="@+id/txtNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/nombre"
-            android:inputType="textPersonName"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp"  />
-
-        <EditText
-            android:id="@+id/txtApellido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/apellido"
-            android:inputType="textPersonName"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp"  />
-
-        <EditText
             android:id="@+id/txtEmailUsuario"
             android:layout_width="match_parent"
             android:layout_height="40dp"
@@ -55,10 +27,11 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHighlight="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textColorLink="@color/colorPrimaryDark"
-            android:textSize="20sp"  />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtPwdLogin"
@@ -71,6 +44,7 @@
             android:ems="12"
             android:hint="@string/contrase_a"
             android:inputType="textPassword"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHighlight="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textColorLink="@color/colorPrimaryDark"
@@ -87,6 +61,7 @@
             android:ems="12"
             android:hint="@string/confirmContrase_a"
             android:inputType="textPassword"
+            android:textColor="@color/colorPrimaryDark"
             android:textColorHighlight="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             android:textColorLink="@color/colorPrimaryDark"
@@ -107,27 +82,29 @@
 
             <Button
                 android:id="@+id/btnEnviar"
-                android:layout_width="120dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="@color/colorBackground"
                 android:background="@drawable/botones_style"
+                android:textSize="@dimen/font_size"
                 android:text="@string/enviar"
+                android:padding="10dp"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/btnCancelar"
-                android:layout_width="120dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:layout_margin="10dp"
+                android:textColor="@color/colorBackground"
                 android:background="@drawable/botones_style"
+                android:textSize="@dimen/font_size"
                 android:text="@string/cancelar"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="18sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 tools:ignore="ButtonStyle" />

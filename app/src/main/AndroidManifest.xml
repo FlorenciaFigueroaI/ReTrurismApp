@@ -12,6 +12,7 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".animaciones.GifLoadingActivity" />
-
         <activity
             android:name=".animaciones.SplashActivity"
             android:screenOrientation="portrait">
@@ -29,8 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.AccesoActivity" />
 
+        <activity android:name=".activities.AccesoActivity" />
+        <activity android:name=".activities.PerfilActivity" />
         <activity
             android:name=".activities.MainActivity"
             android:configChanges="keyboardHidden|orientation" />

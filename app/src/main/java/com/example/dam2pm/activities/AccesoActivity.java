@@ -1,5 +1,6 @@
 package com.example.dam2pm.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -7,11 +8,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -57,7 +58,7 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validar();
-                efectoSonido();
+
             }
         });
 
@@ -72,7 +73,9 @@ public class AccesoActivity extends AppCompatActivity {
                 txtEmailAcc.setVisibility(View.GONE);
                 txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
+
                 efectoSonido();
+
                 // se carga el fragment
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
                 transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
@@ -95,6 +98,8 @@ public class AccesoActivity extends AppCompatActivity {
                 txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
 
+                efectoSonido();
+
                 // se carga el fragment
                 transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
                 RecuperacionPwdFragment frgRecupPwd = new RecuperacionPwdFragment(); // instancia de transacción
@@ -107,7 +112,7 @@ public class AccesoActivity extends AppCompatActivity {
 
     }
 
-    // Comprueba que el edittext de email esté rellenado y con correcto formato
+    // Comprueba que el edittext de email esté rellenado y con formato correcto
     private void validar() {
         email = txtEmailAcc.getText().toString();
         password = txtPwdAcc.getText().toString();
@@ -128,14 +133,11 @@ public class AccesoActivity extends AppCompatActivity {
         email = txtEmailAcc.getText().toString();
         password = txtPwdAcc.getText().toString();
 
-        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
-
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(AccesoActivity.this, "¡Bienvenido/a! " + email, Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(AccesoActivity.this, MainActivity.class));
+                    mostrarDialogo();
 
                 }else{
                     Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
@@ -144,10 +146,45 @@ public class AccesoActivity extends AppCompatActivity {
         });
     }
 
+    public void mostrarDialogo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(AccesoActivity.this);
+        builder.setTitle("Antes de empezar...");
+        builder.setMessage("¿Quieres crear tu usuario?")
+                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startActivity(new Intent(AccesoActivity.this, PerfilActivity.class));
+
+                    }
+                })
+                .setNegativeButton("Lo haré más tarde", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        cargarGif();
+                        Toast.makeText(AccesoActivity.this, "¡Bienvenido/a!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(AccesoActivity.this, MainActivity.class));
+                        dialog.dismiss();
+                    }
+
+                }).show();
+    }
+    // método para producir el sonido
     public void efectoSonido() {
         mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
         mp.start();
+
+
     }
+
+    // método para cargar el GIF
+    public void cargarGif(){
+        efectoSonido();
+        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
+
+    }
+
+
 
 
 }

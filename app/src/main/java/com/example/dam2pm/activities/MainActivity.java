@@ -19,7 +19,6 @@ import com.example.dam2pm.fragments.ColaboracionFragment;
 import com.example.dam2pm.fragments.ExploreFragment;
 import com.example.dam2pm.fragments.GaleriaFragment;
 import com.example.dam2pm.fragments.MapaFragment;
-import com.example.dam2pm.fragments.PerfilFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -74,10 +73,8 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-
         btnAjustes = findViewById(R.id.btnAjustes);
         registerForContextMenu(btnAjustes);
-
 
     }
 
@@ -99,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
 
         if (item.getTitle() == "Perfil") {
-            addFragment(new PerfilFragment());
+            startActivity(new Intent(MainActivity.this, PerfilActivity.class));
         } else if (item.getTitle() == "Ajustes") {
             addFragment(new AjustesFragment());
         } else if (item.getTitle() == "Cerrar sesión") {
@@ -119,8 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 .addToBackStack(null)
                 .commit();
     }
-
-
 
     // Método botón hacia atrás
     @Override

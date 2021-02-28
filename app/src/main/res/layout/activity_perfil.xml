@@ -5,8 +5,6 @@
     android:id="@+id/mainContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="60dp"
-    android:layout_marginBottom="60dp"
     android:background="@color/colorBackground"
     android:padding="20dp"
     app:layout_constraintBottom_toTopOf="@+id/btmNavgtView"
@@ -17,38 +15,37 @@
     app:layout_constraintVertical_bias="0.112"
     android:orientation="vertical">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vwPgr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp" />
-
     <ImageView
-        android:id="@+id/imgVwPerfil"
-        android:layout_width="184dp"
-        android:layout_height="140dp"
+        android:id="@+id/imgVwAvatar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/todo"
         android:src="@drawable/img_user"
-        app:layout_constraintBottom_toTopOf="@+id/txtNombreUsuario"
+        app:layout_constraintBottom_toTopOf="@+id/txtNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+<!--
     <Button
-        android:id="@+id/btnEditarCuenta"
+        android:id="@+id/btnEditar"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginStart="72dp"
         android:background="@drawable/ic_baseline_edit_24"
-        app:layout_constraintBottom_toBottomOf="@+id/imgVwPerfil"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVwAvatar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgVwPerfil" />
+        app:layout_constraintStart_toEndOf="@+id/imgVwAvatar" />
+
+-->
 
     <EditText
-        android:id="@+id/txtNombreUsuario"
+        android:id="@+id/txtNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -70,10 +67,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgVwPerfil" />
+        app:layout_constraintTop_toBottomOf="@+id/imgVwAvatar" />
 
     <EditText
-        android:id="@+id/txtApellidoUsuario"
+        android:id="@+id/txtApellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -88,51 +85,71 @@
         android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="@color/colorPrimaryDark"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnGuardarCambios"
+        app:layout_constraintBottom_toTopOf="@+id/btnGuardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/txtApodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="320dp"
+        android:autofillHints=""
+        android:drawablePadding="12dp"
+        android:ems="12"
+        android:hint="@string/apodo"
+        android:inputType="textAutoComplete"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="20sp"
+      />
+
     <Button
-        android:id="@+id/btnGuardarCambios"
+        android:id="@+id/btnGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="5dp"
-        android:padding="10dp"
+        android:padding="20dp"
         android:text="@string/guardar_cambios"
         android:textAlignment="center"
         android:textColor="@color/colorBackground"
         android:background="@drawable/botones_style"
         android:textSize="@dimen/font_size"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnCancelarEnvioFoto"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtApellidoUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtApellido"
         tools:ignore="ButtonStyle" />
 
     <Button
-        android:id="@+id/btnCancelarEnvioFoto"
+        android:id="@+id/btnSalir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="88dp"
-        android:textColor="@color/colorBackground"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="5dp"
+        android:padding="20dp"
         android:background="@drawable/botones_style"
-        android:textSize="@dimen/font_size"
-        android:padding="10dp"
-        android:text="@string/cancelar"
+        android:text="@string/salir_sin_guardar"
         android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardarCambios"
-        tools:ignore="ButtonStyle" />
+        android:textColor="@color/colorBackground"
+        android:textSize="@dimen/font_size"
+        android:textStyle="bold" />
 
 </LinearLayout>

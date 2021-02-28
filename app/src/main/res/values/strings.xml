@@ -53,6 +53,8 @@
     <string name="home" translatable="false">Home</string>
     <string name="descripcion">Descripción</string>
     <string name="play" translatable="false" />
+    <string name="salir_sin_guardar">Salir sin guardar</string>
+    <string name="apodo">Apodo(*)</string>
 
 
 </resources>

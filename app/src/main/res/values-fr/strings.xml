@@ -49,5 +49,6 @@
     <string name="descripcion">La description</string>
     <string name="salir_sin_guardar">Quitter sans sauvegarder</string>
     <string name="apodo">Nickname(*)</string>
+    <string name="saludo">Salut, </string>
 
 </resources>

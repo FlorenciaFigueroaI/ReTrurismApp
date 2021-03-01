@@ -1,5 +1,5 @@
 package com.example.dam2pm.modelos;
-
+/*
 public class Autor {
     int autorID;
     String apodo;
@@ -57,6 +57,9 @@ public class Autor {
                 '}';
     }
 }
+
+
+ */
 
 
 

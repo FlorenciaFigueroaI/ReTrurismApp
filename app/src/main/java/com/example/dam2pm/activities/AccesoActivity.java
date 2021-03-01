@@ -49,6 +49,7 @@ public class AccesoActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+
         txtEmailAcc = findViewById(R.id.txtEmailAcceso);
         txtPwdAcc= findViewById(R.id.txtPwdAcceso);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);

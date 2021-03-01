@@ -1,10 +1,16 @@
 package com.example.dam2pm.activities;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -14,16 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.dam2pm.R;
 import com.example.dam2pm.animaciones.GifLoadingActivity;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +36,7 @@ public class PerfilActivity extends AppCompatActivity {
 
     RequestQueue requestQueue;
 
-    private static final String URL = "http://192.168.1.38/retrurism/save.php";
+    private static final String URL = "http://192.168.8.107/retrurism/save.php";
 
 
     @Override
@@ -65,9 +62,10 @@ public class PerfilActivity extends AppCompatActivity {
                     String nombre = txtNombre.getText().toString().trim();
                     String apellido = txtApellido.getText().toString().trim();
                     String apodo = txtApodo.getText().toString().trim();
-                 //   String avatar = imgVwAvatar.getDrawable(R.id.imgVwAvatar).toString();
 
                     crearUsuario(nombre, apellido, apodo);
+
+                    startActivity(new Intent(PerfilActivity.this, MainActivity.class));
 
                 }
             }
@@ -76,8 +74,9 @@ public class PerfilActivity extends AppCompatActivity {
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cargarGifSonido();
 
+                cargarGifSonido();
+                startActivity(new Intent(PerfilActivity.this, MainActivity.class));
             }
         });
 
@@ -91,8 +90,8 @@ public class PerfilActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(PerfilActivity.this, "Correcto", Toast.LENGTH_SHORT).show();
-                     //   cargarGifSonido();
+                        Toast.makeText(PerfilActivity.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                        cargarGifSonido();
                         startActivity(new Intent(PerfilActivity.this, MainActivity.class));
 
                     }
@@ -100,18 +99,19 @@ public class PerfilActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(PerfilActivity.this, "Error. No se ha creado el usuario", Toast.LENGTH_SHORT).show();
                     }
                 }
 
         ){
-            @Nullable
+            @NotNull
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("nombre", nombre);
                 params.put("apellido", apellido);
                 params.put("apodo", apodo);
+             //   params.put("ruta_avatar", ruta_avatar);
                 return params;
             }
         };
@@ -127,32 +127,7 @@ public class PerfilActivity extends AppCompatActivity {
         mp = MediaPlayer.create(PerfilActivity.this, R.raw.sonido_botones);
         mp.start();
 
-       startActivity(new Intent(PerfilActivity.this, MainActivity.class));
+     //  startActivity(new Intent(PerfilActivity.this, MainActivity.class));
     }
-/*
-    private void mostrarDialogoOpciones(){
-        final CharSequence[] opciones = {"Sacar foto","Elegir de la galería", "Cancelar"};
-        final AlertDialog.Builder builder = new AlertDialog.Builder(PerfilActivity.this);
-        builder.setTitle("Elige una opción");
-        builder.setItems(opciones, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int i) {
-                if (opciones[i].equals("Sacar foto")){
-                    // llama al método para activar la cámara
-                }else{
-                    if (opciones[i].equals("Elegir de la galería")){
-                        Intent intent = new Intent(Intent.ACTION_GET_CONTENT,
-                                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        intent.setType("image/");
-                        startActivityForResult(intent.createChooser(intent,"Seleccione", 10);
 
-                    }else{
-                        dialog.dismiss();
-                    }
-                }
-            }
-        });
-    }
-    
- */
 }

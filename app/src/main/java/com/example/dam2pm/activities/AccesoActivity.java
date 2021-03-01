@@ -137,7 +137,9 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    mostrarDialogo();
+                    cargarGif();
+                    startActivity(new Intent(AccesoActivity.this, MainActivity.class));
+                 //   mostrarDialogo();
 
                 }else{
                     Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
@@ -145,7 +147,7 @@ public class AccesoActivity extends AppCompatActivity {
             }
         });
     }
-
+/*
     public void mostrarDialogo() {
         AlertDialog.Builder builder = new AlertDialog.Builder(AccesoActivity.this);
         builder.setTitle("Antes de empezar...");
@@ -169,6 +171,9 @@ public class AccesoActivity extends AppCompatActivity {
 
                 }).show();
     }
+
+ */
+
     // método para producir el sonido
     public void efectoSonido() {
         mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);

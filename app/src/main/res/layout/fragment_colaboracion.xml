@@ -149,7 +149,7 @@
             android:text="@string/enviar"
             android:padding="10dp"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorBackground"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="ButtonStyle" />
@@ -163,7 +163,7 @@
             android:background="@drawable/botones_style"
             android:text="@string/cancelar"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorBackground"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="ButtonStyle" />

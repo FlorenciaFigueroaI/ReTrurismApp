@@ -2,13 +2,7 @@ package com.example.dam2pm.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
-import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +13,22 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.dam2pm.R;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
-import com.example.dam2pm.bd.DataBaseHelper;
-import com.example.dam2pm.modelos.Fotografia;
+import com.example.dam2pm.activities.MainActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import static android.app.Activity.RESULT_OK;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ColaboracionFragment extends Fragment {
@@ -39,6 +42,10 @@ public class ColaboracionFragment extends Fragment {
     EditText txtCiudad;
     EditText txtAnyo;
 
+    RequestQueue requestQueue;
+
+    private static final String URL = "http://192.168.1.38/retrurism/save.php";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +57,8 @@ public class ColaboracionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_colaboracion, container, false);
 
+        requestQueue = Volley.newRequestQueue(getContext());
+
         txtTitulo = view.findViewById(R.id.txtTitulo);
         txtDescripcion = view.findViewById(R.id.txtDescripcion);
         txtCiudad = view.findViewById(R.id.txtCiudad);
@@ -57,33 +66,27 @@ public class ColaboracionFragment extends Fragment {
         txtVwEjemplo = view.findViewById(R.id.txtEjemplo);
         imgVwFotografia = view.findViewById(R.id.imgVwEjemplo);
         btnEnviarFoto = view.findViewById(R.id.btnEnviarFoto);
-        /*
+
         btnEnviarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Fotografia fotografia;
+                int id = v.getId();
 
-                    try {
-                        fotografia = new Fotografia(-1, txtTitulo.getText().toString(), txtCiudad.getText().toString(), txtDescripcion.getText().toString(), Integer.parseInt(txtAnyo.getText().toString()), imgVwFotografia.getDrawable().toString());
+                if (id == R.id.btnEnviarFoto){
+                    String titulo = txtTitulo.getText().toString().trim();
+                    String descripcion = txtDescripcion.getText().toString().trim();
+                    String ciudad = txtCiudad.getText().toString().trim();
+                    int anyo = Integer.parseInt(txtAnyo.getText().toString().trim());
 
-                    } catch (Exception e) {
-                        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
-                        Toast.makeText(getActivity(), "No se ha podido agregar la fotografía",  Toast.LENGTH_SHORT).show();
-                        fotografia = new Fotografia(-1, "error", "error", "error",0, "error");
+                  //  String ruta = imgVwFotografia.getDrawable(R.id.imgVwEjemplo).toString();
 
-                    }
-                    startActivity(new Intent(getActivity(), GifLoadingActivity.class));
-                    DataBaseHelper dataBaseHelper = new DataBaseHelper(getActivity());
-                    boolean exito = dataBaseHelper.insertarFoto(fotografia);
-                    Toast.makeText(getActivity(), "Se ha agregado correctamente" + exito, Toast.LENGTH_SHORT).show();
+                    crearFotografia(titulo, descripcion, ciudad, anyo);
 
-
+                }
 
             }
         });
-
-         */
 
         fltActBtn = view.findViewById(R.id.fltActBtn);
         fltActBtn.setOnClickListener(new View.OnClickListener() {
@@ -94,9 +97,47 @@ public class ColaboracionFragment extends Fragment {
             }
         });
 
-
         return view;
 
+    }
+
+
+    private void crearFotografia(final String titulo, final String descripcion, final String ciudad, final int anyo) {
+
+        StringRequest stringRequest = new StringRequest(
+                Request.Method.POST,
+                URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                      //  cargarGifSonido();
+                        startActivity(new Intent(getActivity(), MainActivity.class));
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }
+
+        ) {
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("titulo", titulo);
+                params.put("descripcion", descripcion);
+                params.put("ciudad", ciudad);
+                params.put("anyo", String.valueOf(anyo));
+
+                return params;
+            }
+        };
+
+        requestQueue.add(stringRequest);
     }
 
     // método para cargar la imagen
@@ -106,10 +147,10 @@ public class ColaboracionFragment extends Fragment {
         intent.setType("image/");
         startActivityForResult(Intent.createChooser(intent, "Selecciona la aplicación"),10);
     }
-
+/*
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+
         if (resultCode== RESULT_OK){
             Uri path=data.getData();
             imgVwFotografia.setImageURI(path);
@@ -117,5 +158,9 @@ public class ColaboracionFragment extends Fragment {
             txtVwEjemplo.setVisibility(View.GONE);
 
         }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
+
+ */
 }

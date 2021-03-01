@@ -1,3 +1,4 @@
+
 package com.example.dam2pm.modelos;
 
 public class Fotografia {
@@ -85,6 +86,8 @@ public class Fotografia {
                 '}';
     }
 }
+
+
 
 
 

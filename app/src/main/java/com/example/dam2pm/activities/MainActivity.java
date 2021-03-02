@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     boolean vistaEnExplore;
     BottomNavigationView btmNavVw;
     Button btnMasOpciones;
-    String apodo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

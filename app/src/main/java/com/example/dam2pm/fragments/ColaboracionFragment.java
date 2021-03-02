@@ -2,6 +2,7 @@ package com.example.dam2pm.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
@@ -29,6 +30,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class ColaboracionFragment extends Fragment {
@@ -147,7 +150,7 @@ public class ColaboracionFragment extends Fragment {
         intent.setType("image/");
         startActivityForResult(Intent.createChooser(intent, "Selecciona la aplicación"),10);
     }
-/*
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
@@ -162,5 +165,4 @@ public class ColaboracionFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
- */
 }

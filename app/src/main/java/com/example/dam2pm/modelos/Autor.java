@@ -1,26 +1,19 @@
 package com.example.dam2pm.modelos;
 
 public class Autor {
-    int autorID;
+
     String apodo;
     String nombre;
     String apellido;
+    String rutaAvatar;
 
     public Autor() {}
 
-    public Autor(int autorID, String apodo, String nombre, String apellido) {
-        this.autorID = autorID;
+    public Autor(String apodo, String nombre, String apellido, String rutaAvatar) {
         this.apodo = apodo;
         this.nombre = nombre;
         this.apellido = apellido;
-    }
-
-    public int getAutorID() {
-        return autorID;
-    }
-
-    public void setAutorID(int autorID) {
-        this.autorID = autorID;
+        this.rutaAvatar = rutaAvatar;
     }
 
     public String getApodo() {
@@ -47,13 +40,21 @@ public class Autor {
         this.apellido = apellido;
     }
 
+    public String getRutaAvatar() {
+        return rutaAvatar;
+    }
+
+    public void setRutaAvatar(String rutaAvatar) {
+        this.rutaAvatar = rutaAvatar;
+    }
+
     @Override
     public String toString() {
         return "Autor{" +
-                "autorID=" + autorID +
-                ", apodo='" + apodo + '\'' +
+                "apodo='" + apodo + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
+                ", rutaAvatar='" + rutaAvatar + '\'' +
                 '}';
     }
 }

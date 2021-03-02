@@ -1,22 +1,11 @@
 package com.example.dam2pm.activities;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.dam2pm.R;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
-
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -25,8 +14,21 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.util.HashMap;
-import java.util.Map;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
+import com.example.dam2pm.R;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
+import com.example.dam2pm.modelos.Autor;
+
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
 
 public class PerfilActivity extends AppCompatActivity {
     MediaPlayer mp;
@@ -37,17 +39,15 @@ public class PerfilActivity extends AppCompatActivity {
     EditText txtApodo;
     ImageView imgVwAvatar;
 
-    RequestQueue requestQueue;
-
-    private static final String URL = "http://192.168.1.38/retrurism/save.php";
-
+    final int PICK_IMAGE_REQUEST = 234;
+    private Uri rutaFichero;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        requestQueue = Volley.newRequestQueue(this);
+     //   requestQueue = Volley.newRequestQueue(this);
 
         btnGuardar = findViewById(R.id.btnGuardar);
         btnSalir = findViewById(R.id.btnSalir);
@@ -67,7 +67,7 @@ public class PerfilActivity extends AppCompatActivity {
                     String apodo = txtApodo.getText().toString().trim();
                  //   String avatar = imgVwAvatar.getDrawable(R.id.imgVwAvatar).toString();
 
-                    crearUsuario(nombre, apellido, apodo);
+                  //  crearUsuario(nombre, apellido, apodo);
 
                 }
             }
@@ -82,7 +82,7 @@ public class PerfilActivity extends AppCompatActivity {
         });
 
     }
-
+/*
     private void crearUsuario(final String nombre, final String apellido, final String apodo) {
 
         StringRequest stringRequest = new StringRequest(
@@ -118,6 +118,37 @@ public class PerfilActivity extends AppCompatActivity {
 
         requestQueue.add(stringRequest);
 
+    }
+
+
+ */
+
+// Opciones de fichero
+   public void mostrarFicheroOpciones(){
+
+        Intent intent = new Intent();
+        intent.setType("image/");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Elige una imagen para subir"), PICK_IMAGE_REQUEST);
+
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
+            rutaFichero = data.getData();
+            try{
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), rutaFichero);
+                imgVwAvatar.setImageBitmap(bitmap);
+
+            }catch (IOException e){
+                e.printStackTrace();
+
+            }
+
+        }
     }
 
 

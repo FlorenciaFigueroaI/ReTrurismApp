@@ -68,7 +68,11 @@ public class ColaboracionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    //    requestQueue = Volley.newRequestQueue(getContext());
 
+
+        // Start the queue
+        requestQueue.start();
     }
 
     @Override
@@ -76,7 +80,7 @@ public class ColaboracionFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_colaboracion, container, false);
 
-       requestQueue = Volley.newRequestQueue(getContext());
+
 
         txtTitulo = view.findViewById(R.id.txtTitulo);
         txtDescripcion = view.findViewById(R.id.txtDescripcion);
@@ -85,26 +89,6 @@ public class ColaboracionFragment extends Fragment {
         txtVwEjemplo = view.findViewById(R.id.txtEjemplo);
         imgVwFotografia = view.findViewById(R.id.imgVwEjemplo);
         btnEnviarFoto = view.findViewById(R.id.btnEnviarFoto);
-
-        btnEnviarFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-             //   int id = v.getId();
-
-               // if (id == R.id.btnEnviarFoto){
-                 //   String titulo = txtTitulo.getText().toString().trim();
-                //    String descripcion = txtDescripcion.getText().toString().trim();
-                 //   String ciudad = txtCiudad.getText().toString().trim();
-                 //   int anyo = Integer.parseInt(txtAnyo.getText().toString().trim());
-
-                  //  String ruta = imgVwFotografia.getDrawable(R.id.imgVwEjemplo).toString();
-
-               //     crearFotografia(titulo, descripcion, ciudad, anyo);
-                    subirFoto();
-
-                }
-        });
 
         fltActBtn = view.findViewById(R.id.fltActBtn);
         fltActBtn.setOnClickListener(new View.OnClickListener() {
@@ -115,13 +99,20 @@ public class ColaboracionFragment extends Fragment {
             }
         });
 
+        btnEnviarFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                subirFoto();
+
+            }
+        });
+
         return view;
 
     }
 
 
     private void subirFoto() {
-//final String titulo, final String descripcion, final String ciudad, final int anyo
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 uploadURL,
@@ -131,8 +122,7 @@ public class ColaboracionFragment extends Fragment {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             String resp = jsonObject.getString("response");
-
-                            Toast.makeText(getContext(), "Correcto", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), resp, Toast.LENGTH_SHORT).show();
                             imgVwFotografia.setImageResource(0);
                             fltActBtn.setVisibility(View.GONE);
                             txtVwEjemplo.setVisibility(View.GONE);
@@ -158,16 +148,18 @@ public class ColaboracionFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("titulo", imageToString(bitmap));
+                params.put("image", imageToString(bitmap));
+                params.put("titulo", txtTitulo.getText().toString().trim());
                 params.put("descripcion", txtDescripcion.getText().toString().trim());
                 params.put("ciudad", txtCiudad.getText().toString().trim());
                 params.put("anyo", String.valueOf(Integer.parseInt(txtAnyo.getText().toString().trim())));
-
 
                 return params;
             }
         };
 
+
+     //   MySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQue(stringRequest);
 
         requestQueue.add(stringRequest);
     }
@@ -193,13 +185,13 @@ public class ColaboracionFragment extends Fragment {
            try {
                 ImageDecoder.Source source;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    source = ImageDecoder.createSource(getContext().getContentResolver(), path);
+                    source = ImageDecoder.createSource(getActivity().getApplicationContext().getContentResolver(), path);
                     bitmap = ImageDecoder.decodeBitmap(source);
                     imgVwFotografia.setImageBitmap(bitmap);
                     imgVwFotografia.setVisibility(View.VISIBLE);
                     fltActBtn.setVisibility(View.GONE);
                     txtVwEjemplo.setVisibility(View.GONE);
-                   
+
 
                 }
 

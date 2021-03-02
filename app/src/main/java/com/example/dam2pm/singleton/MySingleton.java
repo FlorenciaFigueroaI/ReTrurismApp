@@ -29,7 +29,7 @@ public class MySingleton {
         }
         return mInstance;
     }
-// Método que devuelve cada request del requestequeue que se hagan
+
     public<T> void addToRequestQue(Request<T> request){
         getRequestQueue().add(request);
     }

@@ -1,6 +1,6 @@
 
 package com.example.dam2pm.modelos;
-
+/*
 public class Fotografia {
 
     int fotografiaID;
@@ -88,6 +88,8 @@ public class Fotografia {
 }
 
 
+
+ */
 
 
 

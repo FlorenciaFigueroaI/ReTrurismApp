@@ -1,5 +1,5 @@
 package com.example.dam2pm.modelos;
-
+/*
 public class Autor {
 
     String apodo;
@@ -58,6 +58,9 @@ public class Autor {
                 '}';
     }
 }
+
+
+ */
 
 
 

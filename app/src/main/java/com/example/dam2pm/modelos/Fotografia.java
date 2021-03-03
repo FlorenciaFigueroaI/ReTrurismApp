@@ -3,35 +3,27 @@ package com.example.dam2pm.modelos;
 
 public class Fotografia {
 
-    int fotografiaID;
+   // int fotografiaID;
     String titulo;
     String ciudad;
     String descripcion;
     int anyo;
-    String ruta;
-    String autorID;
+    String image;
 
     public Fotografia() {}
 
-    public Fotografia(int fotografiaID, String titulo, String descripcion, String ciudad, int anyo, String ruta, String autorID) {
+    public Fotografia(String titulo, String descripcion, String ciudad, int anyo, String image) {
 
-        this.fotografiaID = fotografiaID;
+      //  this.fotografiaID = fotografiaID;
         this.titulo = titulo;
         this.ciudad = ciudad;
         this.descripcion = descripcion;
         this.anyo = anyo;
-        this.ruta = ruta;
-        this.autorID = autorID;
+        this.image = image;
+
 
     }
 
-    public int getfotografiaID() {
-        return fotografiaID;
-    }
-
-    public void setfotografiaID(int fotografiaID) {
-        this.fotografiaID = fotografiaID;
-    }
 
     public String getTitulo() {
         return titulo;
@@ -65,24 +57,22 @@ public class Fotografia {
         this.anyo = anyo;
     }
 
-    public String getRuta() {
-        return ruta;
+    public String getImage() {
+        return image;
     }
 
-    public void setRuta(String ruta) {
-        this.ruta = ruta;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override
     public String toString() {
         return "Fotografia{" +
-                "fotografiaID=" + fotografiaID +
-                ", titulo='" + titulo + '\'' +
+                "titulo='" + titulo + '\'' +
                 ", ciudad='" + ciudad + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", anyo=" + anyo +
-                ", ruta='" + ruta + '\'' +
-                ", autorID='" + autorID + '\'' +
+                ", image='" + image + '\'' +
                 '}';
     }
 }

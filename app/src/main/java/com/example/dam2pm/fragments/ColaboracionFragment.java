@@ -54,7 +54,7 @@ public class ColaboracionFragment extends Fragment {
     Bitmap bitmap;
 
 
-    private final String uploadURL = "http://192.168.8.107/retrurism/upload.php";
+    private final String URL = "http://192.168.8.107/retrurism/upload.php";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,8 +66,6 @@ public class ColaboracionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_colaboracion, container, false);
-
-
 
         txtTitulo = view.findViewById(R.id.txtTitulo);
         txtDescripcion = view.findViewById(R.id.txtDescripcion);
@@ -102,7 +100,7 @@ public class ColaboracionFragment extends Fragment {
     private void subirFoto() {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
-                uploadURL,
+                URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -126,6 +124,7 @@ public class ColaboracionFragment extends Fragment {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_LONG).show();
 
                     }
                 }

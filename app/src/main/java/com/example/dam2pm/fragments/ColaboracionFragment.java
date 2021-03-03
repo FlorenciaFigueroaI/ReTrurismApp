@@ -1,14 +1,11 @@
 package com.example.dam2pm.fragments;
 
-import android.annotation.SuppressLint;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.ImageDecoder;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,16 +16,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.example.dam2pm.R;
 import com.example.dam2pm.activities.MainActivity;
 import com.example.dam2pm.singleton.MySingleton;
@@ -37,7 +31,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
@@ -61,18 +54,12 @@ public class ColaboracionFragment extends Fragment {
     Bitmap bitmap;
 
 
-    RequestQueue requestQueue;
-
-    private final String uploadURL = "http://192.168.1.38/retrurism/upload.php";
+    private final String uploadURL = "http://192.168.8.107/retrurism/upload.php";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    //    requestQueue = Volley.newRequestQueue(getContext());
 
-
-        // Start the queue
-        requestQueue.start();
     }
 
     @Override
@@ -129,7 +116,7 @@ public class ColaboracionFragment extends Fragment {
 
 
                             //   cargarGifSonido();
-                            //  startActivity(new Intent(getActivity(), MainActivity.class));
+                             startActivity(new Intent(getActivity(), MainActivity.class));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -159,9 +146,8 @@ public class ColaboracionFragment extends Fragment {
         };
 
 
-     //   MySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQue(stringRequest);
+        MySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQue(stringRequest);
 
-        requestQueue.add(stringRequest);
     }
 
 

@@ -33,7 +33,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dam2pm.R;
 import com.example.dam2pm.activities.MainActivity;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.singleton.MySingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

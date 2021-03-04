@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,34 +20,34 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaViewHolder>{
+public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreViewHolder>{
 
     Context mContext;
     ArrayList<Fotografia> listaFotos;
 
-    public GaleriaAdapter(Context context, ArrayList<Fotografia> listaFoto) {
+    public ExploreAdapter(Context context, ArrayList<Fotografia> listaFoto) {
         this.mContext = context;
         this.listaFotos=listaFoto;
     }
 
     @NotNull
     @Override
-    public GaleriaViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+    public ExploreViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(mContext);
 
-        View view= LayoutInflater.from(mContext).inflate(R.layout.item_list_galeria, parent,false);
-         return new GaleriaViewHolder(view);
+        View view= LayoutInflater.from(mContext).inflate(R.layout.item_list_explore, parent,false);
+        return new ExploreViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull GaleriaViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ExploreViewHolder holder, int position) {
 
         final Fotografia fotografia = listaFotos.get(position);
 
         Glide.with(mContext)
                 .load(fotografia.getImage())
-                .into(holder.imgVwFoto);
+                .into(holder.imgVwExplore);
         holder.txtTitulo.setText(fotografia.getTitulo());
         holder.txtCiudad.setText(fotografia.getCiudad());
         holder.txtAnyo.setText(String.valueOf(fotografia.getAnyo()));
@@ -57,29 +57,29 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
 
     @Override
     public int getItemCount() {
-       // return listaFotos.size();
+        // return listaFotos.size();
         if (listaFotos != null)
             return listaFotos.size();
         else{
             return 0;
-            }
+        }
     }
 
 
-    static class GaleriaViewHolder extends RecyclerView.ViewHolder {
+    static class ExploreViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtTitulo,txtCiudad, txtAnyo;
-        ImageView imgVwFoto;
-        RelativeLayout mContainer;
+        ImageView imgVwExplore;
+        LinearLayout mContainer;
 
-        public GaleriaViewHolder(View itemView) {
+        public ExploreViewHolder(View itemView) {
             super(itemView);
 
             txtTitulo= itemView.findViewById(R.id.txtTitulo);
             txtCiudad=  itemView.findViewById(R.id.txtCiudad);
             txtAnyo=  itemView.findViewById(R.id.txtAnyo);
-            imgVwFoto= itemView.findViewById(R.id.imgVwFoto);
-            mContainer = itemView.findViewById(R.id.contenedorFotografias);
+            imgVwExplore= itemView.findViewById(R.id.imgVwExplore);
+            mContainer = itemView.findViewById(R.id.contenedorExplore);
         }
     }
 }

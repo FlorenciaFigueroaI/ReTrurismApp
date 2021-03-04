@@ -19,7 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.dam2pm.R;
 import com.example.dam2pm.activities.AccesoActivity;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
+//import com.example.dam2pm.animaciones.GifLoadingActivity;
 
 import com.example.dam2pm.modelos.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -134,7 +134,7 @@ public class RegistroFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(getActivity(), GifLoadingActivity.class));
+                        //    startActivity(new Intent(getActivity(), GifLoadingActivity.class));
                             Usuario usuario = new Usuario(email, password);
                             FirebaseDatabase.getInstance().getReference("Usuario")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

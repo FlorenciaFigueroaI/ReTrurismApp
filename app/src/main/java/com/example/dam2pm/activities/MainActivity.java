@@ -7,17 +7,12 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.dam2pm.R;
 import com.example.dam2pm.fragments.AjustesFragment;
 import com.example.dam2pm.fragments.ColaboracionFragment;
@@ -26,9 +21,6 @@ import com.example.dam2pm.fragments.GaleriaFragment;
 import com.example.dam2pm.fragments.MapaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -134,5 +126,7 @@ public class MainActivity extends AppCompatActivity {
             moveTaskToBack(true);  // sale de la app
         }
     }
+
+
 
 }

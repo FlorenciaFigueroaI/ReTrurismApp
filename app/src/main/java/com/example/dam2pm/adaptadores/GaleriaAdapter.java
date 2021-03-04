@@ -1,15 +1,16 @@
 package com.example.dam2pm.adaptadores;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -30,12 +31,47 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
         this.listaFotos=listaFoto;
     }
 
+    @NotNull
+    @Override
+    public GaleriaViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mContext);
 
-    public static class GaleriaViewHolder extends RecyclerView.ViewHolder {
+        View view= LayoutInflater.from(mContext).inflate(R.layout.item_list_galeria, parent,false);
+         return new GaleriaViewHolder(view);
+
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull GaleriaViewHolder holder, int position) {
+
+        final Fotografia fotografia = listaFotos.get(position);
+
+        Glide.with(mContext)
+                .load(fotografia.getImage())
+                .into(holder.imgVwFoto);
+        holder.txtTitulo.setText(fotografia.getTitulo());
+        holder.txtCiudad.setText(fotografia.getCiudad());
+        holder.txtAnyo.setText(String.valueOf(fotografia.getAnyo()));
+
+    }
+
+
+    @Override
+    public int getItemCount() {
+       // return listaFotos.size();
+        if (listaFotos != null)
+            return listaFotos.size();
+        else{
+            return 0;
+            }
+    }
+
+
+    static class GaleriaViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtTitulo,txtCiudad, txtAnyo;
         ImageView imgVwFoto;
-        LinearLayout mContainer;
+        RelativeLayout mContainer;
 
         public GaleriaViewHolder(View itemView) {
             super(itemView);
@@ -43,34 +79,8 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
             txtTitulo= itemView.findViewById(R.id.txtTitulo);
             txtCiudad=  itemView.findViewById(R.id.txtCiudad);
             txtAnyo=  itemView.findViewById(R.id.txtAnyo);
-            imgVwFoto= itemView.findViewById(R.id.idImagen);
+            imgVwFoto= itemView.findViewById(R.id.imgVwFoto);
             mContainer = itemView.findViewById(R.id.contenedorFotografias);
         }
     }
-
-    @NotNull
-    @Override
-    public GaleriaViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(R.layout.item_list_galeria, parent,false);
-        return new GaleriaViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull GaleriaAdapter.GaleriaViewHolder holder, int position) {
-
-        final Fotografia fotografia = listaFotos.get(position);
-
-        holder.txtTitulo.setText(listaFotos.get(position).getTitulo());
-        holder.txtCiudad.setText(listaFotos.get(position).getCiudad());
-        holder.txtAnyo.setText(String.valueOf(listaFotos.get(position).getAnyo()));
-        Glide.with(mContext).load(fotografia.getImage()).into(holder.imgVwFoto);
-
-    }
-
-
-    @Override
-    public int getItemCount() {
-        return listaFotos.size();
-    }
-
 }

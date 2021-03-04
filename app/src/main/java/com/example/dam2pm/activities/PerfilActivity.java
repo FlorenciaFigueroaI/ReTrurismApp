@@ -18,7 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.dam2pm.R;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
+//import com.example.dam2pm.animaciones.GifLoadingActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +36,7 @@ public class PerfilActivity extends AppCompatActivity {
 
     RequestQueue requestQueue;
 
-    private static final String URL = "http://192.168.8.107/retrurism/save.php";
+    private static final String url = "http://192.168.8.107/retrurism/save.php";
 
 
     @Override
@@ -86,7 +86,7 @@ public class PerfilActivity extends AppCompatActivity {
 
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
-                URL,
+                url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -123,7 +123,7 @@ public class PerfilActivity extends AppCompatActivity {
 
     // método para producir el sonido
     public void cargarGifSonido() {
-        startActivity(new Intent(PerfilActivity.this, GifLoadingActivity.class));
+   //     startActivity(new Intent(PerfilActivity.this, GifLoadingActivity.class));
         mp = MediaPlayer.create(PerfilActivity.this, R.raw.sonido_botones);
         mp.start();
 

@@ -19,7 +19,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.dam2pm.R;
 import com.example.dam2pm.activities.AccesoActivity;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
+//import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -98,7 +98,7 @@ public class RecuperacionPwdFragment extends Fragment {
     // Método que envía el email a firebase y éste enviará un email con instrucciones al usuario para recuperar la contraseña
     private void enviarEmail(String email) {
         emailRecuperacion = email;
-        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
+    //    startActivity(new Intent(getActivity(), GifLoadingActivity.class));
         mAuth.sendPasswordResetEmail(emailRecuperacion) // firebase envía el email
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

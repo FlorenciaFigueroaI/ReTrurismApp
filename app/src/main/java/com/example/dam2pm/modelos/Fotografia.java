@@ -3,27 +3,26 @@ package com.example.dam2pm.modelos;
 
 public class Fotografia {
 
-   // int fotografiaID;
+ //   int fotoID;
     String titulo;
     String ciudad;
-    String descripcion;
+ //   String descripcion;
     int anyo;
     String image;
 
     public Fotografia() {}
 
-    public Fotografia(String titulo, String descripcion, String ciudad, int anyo, String image) {
+    public Fotografia(String titulo, String ciudad, int anyo, String image) {
 
-      //  this.fotografiaID = fotografiaID;
+   //     this.fotoID = fotoID;
         this.titulo = titulo;
         this.ciudad = ciudad;
-        this.descripcion = descripcion;
+      //  this.descripcion = descripcion;
         this.anyo = anyo;
         this.image = image;
 
 
     }
-
 
     public String getTitulo() {
         return titulo;
@@ -31,14 +30,6 @@ public class Fotografia {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
     public String getCiudad() {
@@ -70,7 +61,6 @@ public class Fotografia {
         return "Fotografia{" +
                 "titulo='" + titulo + '\'' +
                 ", ciudad='" + ciudad + '\'' +
-                ", descripcion='" + descripcion + '\'' +
                 ", anyo=" + anyo +
                 ", image='" + image + '\'' +
                 '}';

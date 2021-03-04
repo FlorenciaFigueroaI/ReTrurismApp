@@ -54,7 +54,7 @@ public class ColaboracionFragment extends Fragment {
     Bitmap bitmap;
 
 
-    private final String URL = "http://192.168.8.107/retrurism/upload.php";
+    private final String url = "http://192.168.8.107/retrurism/upload.php";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,7 +100,7 @@ public class ColaboracionFragment extends Fragment {
     private void subirFoto() {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
-                URL,
+                url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

@@ -4,9 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mainContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="60dp"
-    android:layout_marginBottom="60dp"
+    android:layout_height="wrap_content"
+
     android:background="@color/colorBackground"
     android:orientation="vertical"
     android:padding="10dp"
@@ -20,11 +19,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/recyclerVwGaleria"
-        style="@style/AppTheme.CardView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        style="@style/AppTheme.CardView">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/contenedorFotografias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,45 +29,44 @@
             android:orientation="horizontal"
             android:padding="8dp">
 
-            <ImageView
-                android:id="@+id/idImagen"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="8dp"
-                android:contentDescription="@string/todo"
-                 />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgVwFoto"
+                android:layout_height="130dp"
+                android:layout_width="130dp"/>
 
                 <TextView
                     android:id="@+id/txtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginStart="150dp"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="22sp"
+                    android:text="@string/titulo"
+                    android:textSize="@dimen/font_size"
                     android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/txtCiudad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="40dp"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18sp" />
+                    android:text="@string/ciudad"
+                    android:textSize="@dimen/font_size"
+                    android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/txtAnyo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18sp" />
-            </LinearLayout>
-        </LinearLayout>
+            <TextView
+                android:id="@+id/txtAnyo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="80dp"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/anyo"
+                android:textSize="@dimen/font_size"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 

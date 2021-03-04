@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -27,29 +28,23 @@ import java.util.ArrayList;
 public class GaleriaFragment extends Fragment {
 
     RecyclerView recyclerFotos;
-    RecyclerView.LayoutManager manager;
-    RecyclerView.Adapter mAdapter;
     ArrayList<Fotografia> listaFotos;
 
-    private final String URL = "http://192.168.8.107/retrurism/upload.php";
+    GaleriaAdapter adapter;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
+    private static final String url = "http://192.168.8.107/retrurism/fetchImages.php";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_galeria, container, false);
 
         recyclerFotos =  view.findViewById(R.id.recyclerVwGaleria);
-        recyclerFotos.setLayoutManager(manager);
-
+        recyclerFotos.setHasFixedSize(true);
+        recyclerFotos.setLayoutManager(new LinearLayoutManager(getContext()));
         listaFotos=new ArrayList<>();
+
         getImages();
 
         return view;
@@ -59,7 +54,7 @@ public class GaleriaFragment extends Fragment {
 
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
-                URL,
+                url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -67,23 +62,27 @@ public class GaleriaFragment extends Fragment {
                             JSONArray array = new JSONArray(response);
 
                             for (int i = 0; i<array.length(); i++) {
-                                JSONObject object = array.getJSONObject(i);
 
-                                String titulo = object.getString("Título");
-                                String descripcion = object.getString("Descripción");
-                                String ciudad = object.getString("Ciudad");
-                                int anyo = object.getInt("Año");
-                                String image = object.getString("image");
+                                JSONObject fotosObj = array.getJSONObject(i);
 
-                                Fotografia fotografia = new Fotografia(titulo, descripcion, ciudad, anyo, image);
+                                String titulo = fotosObj.getString("titulo");
+                                String ciudad = fotosObj.getString("ciudad");
+                                int anyo = fotosObj.getInt("anyo");
+                              //  String image = fotosObj.getString("image");
+                                String image = "http://192.168.8.107/retrurism/" + fotosObj.getString("image");
+                                Fotografia fotografia = new Fotografia(titulo, ciudad, anyo, image);
                                 listaFotos.add(fotografia);
+
                             }
+
+
+                            adapter = new GaleriaAdapter(getContext(), listaFotos);
+                            recyclerFotos.setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        mAdapter = new GaleriaAdapter(getActivity(), listaFotos);
-                        recyclerFotos.setAdapter(mAdapter);
+
 
                     }
                 },
@@ -97,8 +96,15 @@ public class GaleriaFragment extends Fragment {
                 });
 
          MySingleton.getInstance(getActivity()).addToRequestQue(stringRequest);
+
+
         
-        
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
     }
 
 

@@ -1,5 +1,5 @@
 package com.example.dam2pm.animaciones;
-
+/*
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
@@ -49,3 +49,5 @@ public class GifLoadingActivity extends AppCompatActivity {
 
 
 }
+
+ */

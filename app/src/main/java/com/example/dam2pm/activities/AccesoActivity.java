@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.dam2pm.R;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
+//import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.fragments.RecuperacionPwdFragment;
 import com.example.dam2pm.fragments.RegistroFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -138,7 +138,7 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    cargarGif();
+                 //   cargarGif();
                     startActivity(new Intent(AccesoActivity.this, MainActivity.class));
                  //   mostrarDialogo();
 
@@ -182,13 +182,15 @@ public class AccesoActivity extends AppCompatActivity {
 
 
     }
-
+/*
     // método para cargar el GIF
     public void cargarGif(){
         efectoSonido();
         startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
 
     }
+
+ */
 
 
 

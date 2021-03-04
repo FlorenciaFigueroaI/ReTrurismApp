@@ -35,7 +35,7 @@ public class AjustesFragment extends Fragment {
             @Override
             public boolean onLongClick(View view) {
                 efectoSonido();
-                Toast.makeText(getActivity(), "Descubre nuestras últimas novedades y si somos muy pesados, podrás desactivar las notificaciones cuando quieras", Toast.LENGTH_LONG).show();
+
 
                 return true;
             }

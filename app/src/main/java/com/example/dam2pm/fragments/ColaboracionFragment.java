@@ -1,10 +1,8 @@
 package com.example.dam2pm.fragments;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -33,7 +31,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dam2pm.R;
-import com.example.dam2pm.activities.AccesoActivity;
 import com.example.dam2pm.activities.MainActivity;
 import com.example.dam2pm.singleton.MySingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

@@ -36,7 +36,7 @@
         <activity android:name=".activities.PerfilActivity" />
         <activity
             android:name=".activities.MainActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

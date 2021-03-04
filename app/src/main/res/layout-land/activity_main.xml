@@ -58,7 +58,6 @@
             android:padding="10dp"
             android:layout_marginStart="10dp"
             android:text="@string/app_name"
-            android:textAlignment="center"
             android:textColor="@color/colorBackground"
             android:textSize="26sp"
             android:textStyle="bold" />

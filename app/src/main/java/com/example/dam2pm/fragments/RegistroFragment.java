@@ -21,6 +21,7 @@ import com.example.dam2pm.R;
 import com.example.dam2pm.activities.AccesoActivity;
 //import com.example.dam2pm.animaciones.GifLoadingActivity;
 
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.modelos.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -67,8 +68,6 @@ public class RegistroFragment extends Fragment {
 
         btnEnviar.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){
-                efectoSonido();
-                // llamada al método de registro
                 validar();
             }
         });
@@ -81,8 +80,6 @@ public class RegistroFragment extends Fragment {
 
             }
         });
-
-
         return view;
 
     }
@@ -127,14 +124,12 @@ public class RegistroFragment extends Fragment {
 
         email = txtEmailUsuario.getText().toString();
         password = txtPwd.getText().toString();
-        efectoSonido();
-     //   startActivity(new Intent(getActivity(), GifLoadingActivity.class));
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                        //    startActivity(new Intent(getActivity(), GifLoadingActivity.class));
                             Usuario usuario = new Usuario(email, password);
                             FirebaseDatabase.getInstance().getReference("Usuario")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -142,7 +137,7 @@ public class RegistroFragment extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-
+                                        efectoSonido();
                                         // mensaje de registro correcto
                                         Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(getActivity(), AccesoActivity.class));
@@ -162,11 +157,18 @@ public class RegistroFragment extends Fragment {
 
     }
 
+    // método para cargar el GIF
+    public void cargarGif(){
+        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
+
+    }
+
+    // método para producir el sonido
     public void efectoSonido() {
         mp = MediaPlayer.create(getActivity(), R.raw.sonido_botones);
         mp.start();
-    }
 
+    }
 }
 
 

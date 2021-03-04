@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.ImageDecoder;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dam2pm.R;
 import com.example.dam2pm.activities.MainActivity;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.singleton.MySingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -57,6 +59,8 @@ public class ColaboracionFragment extends Fragment {
     EditText txtDescripcion;
     EditText txtCiudad;
     EditText txtAnyo;
+
+    MediaPlayer mp;
 
     Bitmap bitmap;
     PendingIntent pendingIntent;
@@ -146,7 +150,6 @@ public class ColaboracionFragment extends Fragment {
 
     }
 
-
     private void subirFoto() {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
@@ -159,12 +162,12 @@ public class ColaboracionFragment extends Fragment {
                             String resp = jsonObject.getString("response");
                             Toast.makeText(getContext(), resp, Toast.LENGTH_SHORT).show();
                             imgVwFotografia.setImageResource(0);
+
                             fltActBtn.setVisibility(View.GONE);
                             txtVwEjemplo.setVisibility(View.GONE);
 
-
-                            //   cargarGifSonido();
-                             startActivity(new Intent(getActivity(), MainActivity.class));
+                            efectoSonido();
+                            startActivity(new Intent(getActivity(), MainActivity.class));
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -199,8 +202,6 @@ public class ColaboracionFragment extends Fragment {
 
     }
 
-
-
     // método para cargar la imagen
     private void seleccionarImagen() {
         Intent intent = new Intent();
@@ -234,12 +235,12 @@ public class ColaboracionFragment extends Fragment {
                 e.printStackTrace();
             }
 
+        }else{
+            Toast.makeText(getActivity(), "Rellene los campos para poder enviar la fotografía", Toast.LENGTH_SHORT).show();
         }
 
 
     }
-
-
 
     private String imageToString(Bitmap bitmap){
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -250,5 +251,13 @@ public class ColaboracionFragment extends Fragment {
 
 
     }
+
+    // método para producir el sonido
+    public void efectoSonido() {
+        mp = MediaPlayer.create(getActivity(), R.raw.sonido_botones);
+        mp.start();
+
+    }
+
 
 }

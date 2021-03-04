@@ -1,5 +1,4 @@
 package com.example.dam2pm.animaciones;
-/*
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
@@ -15,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dam2pm.R;
 
 public class GifLoadingActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +42,14 @@ public class GifLoadingActivity extends AppCompatActivity {
         oa.setRepeatCount(ValueAnimator.INFINITE);
         oa.setRepeatCount(4);
         oa.setDuration(4000);
+
         oa.start();
+
 
     }
 
 
 
-}
 
- */
+
+}

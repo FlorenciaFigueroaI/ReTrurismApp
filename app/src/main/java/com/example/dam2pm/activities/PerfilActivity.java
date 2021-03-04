@@ -18,6 +18,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.dam2pm.R;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 //import com.example.dam2pm.animaciones.GifLoadingActivity;
 
 import org.jetbrains.annotations.NotNull;
@@ -64,8 +65,8 @@ public class PerfilActivity extends AppCompatActivity {
                     String apodo = txtApodo.getText().toString().trim();
 
                     crearUsuario(nombre, apellido, apodo);
-
-                    startActivity(new Intent(PerfilActivity.this, MainActivity.class));
+                    efectoSonido();
+                    cargarGif();
 
                 }
             }
@@ -74,8 +75,7 @@ public class PerfilActivity extends AppCompatActivity {
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                cargarGifSonido();
+                efectoSonido();
                 startActivity(new Intent(PerfilActivity.this, MainActivity.class));
             }
         });
@@ -91,7 +91,6 @@ public class PerfilActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(PerfilActivity.this, "Datos guardados", Toast.LENGTH_SHORT).show();
-                        cargarGifSonido();
                         startActivity(new Intent(PerfilActivity.this, MainActivity.class));
 
                     }
@@ -120,14 +119,17 @@ public class PerfilActivity extends AppCompatActivity {
 
     }
 
+    // método para cargar el GIF
+    public void cargarGif(){
+        startActivity(new Intent(PerfilActivity.this, GifLoadingActivity.class));
+
+    }
 
     // método para producir el sonido
-    public void cargarGifSonido() {
-   //     startActivity(new Intent(PerfilActivity.this, GifLoadingActivity.class));
+    public void efectoSonido() {
         mp = MediaPlayer.create(PerfilActivity.this, R.raw.sonido_botones);
         mp.start();
 
-     //  startActivity(new Intent(PerfilActivity.this, MainActivity.class));
     }
 
 }

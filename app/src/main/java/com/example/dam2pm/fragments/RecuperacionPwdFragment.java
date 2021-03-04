@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 import com.example.dam2pm.R;
 import com.example.dam2pm.activities.AccesoActivity;
 //import com.example.dam2pm.animaciones.GifLoadingActivity;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -60,15 +61,14 @@ public class RecuperacionPwdFragment extends Fragment {
         btnEnviarEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                efectoSonido();
                 validar();
+
             }
         });
 
         btnCancelarEmailRecup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 efectoSonido();
                 startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de acceso
                 Toast.makeText(getActivity(), "Tarea cancelada", Toast.LENGTH_SHORT).show();
@@ -91,19 +91,19 @@ public class RecuperacionPwdFragment extends Fragment {
             txtEmailRecup.setError("Email inválido");
             return;
         }
-
+        cargarGif();
         enviarEmail(email);
     }
 
     // Método que envía el email a firebase y éste enviará un email con instrucciones al usuario para recuperar la contraseña
     private void enviarEmail(String email) {
         emailRecuperacion = email;
-    //    startActivity(new Intent(getActivity(), GifLoadingActivity.class));
         mAuth.sendPasswordResetEmail(emailRecuperacion) // firebase envía el email
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
+                            efectoSonido();
                             Toast.makeText(getActivity(), "Email enviado", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getActivity(), AccesoActivity.class);
                             startActivity(intent);
@@ -120,6 +120,14 @@ public class RecuperacionPwdFragment extends Fragment {
         mp = MediaPlayer.create(getActivity(), R.raw.sonido_botones);
         mp.start();
     }
+
+    // método para cargar el GIF
+    public void cargarGif(){
+        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
+
+    }
+
+
 
 
 

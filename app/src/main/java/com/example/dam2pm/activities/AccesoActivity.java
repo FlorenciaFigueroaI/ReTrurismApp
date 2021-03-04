@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.dam2pm.R;
 //import com.example.dam2pm.animaciones.GifLoadingActivity;
+import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.fragments.RecuperacionPwdFragment;
 import com.example.dam2pm.fragments.RegistroFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,11 +36,13 @@ public class AccesoActivity extends AppCompatActivity {
     private TextView txtVwOlviPwd;
     FragmentTransaction transaccion;
 
-    MediaPlayer mp;
     FirebaseAuth mAuth;
 
     String email;
     String password;
+
+    MediaPlayer mp;
+
 
 
     @Override
@@ -74,9 +77,7 @@ public class AccesoActivity extends AppCompatActivity {
                 txtEmailAcc.setVisibility(View.GONE);
                 txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
-
                 efectoSonido();
-
                 // se carga el fragment
                 // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
                 transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
@@ -98,8 +99,6 @@ public class AccesoActivity extends AppCompatActivity {
                 txtEmailAcc.setVisibility(View.GONE);
                 txtPwdAcc.setVisibility(View.GONE);
                 txtVwOlviPwd.setVisibility(View.GONE);
-
-                efectoSonido();
 
                 // se carga el fragment
                 transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
@@ -127,7 +126,9 @@ public class AccesoActivity extends AppCompatActivity {
             txtPwdAcc.setError("Campo requerido.");
             return;
         }
+        cargarGif();
         ingresarUsuario();
+
     }
 
     private void ingresarUsuario() {
@@ -138,9 +139,8 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                 //   cargarGif();
+                    efectoSonido();
                     startActivity(new Intent(AccesoActivity.this, MainActivity.class));
-                 //   mostrarDialogo();
 
                 }else{
                     Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
@@ -148,51 +148,19 @@ public class AccesoActivity extends AppCompatActivity {
             }
         });
     }
-/*
-    public void mostrarDialogo() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(AccesoActivity.this);
-        builder.setTitle("Antes de empezar...");
-        builder.setMessage("¿Quieres crear tu usuario?")
-                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(AccesoActivity.this, PerfilActivity.class));
 
-                    }
-                })
-                .setNegativeButton("Lo haré más tarde", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+    // método para cargar el GIF
+    public void cargarGif(){
 
-                        cargarGif();
-                        Toast.makeText(AccesoActivity.this, "¡Bienvenido/a!", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(AccesoActivity.this, MainActivity.class));
-                        dialog.dismiss();
-                    }
+        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
 
-                }).show();
     }
-
- */
 
     // método para producir el sonido
     public void efectoSonido() {
         mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
         mp.start();
 
-
     }
-/*
-    // método para cargar el GIF
-    public void cargarGif(){
-        efectoSonido();
-        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
-
-    }
-
- */
-
-
-
 
 }

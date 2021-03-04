@@ -36,7 +36,7 @@ public class PerfilActivity extends AppCompatActivity {
 
     RequestQueue requestQueue;
 
-    private static final String url = "http://192.168.8.107/retrurism/save.php";
+    private static final String URL = "http://192.168.8.107/retrurism/save.php";
 
 
     @Override
@@ -86,7 +86,7 @@ public class PerfilActivity extends AppCompatActivity {
 
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
-                url,
+                URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

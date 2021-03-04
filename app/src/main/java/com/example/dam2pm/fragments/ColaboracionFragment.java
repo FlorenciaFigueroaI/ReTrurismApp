@@ -1,7 +1,14 @@
 package com.example.dam2pm.fragments;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.ImageDecoder;
 import android.net.Uri;
 import android.os.Build;
@@ -16,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.AuthFailureError;
@@ -24,6 +33,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.dam2pm.R;
+import com.example.dam2pm.activities.AccesoActivity;
 import com.example.dam2pm.activities.MainActivity;
 import com.example.dam2pm.singleton.MySingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -52,9 +62,13 @@ public class ColaboracionFragment extends Fragment {
     EditText txtAnyo;
 
     Bitmap bitmap;
+    PendingIntent pendingIntent;
+    private final static String CHANNEL_ID = "NOTIFICACION";
+    private final static int NOTIFICACION_ID = 0;
 
 
-    private final String url = "http://192.168.8.107/retrurism/upload.php";
+
+    private final String URL = "http://192.168.8.107/retrurism/upload.php";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -88,6 +102,9 @@ public class ColaboracionFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 subirFoto();
+                setPendingIntent();
+                crearCanalNotificacion();
+                crearNotificacion();
 
             }
         });
@@ -96,11 +113,47 @@ public class ColaboracionFragment extends Fragment {
 
     }
 
+    private void setPendingIntent() {
+        Intent intent = new Intent(getActivity(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        pendingIntent = PendingIntent.getActivity(getActivity(), 1, intent, 0);
+
+
+    }
+
+    private void crearCanalNotificacion() { // para versiones posteriores a O
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence charSequence = "Notificacion";
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, charSequence, NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager notificationManager = (NotificationManager)getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+
+
+    }
+
+
+    private void crearNotificacion() { // para versiones anteriores a O
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(), CHANNEL_ID);
+        builder.setSmallIcon(R.drawable.ic_baseline_photo_camera_24);
+        builder.setContentTitle("Notificación ReTrurism");
+        builder.setContentText("¡Se ha subido una nueva fotografía, pincha para verla!");
+        builder.setColor(Color.BLUE);
+        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        builder.setLights(Color.GREEN, 1000, 1000);
+        builder.setVibrate(new long[]{1000,1000,1000,1000,1000});
+
+        builder.setContentIntent(pendingIntent);
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getActivity());
+        notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
+
+    }
+
 
     private void subirFoto() {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
-                url,
+                URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

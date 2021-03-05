@@ -31,8 +31,10 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView btmNavVw;
     Button btnMasOpciones;
 
-    Button btnPlay_pause;
+    Button btnPlayPause;
     MediaPlayer mp;
+
+    private static final int AUDIO_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,24 +83,24 @@ public class MainActivity extends AppCompatActivity {
         registerForContextMenu(btnMasOpciones);
 
         // Reproductor de música
-        btnPlay_pause = findViewById(R.id.btnPlay);
+        btnPlayPause = findViewById(R.id.btnPlay);
         mp = MediaPlayer.create(this,R.raw.aretha_franklin_save_me);
-        btnPlay_pause.setOnClickListener(new View.OnClickListener() {
+        btnPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mp.isPlaying()) {
                     mp.pause();
-                    btnPlay_pause.setBackgroundResource(R.drawable.ic_baseline_play_circle_outline_24);
-                    Toast.makeText(MainActivity.this, "Se ha pausado la reproducción", Toast.LENGTH_SHORT).show();
+                    btnPlayPause.setBackgroundResource(R.drawable.ic_baseline_play_circle_outline_24);
+                    Toast.makeText(MainActivity.this, "Aretha Franklin - Save me", Toast.LENGTH_SHORT).show();
                 }else{
                     mp.start();
-                    btnPlay_pause.setBackgroundResource(R.drawable.ic_baseline_pause_circle_outline_24);
-                    Toast.makeText(MainActivity.this, "Se ha reiniciado la reproducción", Toast.LENGTH_SHORT).show();
+                    btnPlayPause.setBackgroundResource(R.drawable.ic_baseline_pause_circle_outline_24);
                 }
             }
         });
 
     }
+
 
     // menú contextual
 

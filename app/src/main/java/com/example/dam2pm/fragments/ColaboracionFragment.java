@@ -113,6 +113,7 @@ public class ColaboracionFragment extends Fragment {
 
     }
 
+    // Notificación
     private void setPendingIntent() {
         Intent intent = new Intent(getActivity(), MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

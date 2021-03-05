@@ -44,19 +44,19 @@
 
         <TextView
             android:id="@+id/txtVwNombreApp"
-            android:layout_width="320dp"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lobster"
             android:text="@string/app_name"
-            android:layout_marginTop="8dp"
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/font_icon"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_margin="8dp"/>
 
         <Button
             android:id="@+id/btnPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="top"
             android:background="@drawable/ic_baseline_play_circle_outline_24" />
 

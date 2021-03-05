@@ -1,9 +1,7 @@
 package com.example.dam2pm.activities;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -16,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.preference.PreferenceManager;
 
 import com.example.dam2pm.R;
 import com.example.dam2pm.fragments.ColaboracionFragment;
@@ -112,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         menu.setHeaderIcon(R.drawable.ic_baseline_settings_applications_24);
 
         menu.add(0, v.getId(), 0, "Perfil");
-        menu.add(0, v.getId(), 0, "Ajustes");
         menu.add(0, v.getId(), 0, "Cerrar sesión");
     }
 
@@ -123,10 +119,8 @@ public class MainActivity extends AppCompatActivity {
         if (item.getTitle() == "Perfil") {
             startActivity(new Intent(MainActivity.this, PerfilActivity.class));
 
-        } else if (item.getTitle() == "Ajustes") {
-            startActivity(new Intent(MainActivity.this, AjustesActivity.class));
-
         } else if (item.getTitle() == "Cerrar sesión") {
+
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(MainActivity.this, AccesoActivity.class)); // volvemos a la página de Login
         }

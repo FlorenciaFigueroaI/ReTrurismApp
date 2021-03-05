@@ -1,6 +1,5 @@
 package com.example.dam2pm.activities;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -12,12 +11,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.dam2pm.R;
-//import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.fragments.RecuperacionPwdFragment;
 import com.example.dam2pm.fragments.RegistroFragment;
@@ -25,6 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
 
 public class AccesoActivity extends AppCompatActivity {
 

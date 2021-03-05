@@ -68,7 +68,7 @@ public class GaleriaFragment extends Fragment {
                                 String titulo = fotosObj.getString("titulo");
                                 String ciudad = fotosObj.getString("ciudad");
                                 int anyo = fotosObj.getInt("anyo");
-                                String image = "http://192.168.8.107/retrurism/" + fotosObj.getString("image");
+                                String image = "http://192.168.8.106/retrurism/" + fotosObj.getString("image");
                                 Fotografia fotografia = new Fotografia(titulo, ciudad, anyo, image);
                                 listaFotos.add(fotografia);
 

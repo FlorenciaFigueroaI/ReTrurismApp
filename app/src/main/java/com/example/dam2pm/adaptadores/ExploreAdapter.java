@@ -57,12 +57,13 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreV
 
     @Override
     public int getItemCount() {
-        // return listaFotos.size();
+
         if (listaFotos != null)
             return listaFotos.size();
         else{
             return 0;
         }
+
     }
 
 

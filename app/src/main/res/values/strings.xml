@@ -52,9 +52,9 @@
     <string name="Mis_fotos">Mis fotos</string>
     <string name="home" translatable="false">Home</string>
     <string name="descripcion">Descripción</string>
-    <string name="play" translatable="false" />
     <string name="salir_sin_guardar">Salir sin guardar</string>
     <string name="apodo">Apodo(*)</string>
     <string name="saludo">Hola, </string>
+
 
 </resources>

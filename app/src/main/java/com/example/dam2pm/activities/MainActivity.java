@@ -2,11 +2,13 @@ package com.example.dam2pm.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     boolean vistaEnExplore;
     BottomNavigationView btmNavVw;
     Button btnMasOpciones;
+
+    Button btnPlay_pause;
+    MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +79,24 @@ public class MainActivity extends AppCompatActivity {
 
         btnMasOpciones = findViewById(R.id.btnMasopciones);
         registerForContextMenu(btnMasOpciones);
+
+        // Reproductor de música
+        btnPlay_pause = findViewById(R.id.btnPlay);
+        mp = MediaPlayer.create(this,R.raw.aretha_franklin_save_me);
+        btnPlay_pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mp.isPlaying()) {
+                    mp.pause();
+                    btnPlay_pause.setBackgroundResource(R.drawable.ic_baseline_play_circle_outline_24);
+                    Toast.makeText(MainActivity.this, "Se ha pausado la reproducción", Toast.LENGTH_SHORT).show();
+                }else{
+                    mp.start();
+                    btnPlay_pause.setBackgroundResource(R.drawable.ic_baseline_pause_circle_outline_24);
+                    Toast.makeText(MainActivity.this, "Se ha reiniciado la reproducción", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 

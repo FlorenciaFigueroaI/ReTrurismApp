@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="combo_idiomas">
+        <item>Español</item>
+        <item>English</item>
+        <item>Français</item>
+    </array>
+
+    <string-array name="tema_noche_dia">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+
+    <string-array name="orientacion">
+        <item>Auto</item>
+        <item>Vertical</item>
+        <item>>Horizontal</item>
+    </string-array>
+
+</resources>

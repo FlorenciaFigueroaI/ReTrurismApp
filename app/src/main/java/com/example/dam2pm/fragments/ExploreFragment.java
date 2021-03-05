@@ -33,7 +33,7 @@ public class ExploreFragment extends Fragment {
 
     ExploreAdapter adapter;
 
-    private static final String URL = "http://192.168.8.107/retrurism/fetchImages.php";
+    private static final String URL = "http://192.168.8.106/retrurism/fetchImages.php";
 
 
     @Override

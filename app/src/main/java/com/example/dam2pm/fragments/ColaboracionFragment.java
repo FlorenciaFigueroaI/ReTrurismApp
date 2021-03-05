@@ -66,9 +66,7 @@ public class ColaboracionFragment extends Fragment {
     private final static String CHANNEL_ID = "NOTIFICACION";
     private final static int NOTIFICACION_ID = 0;
 
-
-
-    private final String URL = "http://192.168.8.107/retrurism/upload.php";
+    private final String URL = "http://192.168.8.106/retrurism/upload.php";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

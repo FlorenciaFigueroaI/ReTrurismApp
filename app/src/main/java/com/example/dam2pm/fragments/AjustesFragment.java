@@ -1,54 +1,34 @@
-
 package com.example.dam2pm.fragments;
 
-import android.media.MediaPlayer;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.fragment.app.Fragment;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.example.dam2pm.R;
 
-public class AjustesFragment extends Fragment {
-    MediaPlayer mp;
-    SwitchCompat swtchNotificaciones;
+public class AjustesFragment extends PreferenceFragmentCompat {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    public AjustesFragment() {
+        // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public void onCreatePreferences(Bundle savedInstanceState, String key) {
+        setPreferencesFromResource(R.xml.preferencias, key);
 
-        View view = inflater.inflate(R.layout.fragment_ajustes, container, false);
-
-        swtchNotificaciones = view.findViewById(R.id.swtchNotificaciones);
-
-        swtchNotificaciones.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                efectoSonido();
-
-
-                return true;
-            }
-        });
-
-
-        return view;
     }
 
-    public void efectoSonido() {
-        mp = MediaPlayer.create(getActivity(), R.raw.sonido_botones);
-        mp.start();
-    }
+
 
 
 }

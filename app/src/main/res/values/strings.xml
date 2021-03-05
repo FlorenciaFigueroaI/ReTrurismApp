@@ -55,6 +55,20 @@
     <string name="salir_sin_guardar">Salir sin guardar</string>
     <string name="apodo">Apodo(*)</string>
     <string name="saludo">Hola, </string>
-
+    <string name="elige_idioma">Elige idioma</string>
+    <string name="cambiar_idioma">Idioma</string>
+    <string name="elige_tema">Elige tema</string>
+    <string name="cambiar_tema">Tema</string>
+    <string name="orientacion">Orientación</string>
+    <string name="cambiar_orientacion">Cambiar orientación</string>
+    <string name="elige_orientacion">Elige orientación</string>
+    <string name="English" translatable="false" />
+    <string name="Français" translatable="false" />
+    <string name="Español" translatable="false" />
+    <string name="vertical" translatable="false" />
+    <string name="horizontal" translatable="false" />
+    <string name="Light" translatable="false" />
+    <string name="Dark" translatable="false" />
+    <string name="Auto" translatable="false">auto</string>
 
 </resources>

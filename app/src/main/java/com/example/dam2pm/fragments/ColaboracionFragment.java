@@ -26,7 +26,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -124,7 +123,7 @@ public class ColaboracionFragment extends Fragment {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             CharSequence charSequence = "Notificacion";
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, charSequence, NotificationManager.IMPORTANCE_DEFAULT);
-            NotificationManager notificationManager = (NotificationManager)getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationManager notificationManager = (NotificationManager) requireActivity().getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(notificationChannel);
         }
 
@@ -133,7 +132,7 @@ public class ColaboracionFragment extends Fragment {
 
 
     private void crearNotificacion() { // para versiones anteriores a O
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(), CHANNEL_ID);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(requireActivity(), CHANNEL_ID);
         builder.setSmallIcon(R.drawable.ic_baseline_photo_camera_24);
         builder.setContentTitle("Notificación ReTrurism");
         builder.setContentText("¡Se ha subido una nueva fotografía, pincha para verla!");
@@ -143,7 +142,7 @@ public class ColaboracionFragment extends Fragment {
         builder.setVibrate(new long[]{1000,1000,1000,1000,1000});
 
         builder.setContentIntent(pendingIntent);
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getActivity());
+        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(requireActivity());
         notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
 
     }
@@ -183,7 +182,7 @@ public class ColaboracionFragment extends Fragment {
         ) {
 
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<>();
                 params.put("image", imageToString(bitmap));
                 params.put("titulo", txtTitulo.getText().toString().trim());

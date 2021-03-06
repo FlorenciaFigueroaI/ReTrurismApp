@@ -32,7 +32,7 @@ public class GaleriaFragment extends Fragment {
 
     GaleriaAdapter adapter;
 
-    private static final String URL = "http://192.168.8.106/retrurism/fetchImages.php";
+    private static final String URL = "http://192.168.8.109/retrurism/fetchImages.php";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -68,7 +68,7 @@ public class GaleriaFragment extends Fragment {
                                 String titulo = fotosObj.getString("titulo");
                                 String ciudad = fotosObj.getString("ciudad");
                                 int anyo = fotosObj.getInt("anyo");
-                                String image = "http://192.168.8.106/retrurism/" + fotosObj.getString("image");
+                                String image = "http://192.168.8.109/retrurism/" + fotosObj.getString("image");
                                 Fotografia fotografia = new Fotografia(titulo, ciudad, anyo, image);
                                 listaFotos.add(fotografia);
 

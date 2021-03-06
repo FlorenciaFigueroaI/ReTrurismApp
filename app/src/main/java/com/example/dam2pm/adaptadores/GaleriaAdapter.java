@@ -33,8 +33,6 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
     @NotNull
     @Override
     public GaleriaViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-
         View view= LayoutInflater.from(mContext).inflate(R.layout.item_list_galeria, parent,false);
          return new GaleriaViewHolder(view);
 

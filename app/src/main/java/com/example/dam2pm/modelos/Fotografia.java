@@ -1,6 +1,8 @@
 
 package com.example.dam2pm.modelos;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Fotografia {
 
  //   int fotoID;
@@ -10,7 +12,6 @@ public class Fotografia {
     int anyo;
     String image;
 
-    public Fotografia() {}
 
     public Fotografia(String titulo, String ciudad, int anyo, String image) {
 
@@ -52,10 +53,13 @@ public class Fotografia {
         return image;
     }
 
-    public void setImage(String image) {
+ /*   public void setImage(String image) {
         this.image = image;
     }
 
+  */
+
+    @NotNull
     @Override
     public String toString() {
         return "Fotografia{" +

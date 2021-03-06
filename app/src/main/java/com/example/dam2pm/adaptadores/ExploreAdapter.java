@@ -33,8 +33,6 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ExploreV
     @NotNull
     @Override
     public ExploreViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
-
         View view= LayoutInflater.from(mContext).inflate(R.layout.item_list_explore, parent,false);
         return new ExploreViewHolder(view);
 

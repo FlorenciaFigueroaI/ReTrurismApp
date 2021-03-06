@@ -1,14 +1,10 @@
 package com.example.dam2pm.modelos;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Usuario {
 
     public String email, password;
-
-    // Constructores
-    public Usuario(){
-
-    }
-
 
     public Usuario (String email, String password){
         this.email = email;
@@ -21,7 +17,7 @@ public class Usuario {
     public void setEmail(String email) {
         this.email = email;
     }
-
+/*
     public String getPassword() {
         return password;
     }
@@ -30,6 +26,9 @@ public class Usuario {
         this.password = password;
     }
 
+ */
+
+    @NotNull
     @Override
     public String toString() {
         return "Usuario{" +

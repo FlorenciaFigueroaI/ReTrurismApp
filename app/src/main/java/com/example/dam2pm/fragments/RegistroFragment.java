@@ -19,9 +19,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.dam2pm.R;
 import com.example.dam2pm.activities.AccesoActivity;
-//import com.example.dam2pm.animaciones.GifLoadingActivity;
-
-import com.example.dam2pm.animaciones.GifLoadingActivity;
 import com.example.dam2pm.modelos.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -154,12 +151,6 @@ public class RegistroFragment extends Fragment {
 
                     }
                 });
-
-    }
-
-    // método para cargar el GIF
-    public void cargarGif(){
-        startActivity(new Intent(getActivity(), GifLoadingActivity.class));
 
     }
 

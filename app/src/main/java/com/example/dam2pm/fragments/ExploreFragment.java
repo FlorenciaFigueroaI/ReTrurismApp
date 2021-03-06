@@ -32,8 +32,11 @@ public class ExploreFragment extends Fragment {
     ArrayList<Fotografia> listaFotos;
 
     ExploreAdapter adapter;
-
+/*
+** IMPORTANTE: Cambiar url tanto en String URL como en String image
+ */
     private static final String URL = "http://192.168.8.109/retrurism/fetchImages.php";
+    String imageURL = "http://192.168.8.109/retrurism/";
 
 
     @Override
@@ -70,7 +73,7 @@ public class ExploreFragment extends Fragment {
                                 String titulo = fotosObj.getString("titulo");
                                 String ciudad = fotosObj.getString("ciudad");
                                 int anyo = fotosObj.getInt("anyo");
-                                String image = "http://192.168.8.109/retrurism/" + fotosObj.getString("image");
+                                String image = imageURL + fotosObj.getString("image");
                                 Fotografia fotografia = new Fotografia(titulo, ciudad, anyo, image);
                                 listaFotos.add(fotografia);
 

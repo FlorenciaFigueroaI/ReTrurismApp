@@ -52,6 +52,7 @@ public class ColaboracionFragment extends Fragment {
     ImageView imgVwFotografia;
     FloatingActionButton fltActBtn;
     Button btnEnviarFoto;
+    Button btnCancelarFoto;
     TextView txtVwEjemplo;
     EditText txtTitulo;
     EditText txtDescripcion;
@@ -85,6 +86,7 @@ public class ColaboracionFragment extends Fragment {
         txtVwEjemplo = view.findViewById(R.id.txtEjemplo);
         imgVwFotografia = view.findViewById(R.id.imgVwEjemplo);
         btnEnviarFoto = view.findViewById(R.id.btnEnviarFoto);
+        btnCancelarFoto = view.findViewById(R.id.btnCancelarEnvioFoto);
 
         fltActBtn = view.findViewById(R.id.fltActBtn);
         fltActBtn.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +105,13 @@ public class ColaboracionFragment extends Fragment {
                 crearCanalNotificacion();
                 crearNotificacion();
 
+            }
+        });
+
+        btnCancelarFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), MainActivity.class));
             }
         });
 
@@ -195,7 +204,7 @@ public class ColaboracionFragment extends Fragment {
         };
 
 
-        MySingleton.getInstance(getActivity().getApplicationContext()).addToRequestQue(stringRequest);
+        MySingleton.getInstance(requireActivity().getApplicationContext()).addToRequestQue(stringRequest);
 
     }
 
@@ -218,7 +227,7 @@ public class ColaboracionFragment extends Fragment {
            try {
                 ImageDecoder.Source source;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    source = ImageDecoder.createSource(getActivity().getApplicationContext().getContentResolver(), path);
+                    source = ImageDecoder.createSource(requireActivity().getApplicationContext().getContentResolver(), path);
                     bitmap = ImageDecoder.decodeBitmap(source);
                     imgVwFotografia.setImageBitmap(bitmap);
                     imgVwFotografia.setVisibility(View.VISIBLE);

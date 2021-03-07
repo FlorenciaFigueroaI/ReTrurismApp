@@ -33,17 +33,14 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mapa, container, false);
 
-
         mapVw = view.findViewById(R.id.mapView);
-     //   mapVw.onCreate(savedInstanceState);
-     //   mapVw.getMapAsync(this); // inicializa el mapa
 
         mapVw = mapVw.findViewById(R.id.mapView);
         if (mapVw != null) {
-            // Initialise the MapView
+            // Inicia ek mapa
             mapVw.onCreate(null);
             mapVw.onResume();
-            // Set the map ready callback to receive the GoogleMap object
+            // Recibe el objecto GoogleMap
             mapVw.getMapAsync(this);
         }
 

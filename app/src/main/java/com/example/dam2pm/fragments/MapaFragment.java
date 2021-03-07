@@ -11,6 +11,7 @@ import com.example.dam2pm.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -23,6 +24,8 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        MapsInitializer.initialize(getContext());
+
 
     }
 
@@ -32,8 +35,17 @@ public class MapaFragment extends Fragment implements OnMapReadyCallback{
 
 
         mapVw = view.findViewById(R.id.mapView);
-        mapVw.onCreate(savedInstanceState);
-        mapVw.getMapAsync(this); // inicializa el mapa
+     //   mapVw.onCreate(savedInstanceState);
+     //   mapVw.getMapAsync(this); // inicializa el mapa
+
+        mapVw = mapVw.findViewById(R.id.mapView);
+        if (mapVw != null) {
+            // Initialise the MapView
+            mapVw.onCreate(null);
+            mapVw.onResume();
+            // Set the map ready callback to receive the GoogleMap object
+            mapVw.getMapAsync(this);
+        }
 
         return view;
     }

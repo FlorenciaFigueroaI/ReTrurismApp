@@ -15,6 +15,7 @@ android {
         "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
+        resConfigs "en", "fr", "es"
     }
 
     buildTypes {

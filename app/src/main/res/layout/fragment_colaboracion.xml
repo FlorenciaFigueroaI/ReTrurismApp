@@ -114,9 +114,9 @@
 
         <ImageView
             android:id="@+id/imgVwEjemplo"
-            android:layout_width="184dp"
-            android:layout_height="140dp"
-            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
             android:contentDescription="@string/todo"
             app:srcCompat="@drawable/img_antigua_penyol" />
 
@@ -164,7 +164,7 @@
             android:text="@string/cancelar"
             android:textAlignment="center"
             android:textColor="@color/colorBackground"
-            android:textSize="18sp"
+            android:textSize="@dimen/font_size"
             android:textStyle="bold"
             tools:ignore="ButtonStyle" />
 

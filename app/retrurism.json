@@ -1,0 +1,19 @@
+[
+{"type":"header","version":"5.0.4","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"retrurism"},
+{"type":"table","name":"autor","database":"retrurism","data":
+[
+{"autor_id":"19","nombre":"Flow","apellido":"Figue","apodo":"Flow"},
+{"autor_id":"21","nombre":"Julio","apellido":"","apodo":"Julio"}
+]
+}
+,{"type":"table","name":"fotografia","database":"retrurism","data":
+[
+{"foto_id":"37","titulo":"Parque Amestoy","ciudad":"Castro Urdiales","anyo":"1950","image":"images\/Parque Amestoy.jpg"},
+{"foto_id":"38","titulo":"Puente colgante","ciudad":"Bilbao","anyo":"1940","image":"images\/Puente colgante.jpg"},
+{"foto_id":"39","titulo":"Puntal de Laredo","ciudad":"Laredo","anyo":"1950","image":"images\/Puntal de Laredo.jpg"},
+{"foto_id":"40","titulo":"Playa Castro","ciudad":"Castro","anyo":"1930","image":"images\/Playa Castro.jpg"},
+{"foto_id":"41","titulo":"Barcas","ciudad":"Castro","anyo":"1950","image":"images\/Barcas.jpg"}
+]
+}
+]

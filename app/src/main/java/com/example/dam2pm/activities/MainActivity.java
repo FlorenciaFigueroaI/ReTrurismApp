@@ -90,9 +90,10 @@ public class MainActivity extends AppCompatActivity {
                 if (mp.isPlaying()) {
                     mp.pause();
                     btnPlayPause.setBackgroundResource(R.drawable.ic_baseline_play_circle_outline_24);
-                    Toast.makeText(MainActivity.this, "Aretha Franklin - Save me", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Canción en pausa", Toast.LENGTH_SHORT).show();
                 }else{
                     mp.start();
+                    Toast.makeText(MainActivity.this, "Estás escuchando: Aretha Franklin - Save me", Toast.LENGTH_SHORT).show();
                     btnPlayPause.setBackgroundResource(R.drawable.ic_baseline_pause_circle_outline_24);
                 }
             }

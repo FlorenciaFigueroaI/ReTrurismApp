@@ -32,8 +32,8 @@ public class GaleriaFragment extends Fragment {
 
     GaleriaAdapter adapter;
 
-    private static final String URL = "http://192.168.8.109/retrurism/fetchImages.php";
-    String imageURL = "http://192.168.8.109/retrurism/";
+    private static final String URL = "http://192.168.8.107/retrurism/fetchImages.php";
+    String imageURL = "http://192.168.8.107/retrurism/";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

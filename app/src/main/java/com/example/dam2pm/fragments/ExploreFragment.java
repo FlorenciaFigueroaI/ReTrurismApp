@@ -35,8 +35,8 @@ public class ExploreFragment extends Fragment {
 /*
 ** IMPORTANTE: Cambiar url tanto en String URL como en String image
  */
-    private static final String URL = "http://192.168.8.109/retrurism/fetchImages.php";
-    String imageURL = "http://192.168.8.109/retrurism/";
+    private static final String URL = "http://192.168.8.107/retrurism/fetchImages.php";
+    String imageURL = "http://192.168.8.107/retrurism/";
 
 
     @Override

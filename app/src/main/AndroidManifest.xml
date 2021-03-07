@@ -33,8 +33,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.AccesoActivity" />
-        <activity android:name=".activities.PerfilActivity" />
+        <activity android:name=".activities.AccesoActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".activities.PerfilActivity"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name=".activities.MainActivity"
             android:configChanges="keyboardHidden|orientation" />

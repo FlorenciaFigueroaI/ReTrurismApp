@@ -1,4 +1,4 @@
-package com.example.dam2pm;
+package com.example.retrurism;
 
 import org.junit.Test;
 

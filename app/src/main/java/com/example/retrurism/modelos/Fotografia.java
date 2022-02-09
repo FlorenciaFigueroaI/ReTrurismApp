@@ -1,5 +1,5 @@
 
-package com.example.dam2pm.modelos;
+package com.example.retrurism.modelos;
 
 import org.jetbrains.annotations.NotNull;
 

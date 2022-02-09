@@ -1,4 +1,4 @@
-package com.example.dam2pm.activities;
+package com.example.retrurism.activities;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -14,10 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.dam2pm.R;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
-import com.example.dam2pm.fragments.RecuperacionPwdFragment;
-import com.example.dam2pm.fragments.RegistroFragment;
+import com.example.retrurism.R;
+import com.example.retrurism.animaciones.GifLoadingActivity;
+import com.example.retrurism.fragments.RecuperacionPwdFragment;
+import com.example.retrurism.fragments.RegistroFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -60,7 +60,6 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validar();
-
             }
         });
 
@@ -110,6 +109,21 @@ public class AccesoActivity extends AppCompatActivity {
 
     }
 
+    /*
+    // método para cargar el GIF
+    public void cargarGif(){
+        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
+
+    }
+
+*/
+    // método para producir el sonido
+    public void efectoSonido() {
+        mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
+        mp.start();
+
+    }
+
     // Comprueba que el edittext de email esté rellenado y con formato correcto
     private void validar() {
         email = txtEmailAcc.getText().toString();
@@ -124,8 +138,9 @@ public class AccesoActivity extends AppCompatActivity {
             txtPwdAcc.setError("Campo requerido.");
             return;
         }
-        cargarGif();
+
         ingresarUsuario();
+
 
     }
 
@@ -138,6 +153,7 @@ public class AccesoActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     efectoSonido();
+                   // cargarGif();
                     startActivity(new Intent(AccesoActivity.this, MainActivity.class));
 
                 }else{
@@ -146,19 +162,4 @@ public class AccesoActivity extends AppCompatActivity {
             }
         });
     }
-
-    // método para cargar el GIF
-    public void cargarGif(){
-
-        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
-
-    }
-
-    // método para producir el sonido
-    public void efectoSonido() {
-        mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
-        mp.start();
-
-    }
-
 }

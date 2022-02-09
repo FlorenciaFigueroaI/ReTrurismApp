@@ -1,4 +1,4 @@
-package com.example.dam2pm.adaptadores;
+package com.example.retrurism.adaptadores;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.dam2pm.R;
-import com.example.dam2pm.modelos.Fotografia;
+import com.example.retrurism.R;
+import com.example.retrurism.modelos.Fotografia;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,4 +1,4 @@
-package com.example.dam2pm.singleton;
+package com.example.retrurism.singleton;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

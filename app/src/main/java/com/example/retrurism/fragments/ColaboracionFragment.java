@@ -1,4 +1,4 @@
-package com.example.dam2pm.fragments;
+package com.example.retrurism.fragments;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -30,9 +30,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.dam2pm.R;
-import com.example.dam2pm.activities.MainActivity;
-import com.example.dam2pm.singleton.MySingleton;
+import com.example.retrurism.R;
+import com.example.retrurism.activities.MainActivity;
+import com.example.retrurism.singleton.MySingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;

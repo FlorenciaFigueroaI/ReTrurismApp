@@ -1,4 +1,4 @@
-package com.example.dam2pm.fragments;
+package com.example.retrurism.fragments;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -16,14 +16,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.dam2pm.R;
-import com.example.dam2pm.activities.AccesoActivity;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
+import com.example.retrurism.R;
+import com.example.retrurism.activities.AccesoActivity;
+import com.example.retrurism.animaciones.GifLoadingActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-//import com.example.dam2pm.animaciones.GifLoadingActivity;
 
 public class RecuperacionPwdFragment extends Fragment {
 

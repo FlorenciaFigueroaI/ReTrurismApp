@@ -1,4 +1,4 @@
-package com.example.dam2pm.activities;
+package com.example.retrurism.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,16 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.dam2pm.R;
-import com.example.dam2pm.fragments.ColaboracionFragment;
-import com.example.dam2pm.fragments.GaleriaFragment;
+import com.example.retrurism.R;
+import com.example.retrurism.fragments.ColaboracionFragment;
+import com.example.retrurism.fragments.GaleriaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    boolean vistaEnExplore;
+    boolean vistaEnPrincipal;
     BottomNavigationView btmNavVw;
     Button btnMasOpciones;
 
@@ -49,12 +49,12 @@ public class MainActivity extends AppCompatActivity {
                 switch (itemId) {
                     case R.id.nvgGaleria:
                         addFragment(new GaleriaFragment());
-                        vistaEnExplore = false;
+                        vistaEnPrincipal = true;
                         break;
 
                     case R.id.nvgColaboracion:
                         addFragment(new ColaboracionFragment());
-                        vistaEnExplore = false;
+                        vistaEnPrincipal = false;
                         break;
                 }
                 return true;
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
     // Método botón hacia atrás
     @Override
     public void onBackPressed() {
-        if (!vistaEnExplore) {
+        if (!vistaEnPrincipal) {
             BottomNavigationView bottomNavigationView = findViewById(R.id.btmNavgtView);
             bottomNavigationView.setSelectedItemId(R.id.nvgGaleria);
         } else {

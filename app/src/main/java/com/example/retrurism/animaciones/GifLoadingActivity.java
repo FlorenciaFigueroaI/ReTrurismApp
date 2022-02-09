@@ -1,4 +1,4 @@
-package com.example.dam2pm.animaciones;
+package com.example.retrurism.animaciones;
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.dam2pm.R;
+import com.example.retrurism.R;
 
 public class GifLoadingActivity extends AppCompatActivity {
 

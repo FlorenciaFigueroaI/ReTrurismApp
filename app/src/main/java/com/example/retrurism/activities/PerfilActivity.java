@@ -1,4 +1,4 @@
-package com.example.dam2pm.activities;
+package com.example.retrurism.activities;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -17,9 +17,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.dam2pm.R;
-import com.example.dam2pm.animaciones.GifLoadingActivity;
-//import com.example.dam2pm.animaciones.GifLoadingActivity;
+import com.example.retrurism.R;
+import com.example.retrurism.animaciones.GifLoadingActivity;
+
 
 import org.jetbrains.annotations.NotNull;
 

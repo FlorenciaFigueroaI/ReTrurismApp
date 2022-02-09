@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.dam2pm">
+    package="com.example.retrurism">
     <!-- PERMISOS INTERNET -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -22,9 +22,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
 
-        <activity android:name=".animaciones.GifLoadingActivity" />
+        <activity android:name="com.example.retrurism.animaciones.GifLoadingActivity" />
         <activity
-            android:name=".animaciones.SplashActivity"
+            android:name="com.example.retrurism.animaciones.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashScreen">
             <intent-filter>
@@ -33,14 +33,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.AccesoActivity"
+        <activity android:name="com.example.retrurism.activities.AccesoActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".activities.PerfilActivity"
+        <activity android:name="com.example.retrurism.activities.PerfilActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.example.retrurism.activities.MainActivity"
             android:configChanges="keyboardHidden|orientation" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"

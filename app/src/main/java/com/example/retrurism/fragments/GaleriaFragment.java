@@ -1,4 +1,4 @@
-package com.example.dam2pm.fragments;
+package com.example.retrurism.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,10 +14,10 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.example.dam2pm.R;
-import com.example.dam2pm.adaptadores.GaleriaAdapter;
-import com.example.dam2pm.modelos.Fotografia;
-import com.example.dam2pm.singleton.MySingleton;
+import com.example.retrurism.R;
+import com.example.retrurism.adaptadores.GaleriaAdapter;
+import com.example.retrurism.modelos.Fotografia;
+import com.example.retrurism.singleton.MySingleton;
 
 import org.json.JSONArray;
 import org.json.JSONException;

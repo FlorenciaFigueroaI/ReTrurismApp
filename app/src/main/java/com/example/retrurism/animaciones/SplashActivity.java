@@ -1,12 +1,12 @@
-package com.example.dam2pm.animaciones;
+package com.example.retrurism.animaciones;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.dam2pm.R;
-import com.example.dam2pm.activities.AccesoActivity;
+import com.example.retrurism.R;
+import com.example.retrurism.activities.AccesoActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

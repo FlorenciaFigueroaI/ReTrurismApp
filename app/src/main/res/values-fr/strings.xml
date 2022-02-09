@@ -57,4 +57,6 @@
     <string name="orientacion">Orientation</string>
     <string name="cambiar_orientacion">Changer la orientation</string>
     <string name="elige_orientacion">Choisissez la orientation</string>
+    <string name="buscador">Chercheur</string>
+
 </resources>

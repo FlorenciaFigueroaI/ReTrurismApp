@@ -17,9 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.dam2pm.R;
 import com.example.dam2pm.fragments.ColaboracionFragment;
-import com.example.dam2pm.fragments.ExploreFragment;
 import com.example.dam2pm.fragments.GaleriaFragment;
-import com.example.dam2pm.fragments.MapaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -38,11 +36,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         // Menú de opciones inferior
         btmNavVw = findViewById(R.id.btmNavgtView);
-        addFragment(new ExploreFragment());
+        addFragment(new GaleriaFragment());
         btmNavVw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
             @SuppressLint("NonConstantResourceId")
@@ -51,12 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
                 int itemId = item.getItemId();
                 switch (itemId) {
-
-                    case R.id.nvgExplorar:
-                        addFragment(new ExploreFragment());
-                        vistaEnExplore = true;
-                        break;
-
                     case R.id.nvgGaleria:
                         addFragment(new GaleriaFragment());
                         vistaEnExplore = false;
@@ -66,12 +56,6 @@ public class MainActivity extends AppCompatActivity {
                         addFragment(new ColaboracionFragment());
                         vistaEnExplore = false;
                         break;
-
-                    case R.id.nvgMapa:
-                        addFragment(new MapaFragment());
-                        vistaEnExplore = false;
-                        break;
-
                 }
                 return true;
             }
@@ -145,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (!vistaEnExplore) {
             BottomNavigationView bottomNavigationView = findViewById(R.id.btmNavgtView);
-            bottomNavigationView.setSelectedItemId(R.id.nvgExplorar);
+            bottomNavigationView.setSelectedItemId(R.id.nvgGaleria);
         } else {
             moveTaskToBack(true);  // sale de la app
         }

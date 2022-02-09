@@ -3,29 +3,18 @@
     android:id="@+id/menu">
 
         <item
-            android:id="@+id/nvgExplorar"
-            android:enabled="true"
-            android:icon="@drawable/ic_baseline_explore_24"
-            android:title="@string/explorar" />
-
-        <item
             android:id="@+id/nvgGaleria"
             android:enabled="true"
             android:icon="@drawable/ic_baseline_photo_album_24"
             android:title="@string/galeria"/>
-
+        <item
+            android:id="@+id/nvgBuscador"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_search_24"
+            android:title="@string/buscador"/>
         <item
             android:id="@+id/nvgColaboracion"
             android:enabled="true"
             android:icon="@drawable/ic_baseline_groups_24"
             android:title="@string/Colabora" />
-
-        <item
-            android:id="@+id/nvgMapa"
-            android:enabled="true"
-            android:icon="@drawable/ic_baseline_location_on_24"
-            android:title="@string/mapa"/>
-
-
-
 </menu>

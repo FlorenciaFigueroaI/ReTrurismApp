@@ -67,7 +67,6 @@ public class PerfilActivity extends AppCompatActivity {
                     crearUsuario(nombre, apellido, apodo);
                     efectoSonido();
                     cargarGif();
-
                 }
             }
         });
@@ -83,7 +82,6 @@ public class PerfilActivity extends AppCompatActivity {
     }
 
     private void crearUsuario(final String nombre, final String apellido, final String apodo) {
-
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 URL,
@@ -101,7 +99,6 @@ public class PerfilActivity extends AppCompatActivity {
                         Toast.makeText(PerfilActivity.this, "Error. No se ha creado el usuario", Toast.LENGTH_SHORT).show();
                     }
                 }
-
         ){
             @NotNull
             @Override

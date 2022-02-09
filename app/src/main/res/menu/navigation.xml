@@ -15,6 +15,6 @@
         <item
             android:id="@+id/nvgColaboracion"
             android:enabled="true"
-            android:icon="@drawable/ic_baseline_groups_24"
+            android:icon="@drawable/ic_baseline_add_to_photos_24"
             android:title="@string/Colabora" />
 </menu>

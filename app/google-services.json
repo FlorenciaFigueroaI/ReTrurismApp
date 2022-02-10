@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:529405096545:android:a1c2576c84878cd4ef7020",
         "android_client_info": {
-          "package_name": "com.example.dam2pm"
+          "package_name": "com.example.retrurism"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "529405096545-pu7euavqeajhof7nmvafhacf84774v5u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.dam2pm",
+            "package_name": "com.example.retrurism",
             "certificate_hash": "a8ad8253985f7ef187d8c10c46bb49855e84aab5"
           }
         },

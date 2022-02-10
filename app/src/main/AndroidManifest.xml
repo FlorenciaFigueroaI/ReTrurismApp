@@ -20,13 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         android:usesCleartextTraffic="true"
-        tools:targetApi="m">
+        tools:targetApi="s"
+        android:dataExtractionRules="@xml/data_extraction_rules">
 
         <activity android:name="com.example.retrurism.animaciones.GifLoadingActivity" />
         <activity
             android:name="com.example.retrurism.animaciones.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/SplashScreen">
+            android:screenOrientation="fullSensor"
+            android:theme="@style/SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,10 +36,10 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.retrurism.activities.AccesoActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
         </activity>
         <activity android:name="com.example.retrurism.activities.PerfilActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
         </activity>
         <activity
             android:name="com.example.retrurism.activities.MainActivity"

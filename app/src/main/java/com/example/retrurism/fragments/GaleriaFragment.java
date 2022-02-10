@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.retrurism.R;
 import com.example.retrurism.adaptadores.GaleriaAdapter;
@@ -56,44 +54,34 @@ public class GaleriaFragment extends Fragment {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.GET,
                 URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONArray array = new JSONArray(response);
+                response -> {
+                    try {
+                        JSONArray array = new JSONArray(response);
 
-                            for (int i = 0; i<array.length(); i++) {
+                        for (int i = 0; i<array.length(); i++) {
 
-                                JSONObject fotosObj = array.getJSONObject(i);
+                            JSONObject fotosObj = array.getJSONObject(i);
 
-                                String titulo = fotosObj.getString("titulo");
-                                String ciudad = fotosObj.getString("ciudad");
-                                int anyo = fotosObj.getInt("anyo");
-                                String image = imageURL + fotosObj.getString("image");
-                                Fotografia fotografia = new Fotografia(titulo, ciudad, anyo, image);
-                                listaFotos.add(fotografia);
+                            String titulo = fotosObj.getString("titulo");
+                            String ciudad = fotosObj.getString("ciudad");
+                            int anyo = fotosObj.getInt("anyo");
+                            String image = imageURL + fotosObj.getString("image");
+                            Fotografia fotografia = new Fotografia(titulo, ciudad, anyo, image);
+                            listaFotos.add(fotografia);
 
-                            }
-
-
-                            adapter = new GaleriaAdapter(getContext(), listaFotos);
-                            recyclerFotos.setAdapter(adapter);
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
 
 
+                        adapter = new GaleriaAdapter(getContext(), listaFotos);
+                        recyclerFotos.setAdapter(adapter);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
+
+
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_LONG).show();
-
-                    }
-                });
+                error -> Toast.makeText(getContext(), error.toString(), Toast.LENGTH_LONG).show());
 
          MySingleton.getInstance(getActivity()).addToRequestQue(stringRequest);
 

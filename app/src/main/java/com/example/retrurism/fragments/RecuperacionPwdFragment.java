@@ -13,14 +13,11 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.retrurism.R;
 import com.example.retrurism.activities.AccesoActivity;
 import com.example.retrurism.animaciones.GifLoadingActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -57,21 +54,12 @@ public class RecuperacionPwdFragment extends Fragment {
         btnEnviarEmail = view.findViewById(R.id.btnEnviarEmail);
         btnCancelarEmailRecup = view.findViewById(R.id.btnCancelarRecupEmail);
 
-        btnEnviarEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validar();
+        btnEnviarEmail.setOnClickListener(view1 -> validar());
 
-            }
-        });
-
-        btnCancelarEmailRecup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                efectoSonido();
-                startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de acceso
-                Toast.makeText(getActivity(), "Tarea cancelada", Toast.LENGTH_SHORT).show();
-            }
+        btnCancelarEmailRecup.setOnClickListener(view12 -> {
+            efectoSonido();
+            startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de acceso
+            Toast.makeText(getActivity(), "Tarea cancelada", Toast.LENGTH_SHORT).show();
         });
 
 
@@ -98,18 +86,15 @@ public class RecuperacionPwdFragment extends Fragment {
     private void enviarEmail(String email) {
         emailRecuperacion = email;
         mAuth.sendPasswordResetEmail(emailRecuperacion) // firebase envía el email
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            efectoSonido();
-                            Toast.makeText(getActivity(), "Email enviado", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getActivity(), AccesoActivity.class);
-                            startActivity(intent);
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        efectoSonido();
+                        Toast.makeText(getActivity(), "Email enviado", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), AccesoActivity.class);
+                        startActivity(intent);
 
-                        }else{
-                            Toast.makeText(getActivity(), "Email inválido", Toast.LENGTH_SHORT).show();
-                        }
+                    }else{
+                        Toast.makeText(getActivity(), "Email inválido", Toast.LENGTH_SHORT).show();
                     }
                 });
     }

@@ -1,5 +1,7 @@
 package com.example.retrurism.fragments;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -27,8 +29,6 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.retrurism.R;
 import com.example.retrurism.activities.MainActivity;
@@ -42,8 +42,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.app.Activity.RESULT_OK;
 
 
 public class ColaboracionFragment extends Fragment {
@@ -89,31 +87,17 @@ public class ColaboracionFragment extends Fragment {
         btnCancelarFoto = view.findViewById(R.id.btnCancelarEnvioFoto);
 
         fltActBtn = view.findViewById(R.id.fltActBtn);
-        fltActBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                seleccionarImagen();
+        fltActBtn.setOnClickListener(view1 -> seleccionarImagen());
 
-            }
+        btnEnviarFoto.setOnClickListener(v -> {
+            subirFoto();
+            setPendingIntent();
+            crearCanalNotificacion();
+            crearNotificacion();
+
         });
 
-        btnEnviarFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                subirFoto();
-                setPendingIntent();
-                crearCanalNotificacion();
-                crearNotificacion();
-
-            }
-        });
-
-        btnCancelarFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MainActivity.class));
-            }
-        });
+        btnCancelarFoto.setOnClickListener(v -> startActivity(new Intent(getActivity(), MainActivity.class)));
 
         return view;
 
@@ -160,33 +144,24 @@ public class ColaboracionFragment extends Fragment {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String resp = jsonObject.getString("response");
-                            Toast.makeText(getContext(), resp, Toast.LENGTH_SHORT).show();
-                            imgVwFotografia.setImageResource(0);
+                response -> {
+                    try {
+                        JSONObject jsonObject = new JSONObject(response);
+                        String resp = jsonObject.getString("response");
+                        Toast.makeText(getContext(), resp, Toast.LENGTH_SHORT).show();
+                        imgVwFotografia.setImageResource(0);
 
-                            fltActBtn.setVisibility(View.GONE);
-                            txtVwEjemplo.setVisibility(View.GONE);
+                        fltActBtn.setVisibility(View.GONE);
+                        txtVwEjemplo.setVisibility(View.GONE);
 
-                            efectoSonido();
-                            startActivity(new Intent(getActivity(), MainActivity.class));
+                        efectoSonido();
+                        startActivity(new Intent(getActivity(), MainActivity.class));
 
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getContext(), error.toString(), Toast.LENGTH_LONG).show();
-
-                    }
-                }
+                error -> Toast.makeText(getContext(), error.toString(), Toast.LENGTH_LONG).show()
 
         ) {
 

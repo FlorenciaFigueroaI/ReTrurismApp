@@ -10,17 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.retrurism.R;
-import com.example.retrurism.animaciones.GifLoadingActivity;
 import com.example.retrurism.fragments.RecuperacionPwdFragment;
 import com.example.retrurism.fragments.RegistroFragment;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -56,67 +51,47 @@ public class AccesoActivity extends AppCompatActivity {
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
         btnEnt = findViewById(R.id.btnEntrar);
 
-        btnEnt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                validar();
-            }
-        });
+        btnEnt.setOnClickListener(view -> validar());
 
         // Botón registro que me lleva al fragment_registro
         btnReg = findViewById(R.id.btnRegistro);
-        btnReg.setOnClickListener(new View.OnClickListener() {
+        btnReg.setOnClickListener(v -> {        // Carga el fragmento de registro al clikear en el botón de registro
+            btnReg.setVisibility(View.GONE);    // Desaparecen los componentes de la vista del usuario
+            btnEnt.setVisibility(View.GONE);
+            txtEmailAcc.setVisibility(View.GONE);
+            txtPwdAcc.setVisibility(View.GONE);
+            txtVwOlviPwd.setVisibility(View.GONE);
+            efectoSonido();
+            // se carga el fragment
+            // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
+            transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
+            RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción
+            transaccion.add(R.id.contenedorAcceso, frgRegistro); // se añade transacción
+            transaccion.addToBackStack(null); //para volver hacia atrás
+            transaccion.commit(); // confirmación del cambio
 
-            @Override
-            public void onClick(View v) {        // Carga el fragmento de registro al clikear en el botón de registro
-                btnReg.setVisibility(View.GONE);    // Desaparecen los componentes de la vista del usuario
-                btnEnt.setVisibility(View.GONE);
-                txtEmailAcc.setVisibility(View.GONE);
-                txtPwdAcc.setVisibility(View.GONE);
-                txtVwOlviPwd.setVisibility(View.GONE);
-                efectoSonido();
-                // se carga el fragment
-                // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
-                transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
-                RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción
-                transaccion.add(R.id.contenedorAcceso, frgRegistro); // se añade transacción
-                transaccion.addToBackStack(null); //para volver hacia atrás
-                transaccion.commit(); // confirmación del cambio
-
-            }
         });
 
         // Recuperacion de la contraseña
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
-        txtVwOlviPwd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btnReg.setVisibility(View.GONE);    // Desaparecen los componentes de la vista del usuario
-                btnEnt.setVisibility(View.GONE);
-                txtEmailAcc.setVisibility(View.GONE);
-                txtPwdAcc.setVisibility(View.GONE);
-                txtVwOlviPwd.setVisibility(View.GONE);
+        txtVwOlviPwd.setOnClickListener(view -> {
+            btnReg.setVisibility(View.GONE);    // Desaparecen los componentes de la vista del usuario
+            btnEnt.setVisibility(View.GONE);
+            txtEmailAcc.setVisibility(View.GONE);
+            txtPwdAcc.setVisibility(View.GONE);
+            txtVwOlviPwd.setVisibility(View.GONE);
 
-                // se carga el fragment
-                transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
-                RecuperacionPwdFragment frgRecupPwd = new RecuperacionPwdFragment(); // instancia de transacción
-                transaccion.add(R.id.contenedorAcceso,  frgRecupPwd); // se añade transacción
-                transaccion.addToBackStack(null); //para volver hacia atrás
-                transaccion.commit(); // confirmación del cambio
+            // se carga el fragment
+            transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
+            RecuperacionPwdFragment frgRecupPwd = new RecuperacionPwdFragment(); // instancia de transacción
+            transaccion.add(R.id.contenedorAcceso,  frgRecupPwd); // se añade transacción
+            transaccion.addToBackStack(null); //para volver hacia atrás
+            transaccion.commit(); // confirmación del cambio
 
-            }
         });
 
     }
 
-    /*
-    // método para cargar el GIF
-    public void cargarGif(){
-        startActivity(new Intent(AccesoActivity.this, GifLoadingActivity.class));
-
-    }
-
-*/
     // método para producir el sonido
     public void efectoSonido() {
         mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
@@ -148,17 +123,14 @@ public class AccesoActivity extends AppCompatActivity {
         email = txtEmailAcc.getText().toString();
         password = txtPwdAcc.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    efectoSonido();
-                   // cargarGif();
-                    startActivity(new Intent(AccesoActivity.this, MainActivity.class));
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                efectoSonido();
+               // cargarGif();
+                startActivity(new Intent(AccesoActivity.this, MainActivity.class));
 
-                }else{
-                    Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
-                }
+            }else{
+                Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
             }
         });
     }

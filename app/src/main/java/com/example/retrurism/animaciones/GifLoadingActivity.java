@@ -45,7 +45,6 @@ public class GifLoadingActivity extends AppCompatActivity {
 
         oa.start();
 
-
     }
 
 

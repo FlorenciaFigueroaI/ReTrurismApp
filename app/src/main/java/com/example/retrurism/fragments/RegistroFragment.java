@@ -14,17 +14,15 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.retrurism.R;
 import com.example.retrurism.activities.AccesoActivity;
 import com.example.retrurism.modelos.Usuario;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 
 public class RegistroFragment extends Fragment {
@@ -63,19 +61,13 @@ public class RegistroFragment extends Fragment {
         btnEnviar = view.findViewById(R.id.btnEnviar);
         btnCancelar = view.findViewById(R.id.btnCancelar);
 
-        btnEnviar.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                 validar();
-            }
-        });
+        btnEnviar.setOnClickListener(view1 -> validar());
 
-        btnCancelar.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                efectoSonido();
-                startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de Login
-                Toast.makeText(getActivity(), "No te has registrado", Toast.LENGTH_SHORT).show();
+        btnCancelar.setOnClickListener(view12 -> {
+            efectoSonido();
+            startActivity(new Intent(getActivity(), AccesoActivity.class)); // volvemos a la página de Login
+            Toast.makeText(getActivity(), "No te has registrado", Toast.LENGTH_SHORT).show();
 
-            }
         });
         return view;
 
@@ -119,29 +111,23 @@ public class RegistroFragment extends Fragment {
         password = txtPwd.getText().toString();
 
         mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            Usuario usuario = new Usuario(email, password);
-                            FirebaseDatabase.getInstance().getReference("Usuario")
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(usuario).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (!task.isSuccessful()) {
+                .addOnCompleteListener(requireActivity(), task -> {
+                    if (task.isSuccessful()) {
+                        Usuario usuario = new Usuario(email, password);
+                        FirebaseDatabase.getInstance().getReference("Usuario")
+                                .child(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
+                                .setValue(usuario).addOnCompleteListener(task1 -> {
+                                    if (!task1.isSuccessful()) {
                                         efectoSonido();
                                         // mensaje de registro correcto
                                         Toast.makeText(getActivity(), "Se ha registrado con éxito", Toast.LENGTH_SHORT).show();
                                         startActivity(new Intent(getActivity(), AccesoActivity.class));
                                     }
-                                }
-                            });
+                                });
 
-                        } else {
-                            Toast.makeText(getActivity(), "El email introducido ya existe, intente acceder con dicho email o vuelva a intentarlo con otro.",
-                                    Toast.LENGTH_LONG).show();
-                        }
+                    } else {
+                        Toast.makeText(getActivity(), "El email introducido ya existe, intente acceder con dicho email o vuelva a intentarlo con otro.",
+                                Toast.LENGTH_LONG).show();
                     }
                 });
 

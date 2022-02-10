@@ -3,7 +3,6 @@ package com.example.retrurism.activities;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -13,13 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.retrurism.R;
 import com.example.retrurism.animaciones.GifLoadingActivity;
-
 
 import org.jetbrains.annotations.NotNull;
 
@@ -54,29 +50,23 @@ public class PerfilActivity extends AppCompatActivity {
         txtApodo = findViewById(R.id.txtApodo);
         imgVwAvatar = findViewById(R.id.imgVwAvatar);
 
-        btnGuardar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int id = v.getId();
+        btnGuardar.setOnClickListener(v -> {
+            int id = v.getId();
 
-                if (id == R.id.btnGuardar){
-                    String nombre = txtNombre.getText().toString().trim();
-                    String apellido = txtApellido.getText().toString().trim();
-                    String apodo = txtApodo.getText().toString().trim();
+            if (id == R.id.btnGuardar){
+                String nombre = txtNombre.getText().toString().trim();
+                String apellido = txtApellido.getText().toString().trim();
+                String apodo = txtApodo.getText().toString().trim();
 
-                    crearUsuario(nombre, apellido, apodo);
-                    efectoSonido();
-                    cargarGif();
-                }
+                crearUsuario(nombre, apellido, apodo);
+                efectoSonido();
+                cargarGif();
             }
         });
 
-        btnSalir.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                efectoSonido();
-                startActivity(new Intent(PerfilActivity.this, MainActivity.class));
-            }
+        btnSalir.setOnClickListener(v -> {
+            efectoSonido();
+            startActivity(new Intent(PerfilActivity.this, MainActivity.class));
         });
 
     }
@@ -85,20 +75,12 @@ public class PerfilActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(PerfilActivity.this, "Datos guardados", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(PerfilActivity.this, MainActivity.class));
+                response -> {
+                    Toast.makeText(PerfilActivity.this, "Datos guardados", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(PerfilActivity.this, MainActivity.class));
 
-                    }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(PerfilActivity.this, "Error. No se ha creado el usuario", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                error -> Toast.makeText(PerfilActivity.this, "Error. No se ha creado el usuario", Toast.LENGTH_SHORT).show()
         ){
             @NotNull
             @Override

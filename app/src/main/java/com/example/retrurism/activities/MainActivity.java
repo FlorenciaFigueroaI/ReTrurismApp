@@ -2,13 +2,11 @@ package com.example.retrurism.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,9 +26,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView btmNavVw;
     Button btnMasOpciones;
 
-    Button btnPlayPause;
-    MediaPlayer mp;
-
+    @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,50 +35,25 @@ public class MainActivity extends AppCompatActivity {
         // Menú de opciones inferior
         btmNavVw = findViewById(R.id.btmNavgtView);
         addFragment(new GaleriaFragment());
-        btmNavVw.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        btmNavVw.setOnItemSelectedListener(item -> {
 
-            @SuppressLint("NonConstantResourceId")
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            int itemId = item.getItemId();
+            switch (itemId) {
+                case R.id.nvgGaleria:
+                    addFragment(new GaleriaFragment());
+                    vistaEnPrincipal = true;
+                    break;
 
-                int itemId = item.getItemId();
-                switch (itemId) {
-                    case R.id.nvgGaleria:
-                        addFragment(new GaleriaFragment());
-                        vistaEnPrincipal = true;
-                        break;
-
-                    case R.id.nvgColaboracion:
-                        addFragment(new ColaboracionFragment());
-                        vistaEnPrincipal = false;
-                        break;
-                }
-                return true;
+                case R.id.nvgColaboracion:
+                    addFragment(new ColaboracionFragment());
+                    vistaEnPrincipal = false;
+                    break;
             }
-
+            return true;
         });
 
         btnMasOpciones = findViewById(R.id.btnMasopciones);
         registerForContextMenu(btnMasOpciones);
-
-        // Reproductor de música
-        btnPlayPause = findViewById(R.id.btnPlay);
-        mp = MediaPlayer.create(this,R.raw.aretha_franklin_save_me);
-        btnPlayPause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mp.isPlaying()) {
-                    mp.pause();
-                    btnPlayPause.setBackgroundResource(R.drawable.ic_baseline_play_circle_outline_24);
-                    Toast.makeText(MainActivity.this, "Canción en pausa", Toast.LENGTH_SHORT).show();
-                }else{
-                    mp.start();
-                    Toast.makeText(MainActivity.this, "Estás escuchando: Aretha Franklin - Save me", Toast.LENGTH_SHORT).show();
-                    btnPlayPause.setBackgroundResource(R.drawable.ic_baseline_pause_circle_outline_24);
-                }
-            }
-        });
-
     }
 
 

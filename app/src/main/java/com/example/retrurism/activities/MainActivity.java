@@ -105,7 +105,4 @@ public class MainActivity extends AppCompatActivity {
             moveTaskToBack(true);  // sale de la app
         }
     }
-
-
-
 }

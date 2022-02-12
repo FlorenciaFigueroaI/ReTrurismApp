@@ -16,6 +16,8 @@ import com.example.retrurism.R;
 import com.example.retrurism.adaptadores.GaleriaAdapter;
 import com.example.retrurism.modelos.Fotografia;
 import com.example.retrurism.singleton.MySingleton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -85,8 +87,6 @@ public class GaleriaFragment extends Fragment {
 
          MySingleton.getInstance(getActivity()).addToRequestQue(stringRequest);
 
-
-        
     }
 
     @Override

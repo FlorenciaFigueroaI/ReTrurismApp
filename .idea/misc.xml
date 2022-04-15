@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/flore/Desktop/DAM2PM/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.285" />
+        <entry key="..\:/Users/flore/Desktop/DAM2PM/app/src/main/res/layout/activity_main.xml" value="0.334375" />
+        <entry key="..\:/Users/flore/Desktop/DAM2PM/app/src/main/res/layout/fragment_busqueda.xml" value="0.334375" />
+        <entry key="..\:/Users/flore/Desktop/DAM2PM/app/src/main/res/layout/fragment_galeria.xml" value="0.334375" />
+        <entry key="..\:/Users/flore/Desktop/DAM2PM/app/src/main/res/layout/item_list_galeria.xml" value="0.22780797101449277" />
+        <entry key="..\:/Users/flore/Desktop/DAM2PM/app/src/main/res/menu/navigation.xml" value="0.334375" />
         <entry key="..\:/Users/flore/Desktop/ReTrurismApp/app/src/main/res/layout/activity_acceso.xml" value="0.33" />
         <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/activity_main.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/fragment_galeria.xml" value="0.25416666666666665" />

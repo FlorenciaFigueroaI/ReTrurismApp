@@ -133,7 +133,7 @@ public class AccesoActivity extends AppCompatActivity {
     private void ingresarInvitado(){
 
         mAuth.signInAnonymously().addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if(!task.isSuccessful()){
                 efectoSonido();
                 // cargarGif();
                 Toast.makeText(AccesoActivity.this, "Has entrado como Invitado.", Toast.LENGTH_SHORT).show();

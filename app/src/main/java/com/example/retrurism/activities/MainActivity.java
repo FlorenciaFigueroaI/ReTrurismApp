@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.retrurism.R;
+import com.example.retrurism.fragments.BusquedaFragment;
 import com.example.retrurism.fragments.ColaboracionFragment;
 import com.example.retrurism.fragments.GaleriaFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -42,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nvgGaleria:
                     addFragment(new GaleriaFragment());
                     vistaEnPrincipal = true;
+                    break;
+
+                case R.id.nvgBuscador:
+                    addFragment(new BusquedaFragment());
+                    vistaEnPrincipal = false;
                     break;
 
                 case R.id.nvgColaboracion:
@@ -105,7 +111,4 @@ public class MainActivity extends AppCompatActivity {
             moveTaskToBack(true);  // sale de la app
         }
     }
-
-
-
 }

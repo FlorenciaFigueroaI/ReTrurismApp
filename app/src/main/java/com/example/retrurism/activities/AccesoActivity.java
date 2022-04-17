@@ -27,16 +27,12 @@ public class AccesoActivity extends AppCompatActivity {
     private EditText txtEmailAcc;
     private EditText txtPwdAcc;
     private TextView txtVwOlviPwd;
-    FragmentTransaction transaccion;
+    private FragmentTransaction transaccion;
 
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
 
-    String email;
-    String password;
-
-    MediaPlayer mp;
-
-
+    private String email;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +41,13 @@ public class AccesoActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
         txtEmailAcc = findViewById(R.id.txtEmailAcceso);
         txtPwdAcc= findViewById(R.id.txtPwdAcceso);
         txtVwOlviPwd = findViewById(R.id.txtVwOlvidoPwd);
         btnEnt = findViewById(R.id.btnEntrar);
-
+        Button btnEntInv = findViewById(R.id.btnEntrarInvitado);
         btnEnt.setOnClickListener(view -> validar());
+        btnEntInv.setOnClickListener(view -> ingresarInvitado());
 
         // Botón registro que me lleva al fragment_registro
         btnReg = findViewById(R.id.btnRegistro);
@@ -94,7 +90,7 @@ public class AccesoActivity extends AppCompatActivity {
 
     // método para producir el sonido
     public void efectoSonido() {
-        mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
+        MediaPlayer mp = MediaPlayer.create(AccesoActivity.this, R.raw.sonido_botones);
         mp.start();
 
     }
@@ -115,8 +111,6 @@ public class AccesoActivity extends AppCompatActivity {
         }
 
         ingresarUsuario();
-
-
     }
 
     private void ingresarUsuario() {
@@ -126,12 +120,28 @@ public class AccesoActivity extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 efectoSonido();
-               // cargarGif();
+                // cargarGif();
                 startActivity(new Intent(AccesoActivity.this, MainActivity.class));
 
             }else{
                 Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void ingresarInvitado(){
+
+        mAuth.signInAnonymously().addOnCompleteListener(task -> {
+            if(!task.isSuccessful()){
+                efectoSonido();
+                // cargarGif();
+                Toast.makeText(AccesoActivity.this, "Has entrado como Invitado.", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(AccesoActivity.this, MainActivity.class));
+
+            }else{
+                Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

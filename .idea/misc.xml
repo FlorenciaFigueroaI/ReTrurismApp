@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/drawable/ic_baseline_language_24.xml" value="0.177" />
+        <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.177" />
+        <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/activity_acceso.xml" value="0.25" />
+        <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/activity_detalle.xml" value="0.13269927536231885" />
+        <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/activity_detalle_activuty.xml" value="0.25" />
         <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/activity_main.xml" value="0.18697916666666667" />
+        <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/content_detalle_activuty.xml" value="0.3625" />
         <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/fragment_galeria.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/flore/StudioProjects/ReTrurismApp/app/src/main/res/layout/item_list_galeria.xml" value="0.264" />
       </map>

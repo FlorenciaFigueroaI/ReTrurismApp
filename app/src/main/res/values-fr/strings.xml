@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="cancelar">Annuler</string>
     <string name="contrase_a">Mot de passe</string>
     <string name="email">Email (*)</string>
@@ -8,6 +9,7 @@
     <string name="registro">Enregistrement</string>
     <string name="entrar">Entré</string>
     <string name="nombre">Nom (*)</string>
+    <string name="entrar_invitado">Entrer en tant qu\'invité</string>
     <string name="apellido">Prénom</string>
     <string name="enviar">Valider</string>
     <string name="recibir_noticias">Je voudrais recevoir des nouvelles</string>

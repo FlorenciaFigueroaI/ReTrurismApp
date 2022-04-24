@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             switch (itemId) {
                 case R.id.nvgGaleria:
                     addFragment(new GaleriaFragment());
-                    vistaEnPrincipal = true;
+                    vistaEnPrincipal = false;
                     break;
 
                 case R.id.nvgBuscador:

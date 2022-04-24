@@ -17,7 +17,6 @@ import com.example.retrurism.R;
 import com.example.retrurism.fragments.RecuperacionPwdFragment;
 import com.example.retrurism.fragments.RegistroFragment;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 
 public class AccesoActivity extends AppCompatActivity {
@@ -146,19 +145,4 @@ public class AccesoActivity extends AppCompatActivity {
 
     }
 
-    private void ingresarInvitado(){
-
-        mAuth.signInAnonymously().addOnCompleteListener(task -> {
-            if(!task.isSuccessful()){
-                efectoSonido();
-                // cargarGif();
-                Toast.makeText(AccesoActivity.this, "Has entrado como Invitado.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(AccesoActivity.this, MainActivity.class));
-
-            }else{
-                Toast.makeText(AccesoActivity.this, "No se puede acceder. Verifique los datos.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 }

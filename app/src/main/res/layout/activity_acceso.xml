@@ -113,17 +113,4 @@
         android:textSize="@dimen/font_size"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnEntrarInvitado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/buscador_style"
-        android:text="@string/entrar_invitado"
-        android:textAlignment="center"
-        android:textColor="@color/colorBackground"
-        android:textSize="@dimen/font_size"
-        android:textStyle="bold" />
-
 </LinearLayout>

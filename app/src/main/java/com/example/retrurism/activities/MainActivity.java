@@ -1,15 +1,20 @@
 package com.example.retrurism.activities;
 
 import android.annotation.SuppressLint;
+import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -27,12 +32,13 @@ public class MainActivity extends AppCompatActivity{
     BottomNavigationView btmNavVw;
     Button btnMasOpciones;
 
-
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         // Menú de opciones inferior
         btmNavVw = findViewById(R.id.btmNavgtView);
@@ -47,7 +53,8 @@ public class MainActivity extends AppCompatActivity{
                     break;
 
                 case R.id.nvgBuscador:
-                    addFragment(new BusquedaFragment());
+                //    addFragment(new BusquedaFragment());
+
                     vistaEnPrincipal = false;
                     break;
 
@@ -62,6 +69,7 @@ public class MainActivity extends AppCompatActivity{
         btnMasOpciones = findViewById(R.id.btnMasopciones);
         registerForContextMenu(btnMasOpciones);
     }
+
 
 
     // menú contextual

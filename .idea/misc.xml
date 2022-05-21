@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/flore/Desktop/ReTrurismApp/app/src/main/res/layout/activity_acceso.xml" value="0.2265625" />
         <entry key="..\:/Users/flore/Desktop/ReTrurismApp/app/src/main/res/layout/activity_main.xml" value="0.2871376811594203" />
+        <entry key="..\:/Users/flore/Desktop/ReTrurismApp/app/src/main/res/layout/fragment_colaboracion.xml" value="0.20697463768115942" />
         <entry key="..\:/Users/flore/Desktop/ReTrurismApp/app/src/main/res/layout/fragment_galeria.xml" value="0.2871376811594203" />
         <entry key="..\:/Users/flore/Desktop/ReTrurismApp/app/src/main/res/layout/fragment_lista_fotografias.xml" value="0.334375" />
         <entry key="..\:/Users/flore/Desktop/ReTrurismApp/app/src/main/res/layout/item_list_galeria.xml" value="0.2871376811594203" />

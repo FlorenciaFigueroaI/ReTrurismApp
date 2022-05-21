@@ -21,11 +21,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     boolean vistaEnPrincipal;
     BottomNavigationView btmNavVw;
     Button btnMasOpciones;
+
 
     @SuppressLint("NonConstantResourceId")
     @Override

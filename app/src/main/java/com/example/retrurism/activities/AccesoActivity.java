@@ -59,7 +59,6 @@ public class AccesoActivity extends AppCompatActivity {
             txtVwOlviPwd.setVisibility(View.GONE);
             efectoSonido();
             // se carga el fragment
-            // Link ayuda: https://developer.android.com/training/basics/fragments/fragment-ui?hl=es
             transaccion = getSupportFragmentManager().beginTransaction(); // creación nueva transacción
             RegistroFragment frgRegistro = new RegistroFragment(); // instancia de transacción
             transaccion.add(R.id.contenedorAcceso, frgRegistro); // se añade transacción

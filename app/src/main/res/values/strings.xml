@@ -72,4 +72,7 @@
     <string name="Dark" translatable="false" />
     <string name="Auto" translatable="false">auto</string>
     <string name="buscador">Buscador</string>
+    <string name="mil" translatable="false">1940</string>
+
+
 </resources>

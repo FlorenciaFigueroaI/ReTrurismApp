@@ -10,19 +10,23 @@ public class Fotografia {
     String ciudad;
  //   String descripcion;
     int anyo;
-    String image;
+    int ruta;
 
 
-    public Fotografia(String titulo, String ciudad, int anyo, String image) {
+    public Fotografia(int ruta, String titulo, String ciudad, int anyo) {
 
    //     this.fotoID = fotoID;
+        this.ruta = ruta;
         this.titulo = titulo;
         this.ciudad = ciudad;
       //  this.descripcion = descripcion;
         this.anyo = anyo;
-        this.image = image;
 
 
+
+    }
+    public int getRuta() {
+        return ruta;
     }
 
     public String getTitulo() {
@@ -49,9 +53,7 @@ public class Fotografia {
         this.anyo = anyo;
     }
 
-    public String getImage() {
-        return image;
-    }
+
 
  /*   public void setImage(String image) {
         this.image = image;
@@ -59,14 +61,13 @@ public class Fotografia {
 
   */
 
-    @NotNull
     @Override
     public String toString() {
         return "Fotografia{" +
                 "titulo='" + titulo + '\'' +
                 ", ciudad='" + ciudad + '\'' +
                 ", anyo=" + anyo +
-                ", image='" + image + '\'' +
+                ", ruta='" + ruta + '\'' +
                 '}';
     }
 }

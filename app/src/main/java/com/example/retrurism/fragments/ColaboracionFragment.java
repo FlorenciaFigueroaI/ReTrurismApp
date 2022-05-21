@@ -28,20 +28,16 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 
-import com.android.volley.Request;
-import com.android.volley.toolbox.StringRequest;
+
 import com.example.retrurism.R;
 import com.example.retrurism.activities.MainActivity;
-import com.example.retrurism.singleton.MySingleton;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+
 
 
 public class ColaboracionFragment extends Fragment {
@@ -64,7 +60,7 @@ public class ColaboracionFragment extends Fragment {
     private final static String CHANNEL_ID = "NOTIFICACION";
     private final static int NOTIFICACION_ID = 0;
 
-    private final String URL = "http://192.168.8.107/retrurism/upload.php";
+   // private final String URL = "http://192.168.8.107/retrurism/upload.php";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,7 +86,7 @@ public class ColaboracionFragment extends Fragment {
         fltActBtn.setOnClickListener(view1 -> seleccionarImagen());
 
         btnEnviarFoto.setOnClickListener(v -> {
-            subirFoto();
+   //         subirFoto();
             setPendingIntent();
             crearCanalNotificacion();
             crearNotificacion();
@@ -139,8 +135,9 @@ public class ColaboracionFragment extends Fragment {
         notificationManagerCompat.notify(NOTIFICACION_ID, builder.build());
 
     }
-
+/*
     private void subirFoto() {
+
         StringRequest stringRequest = new StringRequest(
                 Request.Method.POST,
                 URL,
@@ -182,7 +179,7 @@ public class ColaboracionFragment extends Fragment {
         MySingleton.getInstance(requireActivity().getApplicationContext()).addToRequestQue(stringRequest);
 
     }
-
+*/
     // método para cargar la imagen
     private void seleccionarImagen() {
         Intent intent = new Intent();

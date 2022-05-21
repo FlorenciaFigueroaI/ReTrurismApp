@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -25,15 +26,14 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
     Context mContext;
     ArrayList<Fotografia> listaFotos;
 
-    public GaleriaAdapter(Context context, ArrayList<Fotografia> listaFoto) {
-        this.mContext = context;
-        this.listaFotos=listaFoto;
+    public GaleriaAdapter(ArrayList<Fotografia> listaFotos) {
+        this.listaFotos=listaFotos;
     }
 
     @NotNull
     @Override
     public GaleriaViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(R.layout.item_list_galeria, parent,false);
+         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_galeria, parent,false);
          return new GaleriaViewHolder(view);
 
     }
@@ -41,14 +41,18 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
     @Override
     public void onBindViewHolder(@NonNull GaleriaViewHolder holder, int position) {
 
-        final Fotografia fotografia = listaFotos.get(position);
 
+        /*
         Glide.with(mContext)
-                .load(fotografia.getImage())
+                .load(fotografia.getRuta())
                 .into(holder.imgVwFoto);
-        holder.txtTitulo.setText(fotografia.getTitulo());
-        holder.txtCiudad.setText(fotografia.getCiudad());
-        holder.txtAnyo.setText(String.valueOf(fotografia.getAnyo()));
+                */
+
+        holder.txtTitulo.setText(listaFotos.get(position).getTitulo());
+        holder.txtCiudad.setText(listaFotos.get(position).getCiudad());
+        holder.txtAnyo.setText(String.valueOf(listaFotos.get(position).getAnyo()));
+        holder.imgVwFoto.setImageResource(listaFotos.get(position).getRuta());
+
 
     }
 
@@ -68,7 +72,7 @@ public class GaleriaAdapter extends RecyclerView.Adapter<GaleriaAdapter.GaleriaV
 
         TextView txtTitulo,txtCiudad, txtAnyo;
         ImageView imgVwFoto;
-        RelativeLayout mContainer;
+        ConstraintLayout mContainer;
 
         public GaleriaViewHolder(View itemView) {
             super(itemView);
